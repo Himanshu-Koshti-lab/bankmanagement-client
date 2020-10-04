@@ -1,0 +1,21 @@
+export class User {
+    id:number;
+    firstName:string;
+    middleName:string;
+    lastName:string;
+    emailID:string;
+    password:string;
+    mobileNo:number;
+    dob:string;
+    gender:string;
+    currentAddress:string;
+    currentCity:string;
+    currentState:string;
+    currentZipcode:string;
+    permanentAddress:string;
+    permanentCity:string;
+    permanentState:string;
+    permanentZipcode:string;
+    securityQuestion:string;
+    answer:string;
+}
