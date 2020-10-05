@@ -18,4 +18,5 @@ export class User {
     permanentZipcode:string;
     securityQuestion:string;
     answer:string;
+    termsAndcondition:string;
 }
