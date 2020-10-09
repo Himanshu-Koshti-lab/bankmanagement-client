@@ -17,14 +17,13 @@ export class RegistrationComponent implements OnInit {
 
   siteKey:string;
 
-  states:any=["Andaman and Nicobar Islands",
+  states:any=["Andaman and Nicobar",
 "Andhra Pradesh",
 "Arunachal Pradesh",
 "Assam",
 "Bihar",
 "Chandigarh",
 "Chhattisgarh",
-"Dadra and Nagar Haveli and Daman and Diu",
 "Delhi",
 "Goa",
 "Gujarat",
@@ -54,6 +53,23 @@ export class RegistrationComponent implements OnInit {
 "Uttarakhand",
 "West Bengal"];
 
+updateAddress(event)
+{
+  if(event.target.checked)
+  {
+    this.user.permanentAddress=this.user.currentAddress;
+    this.user.permanentCity=this.user.currentCity;
+    this.user.permanentState=this.user.currentState;
+    this.user.permanentZipcode=this.user.currentZipcode;
+
+  }
+  else{
+    this.user.permanentAddress='';
+    this.user.permanentCity='';
+    this.user.permanentState='';
+    this.user.permanentZipcode='';
+  }
+}
   constructor(private _service:MainService, private _router:Router) {
     this.siteKey='6Lc9ktMZAAAAANyXdtiP4A-TDXMdX1KVvxnOL5WN';
    }
@@ -64,9 +80,9 @@ export class RegistrationComponent implements OnInit {
   registerUser(){
     
     this._service.registerUserFromRemote(this.user).subscribe(
+
       data =>{
         console.log("response received");
-        return;
       },
       error =>{
         console.log("exception occured");
@@ -75,6 +91,5 @@ export class RegistrationComponent implements OnInit {
     )
   }
 
-  
   
 }

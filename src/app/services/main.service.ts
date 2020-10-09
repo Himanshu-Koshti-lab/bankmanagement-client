@@ -8,11 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class MainService {
   
-  
-
-  constructor(private _http:HttpClient) { }
-
   registerUserFromRemote(user: User):Observable<any> {
     return this._http.post<any>("http://localhost:8080/register",user);
   }
+  constructor(private _http:HttpClient) { }
 }

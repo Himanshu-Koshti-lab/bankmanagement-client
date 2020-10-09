@@ -17,13 +17,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutUsComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
