@@ -4,6 +4,8 @@ import { from } from 'rxjs';
 import {MainService} from 'src/app/services/main.service';
 import {User} from 'src/app/classes/user/user';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 
 @Component({
   selector: 'app-registration',
@@ -70,11 +72,15 @@ updateAddress(event)
     this.user.permanentZipcode='';
   }
 }
-  constructor(private _service:MainService, private _router:Router) {
+  constructor(private _service:MainService, private _router:Router, public dialog:MatDialog) {
     this.siteKey='6Lc9ktMZAAAAANyXdtiP4A-TDXMdX1KVvxnOL5WN';
    }
 
   ngOnInit(): void {
+  }
+
+  openDialog(){
+    this.dialog.open(DialogboxComponent);
   }
 
   registerUser(){
@@ -90,6 +96,7 @@ updateAddress(event)
       }
     )
   }
+
 
   
 }

@@ -16,8 +16,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { FooterComponent } from './components/footer/footer.component';
+import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +27,10 @@ import { FooterComponent } from './components/footer/footer.component';
     AboutUsComponent,
     LoginComponent,
     RegistrationComponent,
-    FooterComponent
+    FooterComponent,
+    DialogboxComponent
   ],
+  entryComponents:[DialogboxComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -37,6 +41,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
+    MatDialogModule,
     NgxCaptchaModule,
     AppRoutingModule,
     BrowserAnimationsModule

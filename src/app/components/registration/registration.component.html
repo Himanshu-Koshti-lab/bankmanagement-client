@@ -449,7 +449,7 @@
             <div class="row">
                 <div class="col">
                     <button type="submit" class="btn btn-primary"
-                        [disabled]="registrationForm.form.invalid">Register</button>
+                        [disabled]="registrationForm.form.invalid" mat-raised-button (click)="openDialog()">Register</button>
                 </div>
             </div>
         </mat-card>
