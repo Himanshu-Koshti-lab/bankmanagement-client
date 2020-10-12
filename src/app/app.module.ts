@@ -20,6 +20,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { FooterComponent } from './components/footer/footer.component';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
+import { BannerComponent } from './components/banner/banner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
     LoginComponent,
     RegistrationComponent,
     FooterComponent,
-    DialogboxComponent
+    DialogboxComponent,
+    BannerComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [

@@ -366,7 +366,11 @@
                             <label for="permanentZipcode">Zipcode : </label>
                         </div>
                     </div>
-                   
+                    <div class="col">
+                        <div class="required">
+                            <label for="role">Registered as : </label>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -386,6 +390,15 @@
                             <small class="text-danger" *ngIf="permanentZipcode.errors.pattern">Zipcode should be 6 digit
                                 long. It should not start with zero</small>
                         </div>
+                    </div>
+
+                    <div class="col">
+                        <input type="radio" id="role" name="role" [(ngModel)]="user.role" required #Customer="ngModel"
+                            value="Customer" [class.is-invalid]="Customer.invalid && Customer.touched" checked>Customer
+
+                        <input type="radio" id="role" name="role" [(ngModel)]="user.role" required
+                            #Employee="ngModel" value="Employee"
+                            [class.is-invalid]="Employee.invalid && Employee.touched">Employee
                     </div>
                     
                 </div>
