@@ -1,188 +1,472 @@
-<!-- <h2>Register here</h2>
-<form #registrationForm="ngForm" (ngSubmit)="registerUser()">
-    <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstNameHelp"
-            placeholder="Enter first name" [(ngModel)]="user.firstName" required #firstName="ngModel"
-            [class.is-invalid]="firstName.invalid && firstName.touched" maxlength="25">
-        <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">First name is required
-            field</small>
-    </div>
+<div class="main-div">
+    <div id="overflowTest">
+    <form #registrationForm="ngForm" (ngSubmit)="registerUser(); registrationForm.reset()" fxLayoutAlign="stretch"
+        class="register-form">
+        <mat-card fxFlex="50">
+            <mat-toolbar class="bg-primary">
+                Register here
+            </mat-toolbar>
+            <br>
+            <br>
 
-    <div class="form-group">
-        <label for="middleName">Middle Name</label>
-        <input type="text" class="form-control" id="middleName" name="middleName" aria-describedby="middleNameHelp"
-            placeholder="Enter middle name" [(ngModel)]="user.middleName" maxlength="25">
-    </div>
+            <div class="form-group">
 
-    <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastNameHelp"
-            placeholder="Enter last name" [(ngModel)]="user.lastName" required #lastName="ngModel"
-            [class.is-invalid]="lastName.invalid && lastName.touched" maxlength="25">
-        <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Last name is required
-            field</small>
-    </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label for="firstName">First Name : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="middleName">Middle Name : </label>
+                    </div>
 
-    <div class="form-group">
-        <label for="emailID">Email address</label>
-        <input type="email" class="form-control" id="emailID" name="emailID" aria-describedby="emailIDHelp"
-            placeholder="Enter email" [(ngModel)]="user.emailID" required #emailID="ngModel"
-            [class.is-invalid]="emailID.invalid && emailID.touched" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-        <div *ngIf="emailID.errors && (emailID.invalid && emailID.touched)">
-            <small class="text-danger" *ngIf="emailID.errors.required">Email ID is required field</small>
-            <small class="text-danger" *ngIf="emailID.errors.pattern">Email ID should be in proper format</small>
-        </div>
-        <small id="emailIDHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="lastName">Last Name : </label>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
-            [(ngModel)]="user.password" required #password="ngModel"
-            [class.is-invalid]="password.invalid && password.touched" maxlength="15">
-        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required
-            field</small>
-    </div>
+            </div>
 
-    <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
-            #confirmPassword="ngModel" (ngModel)="user.password" placeholder="Confirm Password" required
-            [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched" maxlength="15">
-        <small class="text-danger"
-            [class.d-none]="(confirmPassword.value==password.value) || confirmPassword.untouched">Password & Confirm
-            Password Must be same</small>
-    </div>
+            <div class="form-group">
 
-    <div class="form-group">
-        <label for="mobileNo">Mobile Number</label>
-        <input type="number" class="form-control" id="mobileNo" name="mobileNo" aria-describedby="mobileNoHelp"
-            placeholder="Enter Mobile Number" [(ngModel)]="user.mobileNo" required #mobileNo="ngModel"
-            [class.is-invalid]="mobileNo.invalid && mobileNo.touched" maxlength="10" pattern="^((\\+91-?)|0)?[0-9]{10}$"
-            onKeyPress="if(this.value.length==10) return false;">
-        <div *ngIf="mobileNo.errors && (mobileNo.invalid && mobileNo.touched)">
-            <small class="text-danger" *ngIf="mobileNo.errors.required">Mobile Number is required field</small>
-            <small class="text-danger" *ngIf="mobileNo.errors.pattern">Mobile Number should be in proper format</small>
-        </div>
-        <small id="mobileNoHelp" class="form-text text-muted">We'll never share your Mobile Number with anyone
-            else.</small>
-    </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="firstName" name="firstName"
+                            aria-describedby="firstNameHelp" placeholder="Enter first name" [(ngModel)]="user.firstName"
+                            required #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched"
+                            maxlength="25">
+                        <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">First name is
+                            required
+                            field</small>
 
-    <div class="form-group">
-        <label for="dob">Date of birth</label>
-        <input type="date" class="form-control" id="dob" name="dob" aria-describedby="dobHelp"
-            placeholder="Enter Date of birth" [(ngModel)]="user.dob" required #dob="ngModel"
-            [class.is-invalid]="dob.invalid && dob.touched">
-        <small class="text-danger" [class.d-none]="dob.valid || dob.untouched">Date of birth is required field</small>
-    </div>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="middleName" name="middleName"
+                            aria-describedby="middleNameHelp" placeholder="Enter middle name"
+                            [(ngModel)]="user.middleName" maxlength="25">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="lastName" name="lastName"
+                            aria-describedby="lastNameHelp" placeholder="Enter last name" [(ngModel)]="user.lastName"
+                            required #lastName="ngModel" [class.is-invalid]="lastName.invalid && lastName.touched"
+                            maxlength="25">
+                        <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Last name is
+                            required
+                            field</small>
+                    </div>
+                </div>
+            </div>
 
-    <div class="form-group">
-        <label for="gender">Gender</label>
-        <input type="text" class="form-control" id="gender" name="gender" aria-describedby="genderHelp"
-            placeholder="Enter Gender" [(ngModel)]="user.gender" required #gender="ngModel"
-            [class.is-invalid]="gender.invalid && gender.touched">
-        <small class="text-danger" [class.d-none]="gender.valid || gender.untouched">Gender is required field</small>
-    </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label for="emailID">Email address : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="mobileNo">Mobile Number : </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" class="form-control" id="emailID" name="emailID"
+                            aria-describedby="emailIDHelp" placeholder="Enter email" [(ngModel)]="user.emailID" required
+                            #emailID="ngModel" [class.is-invalid]="emailID.invalid && emailID.touched"
+                            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <div *ngIf="emailID.errors && (emailID.invalid && emailID.touched)">
+                            <small class="text-danger" *ngIf="emailID.errors.required">Email ID is required
+                                field</small>
+                            <small class="text-danger" *ngIf="emailID.errors.pattern">Email ID should be in proper
+                                format (Example: abc@gmail.com)</small>
+                        </div>
+                        <small id="emailIDHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="mobileNo" name="mobileNo"
+                            aria-describedby="mobileNoHelp" placeholder="Enter Mobile Number"
+                            [(ngModel)]="user.mobileNo" required #mobileNo="ngModel"
+                            [class.is-invalid]="mobileNo.invalid && mobileNo.touched" maxlength="10"
+                            pattern="[789][0-9]{9}" onKeyPress="if(this.value.length==10) return false;" onkeydown="return event.keyCode === 8 ||
+                            event.keyCode === 46 ? true : !isNaN(Number(event.key))">
+                        <div *ngIf="mobileNo.errors && (mobileNo.invalid && mobileNo.touched)">
+                            <small class="text-danger" *ngIf="mobileNo.errors.required">Mobile Number is required
+                                field</small>
+                            <small class="text-danger" *ngIf="mobileNo.errors.pattern">Mobile Number should be in proper
+                                format (Phone numbers from India are 10 digits long, and start with 7, 8, or 9)</small>
+                        </div>
+                        <small id="mobileNoHelp" class="form-text text-muted">We'll never share your Mobile Number with
+                            anyone
+                            else.</small>
+                    </div>
+                </div>
+            </div>
 
-    <div class="form-group">
-        <label for="currentAddress">Current Address</label>
-        <textarea class="form-control" id="currentAddress" name="currentAddress" aria-describedby="currentAddressHelp"
-            placeholder="Enter Current Address" [(ngModel)]="user.currentAddress" required #currentAddress="ngModel"
-            [class.is-invalid]="currentAddress.invalid && currentAddress.touched" maxlength="200"> </textarea>
-        <small class="text-danger" [class.d-none]="currentAddress.valid || currentAddress.untouched">Current Address is
-            required field</small>
-    </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label for="password">Password : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="confirmPassword">Confirm Password : </label>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="form-group">
-        <label for="currentCity">City</label>
-        <input type="text" class="form-control" id="currentCity" name="currentCity" aria-describedby="currentCityHelp"
-            placeholder="Enter City" [(ngModel)]="user.currentCity" required #currentCity="ngModel"
-            [class.is-invalid]="currentCity.invalid && currentCity.touched" maxlength="25">
-        <small class="text-danger" [class.d-none]="currentCity.valid || currentCity.untouched">City is required
-            field</small>
-    </div>
+            </div>
 
-    <div class="form-group">
-        <label for="currentState">State</label>
-        <input type="text" class="form-control" id="currentState" name="currentState"
-            aria-describedby="currentStateHelp" placeholder="Enter State" [(ngModel)]="user.currentState" required
-            #currentState="ngModel" [class.is-invalid]="currentState.invalid && currentState.touched" maxlength="25">
-        <small class="text-danger" [class.d-none]="currentState.valid || currentState.untouched">State is required
-            field</small>
-    </div>
+            <div class="form-group">
 
-    <div class="form-group">
-        <label for="currentZipcode">Zipcode</label>
-        <input type="number" class="form-control" id="currentZipcode" name="currentZipcode"
-            aria-describedby="currentZipcodeHelp" placeholder="Enter Zipcode" [(ngModel)]="user.currentZipcode" required
-            #currentZipcode="ngModel" [class.is-invalid]="currentZipcode.invalid && currentZipcode.touched"
-            pattern="^[1-9][0-9]{5}$">
-        <div *ngIf="currentZipcode.errors && (currentZipcode.invalid && currentZipcode.touched)">
-            <small class="text-danger" *ngIf="currentZipcode.errors.required">Zipcode is required field</small>
-            <small class="text-danger" *ngIf="currentZipcode.errors.pattern">Zipcode should be 6 digit long</small>
-        </div>
-    </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                            [(ngModel)]="user.password" required #password="ngModel"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                            [class.is-invalid]="password.invalid && password.touched" maxlength="15">
+                        <div *ngIf="password.errors && (password.invalid && password.touched)">
+                            <small class="text-danger" *ngIf="password.errors.required">Password is required
+                                field</small>
+                            <small class="text-danger" *ngIf="password.errors.pattern">Password should be in proper
+                                format (It must contains minimum eight characters, at least one uppercase letter, one
+                                lowercase
+                                letter, one number and one special character)</small>
+                        </div>
+                    </div>
 
-    <div class="form-group">
-        <label for="permanentAddress">Permanent Address</label>
-        <input type="text" class="form-control" id="permanentAddress" name="permanentAddress"
-            aria-describedby="permanentAddressHelp" placeholder="Enter Permanent Address"
-            [(ngModel)]="user.permanentAddress" required #permanentAddress="ngModel"
-            [class.is-invalid]="permanentAddress.invalid && permanentAddress.touched">
-        <small class="text-danger" [class.d-none]="permanentAddress.valid || permanentAddress.untouched">Permanent
-            Address is required field</small>
-    </div>
+                    <div class="col">
 
-    <div class="form-group">
-        <label for="permanentCity">City</label>
-        <input type="text" class="form-control" id="permanentCity" name="permanentCity"
-            aria-describedby="permanentCityHelp" placeholder="Enter City" [(ngModel)]="user.permanentCity" required
-            #permanentCity="ngModel" [class.is-invalid]="permanentCity.invalid && permanentCity.touched">
-        <small class="text-danger" [class.d-none]="permanentCity.valid || permanentCity.untouched">City is required
-            field</small>
-    </div>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                            #confirmPassword="ngModel" (ngModel)="user.password" placeholder="Confirm Password" required
+                            [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched" maxlength="15">
+                        <small class="text-danger"
+                            [class.d-none]="(confirmPassword.value==password.value) || confirmPassword.untouched">Password
+                            &
+                            Confirm
+                            Password Must be same</small>
 
-    <div class="form-group">
-        <label for="permanentState">State</label>
-        <input type="text" class="form-control" id="permanentState" name="permanentState"
-            aria-describedby="permanentStateHelp" placeholder="Enter State" [(ngModel)]="user.permanentState" required
-            #permanentState="ngModel" [class.is-invalid]="permanentState.invalid && permanentState.touched">
-        <small class="text-danger" [class.d-none]="permanentState.valid || permanentState.untouched">State is required
-            field</small>
-    </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="form-group">
-        <label for="permanentZipcode">Zipcode</label>
-        <input type="text" class="form-control" id="permanentZipcode" name="permanentZipcode"
-            aria-describedby="permanentZipcodeHelp" placeholder="Enter Zipcode" [(ngModel)]="user.permanentZipcode"
-            required #permanentZipcode="ngModel"
-            [class.is-invalid]="permanentZipcode.invalid && permanentZipcode.touched">
-        <small class="text-danger" [class.d-none]="permanentZipcode.valid || permanentZipcode.untouched">Zipcode is
-            required field</small>
-    </div>
 
-    <div class="form-group">
-        <label for="securityQuestion">Security Question</label>
-        <input type="text" class="form-control" id="securityQuestion" name="securityQuestion"
-            aria-describedby="securityQuestionHelp" placeholder="Enter Security Question"
-            [(ngModel)]="user.securityQuestion" required #securityQuestion="ngModel"
-            [class.is-invalid]="securityQuestion.invalid && securityQuestion.touched">
-        <small class="text-danger" [class.d-none]="securityQuestion.valid || securityQuestion.untouched">Security
-            Question is required field</small>
-    </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label for="dob">Date of birth : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="gender">Gender : </label>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="form-group">
-        <label for="answer">Answer</label>
-        <input type="text" class="form-control" id="answer" name="answer" aria-describedby="answerHelp"
-            placeholder="Enter Answer" [(ngModel)]="user.answer" required #answer="ngModel"
-            [class.is-invalid]="answer.invalid && answer.touched">
-        <small class="text-danger" [class.d-none]="answer.valid || answer.untouched">Answer is required field</small>
-    </div>
+            </div>
 
-    <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" name="checkbox" id="checkbox">
-        <label class="form-check-label" for="checkbox">Accept terms & conditions</label>
-    </div>
-    <button type="submit" class="btn btn-primary" [disabled]="registrationForm.form.invalid">Register</button>
-</form> -->
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <input type="date" class="form-control" id="dob" name="dob" aria-describedby="dobHelp"
+                            placeholder="Enter Date of birth" [(ngModel)]="user.dob" required #dob="ngModel"
+                            [class.is-invalid]="dob.invalid && dob.touched">
+                        <small class="text-danger" [class.d-none]="dob.valid || dob.untouched">Date of birth is required
+                            field</small>
+                    </div>
+
+                    <div class="col">
+                        <input type="radio" id="gender" name="gender" [(ngModel)]="user.gender" required #male="ngModel"
+                            value="Male" [class.is-invalid]="male.invalid && male.touched" checked>Male
+
+                        <input type="radio" id="gender" name="gender" [(ngModel)]="user.gender" required
+                            #female="ngModel" value="Female"
+                            [class.is-invalid]="female.invalid && female.touched">Female
+
+                        <input type="radio" id="gender" name="gender" [(ngModel)]="user.gender" required
+                            #other="ngModel" value="Other" [class.is-invalid]="other.invalid && other.touched">Other
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label for="currentAddress">Current Address : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="currentCity">City : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="currentState">State : </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="row">
+                    <div class="col">
+                        <textarea class="form-control" id="currentAddress" name="currentAddress"
+                            aria-describedby="currentAddressHelp" placeholder="Enter Current Address"
+                            [(ngModel)]="user.currentAddress" required #currentAddress="ngModel"
+                            [class.is-invalid]="currentAddress.invalid && currentAddress.touched" maxlength="200"
+                            rows="3"> </textarea>
+                        <small class="text-danger"
+                            [class.d-none]="currentAddress.valid || currentAddress.untouched">Current
+                            Address is
+                            required field</small>
+                    </div>
+
+                    <div class="col">
+                        <input type="text" class="form-control" id="currentCity" name="currentCity"
+                            aria-describedby="currentCityHelp" placeholder="Enter City" [(ngModel)]="user.currentCity"
+                            required #currentCity="ngModel"
+                            [class.is-invalid]="currentCity.invalid && currentCity.touched" maxlength="25">
+                        <small class="text-danger" [class.d-none]="currentCity.valid || currentCity.untouched">City is
+                            required
+                            field</small>
+                    </div>
+                    <div class="col">
+                        <select name="currentState" id="currentState" aria-describedby="currentStateHelp"
+                            [(ngModel)]="user.currentState" required #currentState="ngModel"
+                            [class.is-invalid]="currentState.invalid && currentState.touched">
+                            <option disabled>Select State</option>
+                            <option *ngFor="let currentState of states">{{ currentState }}</option>
+                        </select> <br>
+                        <small class="text-danger" [class.d-none]="currentState.valid || currentState.untouched">State
+                            is
+                            required
+                            field</small>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label for="currentZipcode">Zipcode : </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="number" class="form-control" id="currentZipcode" name="currentZipcode"
+                            aria-describedby="currentZipcodeHelp" placeholder="Enter Zipcode"
+                            [(ngModel)]="user.currentZipcode" required #currentZipcode="ngModel"
+                            [class.is-invalid]="currentZipcode.invalid && currentZipcode.touched"
+                            pattern="^[1-9][0-9]{5}$" onkeydown="return event.keyCode === 8 ||
+                            event.keyCode === 46 ? true : !isNaN(Number(event.key))">
+                        <div *ngIf="currentZipcode.errors && (currentZipcode.invalid && currentZipcode.touched)">
+                            <small class="text-danger" *ngIf="currentZipcode.errors.required">Zipcode is required
+                                field</small>
+                            <small class="text-danger" *ngIf="currentZipcode.errors.pattern">Zipcode should be 6 digit
+                                long. It should not start with zero</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" name="copyCheckbox" id="copyCheckbox" [checked]="false"
+                    (change)="updateAddress($event)" [disabled]=" currentZipcode.invalid || currentState.invalid || currentCity.invalid 
+                    || currentAddress.invalid">
+                <label class="form-check-label" for="copyCheckbox">Permanent address is same as current address</label>
+            </div>
+
+
+        </mat-card>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-card fxFlex="50">
+            <div class="form-group">
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="required">
+                            <label for="permanentAddress">Permanent Address : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="permanentCity">City : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="permanentState">State : </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <div class="row">
+                    <div class="col-4">
+                        <textarea class="form-control" id="permanentAddress" name="permanentAddress"
+                            aria-describedby="permanentAddressHelp" placeholder="Enter Permanent Address"
+                            [(ngModel)]="user.permanentAddress" required #permanentAddress="ngModel"
+                            [class.is-invalid]="permanentAddress.invalid && permanentAddress.touched" rows="3"
+                            maxlength="200" style="width: 100%;"></textarea>
+                        <small class="text-danger"
+                            [class.d-none]="permanentAddress.valid || permanentAddress.untouched">Permanent
+                            Address is required field</small>
+                    </div>
+
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="permanentCity" name="permanentCity"
+                            aria-describedby="permanentCityHelp" placeholder="Enter City"
+                            [(ngModel)]="user.permanentCity" required #permanentCity="ngModel"
+                            [class.is-invalid]="permanentCity.invalid && permanentCity.touched">
+                        <small class="text-danger" [class.d-none]="permanentCity.valid || permanentCity.untouched">City
+                            is
+                            required
+                            field</small>
+                    </div>
+                    <div class="col">
+
+                        <select name="permanentState" id="permanentState" aria-describedby="permanentStateHelp"
+                            [(ngModel)]="user.permanentState" required #permanentState="ngModel"
+                            [class.is-invalid]="permanentState.invalid && permanentState.touched">
+                            <option disabled>Select State</option>
+                            <option *ngFor="let permanentState of states">{{ permanentState }}</option>
+                        </select> <br>
+                        <small class="text-danger"
+                            [class.d-none]="permanentState.valid || permanentState.untouched">State is
+                            required
+                            field</small>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label for="permanentZipcode">Zipcode : </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="required">
+                            <label for="role">Registered as : </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="number" class="form-control" id="permanentZipcode" name="permanentZipcode"
+                            aria-describedby="permanentZipcodeHelp" placeholder="Enter Zipcode"
+                            [(ngModel)]="user.permanentZipcode" required #permanentZipcode="ngModel"
+                            [class.is-invalid]="permanentZipcode.invalid && permanentZipcode.touched"
+                            pattern="^[1-9][0-9]{5}$" max="6" onkeydown="return event.keyCode === 8 ||
+                            event.keyCode === 46 ? true : !isNaN(Number(event.key))">
+                        <div *ngIf="permanentZipcode.errors && (permanentZipcode.invalid && permanentZipcode.touched)">
+                            <small class="text-danger" *ngIf="permanentZipcode.errors.required">Zipcode is required
+                                field</small>
+                            <small class="text-danger" *ngIf="permanentZipcode.errors.pattern">Zipcode should be 6 digit
+                                long. It should not start with zero</small>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <input type="radio" id="role" name="role" [(ngModel)]="user.role" required #Customer="ngModel"
+                            value="Customer" [class.is-invalid]="Customer.invalid && Customer.touched" checked> Customer
+
+                        <input type="radio" id="role" name="role" [(ngModel)]="user.role" required
+                            #Employee="ngModel" value="Employee"
+                            [class.is-invalid]="Employee.invalid && Employee.touched"> Employee
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="required">
+                            <label for="securityQuestion">Security Question : </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="required">
+                            <label for="answer">Answer : </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <select name="securityQuestion" id="securityQuestion" aria-describedby="securityQuestionHelp"
+                            [(ngModel)]="user.securityQuestion" required #securityQuestion="ngModel"
+                            [class.is-invalid]="securityQuestion.invalid && securityQuestion.touched" style="width: 80%; height: 80%;">
+                            <option disabled>Select security question</option>
+                            <option value="What Is your favorite book?">What Is your favorite book?</option>
+                            <option value="What was the name of your first/current/favorite pet?">What was the name of
+                                your
+                                first/current/favorite pet?</option>
+                            <option value="What is your favorite food?">What is your favorite food?</option>
+                        </select>
+
+                        <br>
+                        <small class="text-danger"
+                            [class.d-none]="securityQuestion.valid || securityQuestion.untouched">Security
+                            Question is required field</small>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="answer" name="answer" aria-describedby="answerHelp"
+                            placeholder="Enter Answer" [(ngModel)]="user.answer" required #answer="ngModel"
+                            [class.is-invalid]="answer.invalid && answer.touched">
+                        <small class="text-danger" [class.d-none]="answer.valid || answer.untouched">Answer is required
+                            field</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" name="termsAndcondition" id="termsAndcondition" required
+                    #termsAndcondition="ngModel" (ngModel)="user.termsAndcondition"
+                    [class.is-invalid]="termsAndcondition.invalid && termsAndcondition.touched">
+                <label class="form-check-label" for="termsAndcondition">Accept terms & conditions</label>
+                <br>
+                <small class="text-danger"
+                    [class.d-none]="termsAndcondition.valid || termsAndcondition.untouched">Please accept terms and
+                    condition</small>
+            </div>
+
+            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey"> </ngx-recaptcha2>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary"
+                        [disabled]="registrationForm.form.invalid" mat-raised-button (click)="openDialog()">Register</button>
+                </div>
+            </div>
+        </mat-card>
+    </form>
+</div>
+</div>

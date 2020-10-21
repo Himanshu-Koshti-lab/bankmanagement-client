@@ -1,0 +1,27 @@
+
+#overflowTest {
+    
+    padding: 15px;
+    width: 100%;
+    height: 50%;
+    overflow: scroll;
+  }
+
+.main-div mat-card{
+    padding: 0px;
+}
+.register-form{
+    padding: 20px;
+}
+.required label:after 
+{ 
+    content:"*";
+    color: red; 
+}
+
+.btn{
+    color: #000000;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 33%;
+}
