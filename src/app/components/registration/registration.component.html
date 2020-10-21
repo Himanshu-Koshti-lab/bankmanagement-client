@@ -3,9 +3,10 @@
     <form #registrationForm="ngForm" (ngSubmit)="registerUser(); registrationForm.reset()" fxLayoutAlign="stretch"
         class="register-form">
         <mat-card fxFlex="50">
-            <mat-toolbar style="background-color: #75a9f9;">
+            <mat-toolbar class="bg-primary">
                 Register here
             </mat-toolbar>
+            <br>
             <br>
 
             <div class="form-group">
@@ -394,11 +395,11 @@
 
                     <div class="col">
                         <input type="radio" id="role" name="role" [(ngModel)]="user.role" required #Customer="ngModel"
-                            value="Customer" [class.is-invalid]="Customer.invalid && Customer.touched" checked>Customer
+                            value="Customer" [class.is-invalid]="Customer.invalid && Customer.touched" checked> Customer
 
                         <input type="radio" id="role" name="role" [(ngModel)]="user.role" required
                             #Employee="ngModel" value="Employee"
-                            [class.is-invalid]="Employee.invalid && Employee.touched">Employee
+                            [class.is-invalid]="Employee.invalid && Employee.touched"> Employee
                     </div>
                     
                 </div>
