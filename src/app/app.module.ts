@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -21,6 +21,9 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { FooterComponent } from './components/footer/footer.component';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +33,16 @@ import { BannerComponent } from './components/banner/banner.component';
     RegistrationComponent,
     FooterComponent,
     DialogboxComponent,
-    BannerComponent
+    BannerComponent,
+    NavbarComponent,
+    ForgotpasswordComponent,
+    AdminDashboardComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FlexLayoutModule,
     MatFormFieldModule,
