@@ -84,7 +84,6 @@ updateAddress(event)
   }
 
   registerUser(){
-    
     this._service.registerUserFromRemote(this.user).subscribe(
 
       data =>{

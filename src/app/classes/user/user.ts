@@ -20,4 +20,5 @@ export class User {
     securityQuestion:string;
     answer:string;
     termsAndcondition:string;
+    captcha:string;
 }
