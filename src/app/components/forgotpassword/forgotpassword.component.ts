@@ -14,7 +14,9 @@ export class ForgotpasswordComponent implements OnInit {
   ForgetForm: FormGroup;
   PasswordOtpForm:FormGroup;
   IsValidEmail = false;
+  OtpBased:false;
   submitted = false;
+  selectedQuestion:any;
   user:any;
   message:any;
   constructor(private _service: MainService, private _router: Router, private formBuilder: FormBuilder) { }
@@ -44,6 +46,16 @@ export class ForgotpasswordComponent implements OnInit {
     const resp = this._service.verifyotp(otpver);
     resp.subscribe(data => this.message = data,err => console.error("not change")
     )
+  }
+
+  //QuestionBased
+
+  forgetPassByQuestion(user :User){
+    const response = this._service.forgetPassByQuestionSer(user);
+  }
+
+  selectedOne(event:any){
+    this.selectedQuestion = event.target.value;
   }
   
 }

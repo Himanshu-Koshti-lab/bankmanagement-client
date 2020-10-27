@@ -26,6 +26,10 @@ export class MainService {
   verifyotp(userotp : Userotp){
     return this._http.put('Updatelink',userotp);
   }
+
+  forgetPassByQuestionSer(user :User){
+    return this._http.put('http://localhost:8080/forgotPasswordByAnswer',user)
+  }
 // End Here
   constructor(private _http:HttpClient) { }
 }

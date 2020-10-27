@@ -27,7 +27,7 @@ input[type=text], input[type=password] {
 .design{
   margin-top: 20px;
   max-width: 500px;
-  max-height: 500px;
+  max-height: auto;
 }
 span.reg {
   float: center;
