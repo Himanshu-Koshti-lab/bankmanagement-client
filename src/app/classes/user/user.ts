@@ -16,7 +16,7 @@ export class User {
     permanentCity:string;
     permanentState:string;
     permanentZipcode:string;
-    role:string;
+    role:number;
     securityQuestion:string;
     answer:string;
     termsAndcondition:string;

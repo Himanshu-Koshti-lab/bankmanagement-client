@@ -24,6 +24,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminnavbarComponent } from './components/navbar/AdminNavbar/adminnavbar/adminnavbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     BannerComponent,
     NavbarComponent,
     ForgotpasswordComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AdminnavbarComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [

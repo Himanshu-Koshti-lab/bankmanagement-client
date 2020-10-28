@@ -10,7 +10,7 @@ import { Userotp } from '../classes/userotp';
 export class MainService {
   
   registerUserFromRemote(user: User):Observable<any> {
-    return this._http.post<any>("http://localhost:8080/register",user);
+    return this._http.post<any>("http://localhost:8080/service/register-user",user);
   }
 // HimanshuEdits Start Here
   loginuser(user: User){
