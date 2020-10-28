@@ -18,7 +18,7 @@ export class MainService {
   }
 
   // Email For Generate OTP
-  forgotPasswordByOtp(user:User){
+  forgetPassByOtpSer(user:User){
     return this._http.post('http://localhost:8080/forgotPasswordByOtp', user);
   }
 

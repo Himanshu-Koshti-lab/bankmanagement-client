@@ -13,7 +13,8 @@ export class ForgotpasswordComponent implements OnInit {
   forgotPassByQue:FormGroup;
   Confirmpassword:String;
   OtpBased:boolean;
-  user;
+  validEmail:any;
+  //user;
   Updateuser:any;
   submitted = false;
   constructor(private _service: MainService, private _router: Router, private formBuilder: FormBuilder) { }
@@ -23,17 +24,19 @@ export class ForgotpasswordComponent implements OnInit {
       emailID: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       securityQuestion:[''],
-      Confirmpassword: ['', [Validators.required, Validators.minLength(4)]],
-      answer:['', [Validators.required, Validators.minLength(8)]],
+      Confirmpassword: [''],
+      answer:['']
   });
   }
   //Show Otp Based Form
   showOtp(){
     this.OtpBased = true;
+    this.validEmail=  false;
   }
   //Show AnswerBased Form
   showAnswer(){
     this.OtpBased = false;
+    this.validEmail = false;
   }
   //Function For Submit forgotPassByQue Form
   forgotPassByQueF(user:User){
@@ -47,7 +50,22 @@ export class ForgotpasswordComponent implements OnInit {
       },
       err => 
       alert("Something went wrong with Email,Question and Password"))
-  }  
+  }
+  
+  forgotPassByOtp(user:User){
+    const resp =  this._service.forgetPassByOtpSer(user);
+    resp.subscribe(
+      data => {
+        this.validEmail=data
+        console.log(this.validEmail)
+      },
+      err => 
+      alert("Something went wrong with Email,Question and Password"))
+  }
+  public verifyOtp(){
+    this.validEmail=false
+    console.log("UnderConstruction")
+  }
   selectedQuestion: string = 'What Is your favorite book?';
   
 
@@ -55,7 +73,12 @@ export class ForgotpasswordComponent implements OnInit {
   selectChangeHandler (event: any) {
     //update the ui
     this.selectedQuestion = event.target.value;
-  } 
+  }
+  
+  SentOtp(){
+    console.log("Sending....")
+    this.validEmail=true;
+  }
 }
 
 
