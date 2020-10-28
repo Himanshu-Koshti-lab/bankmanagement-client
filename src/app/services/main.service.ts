@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { User } from '../classes/user/user';
 import { Observable } from 'rxjs';
-import { Userotp } from '../classes/userotp';
+// import { Userotp } from '../classes/userotp';
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +22,13 @@ export class MainService {
     return this._http.post('http://localhost:8080/forgotPasswordByOtp', user);
   }
 
-  //Veriy Otp
-  verifyotp(userotp : Userotp){
-    return this._http.put('Updatelink',userotp);
-  }
+  // //Veriy Otp
+  // verifyotp(userotp : Userotp){
+  //   return this._http.put('Updatelink',userotp);
+  // }
 
   forgetPassByQuestionSer(user :User){
+    console.log(user)
     return this._http.put('http://localhost:8080/forgotPasswordByAnswer',user)
   }
 // End Here

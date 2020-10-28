@@ -45,13 +45,6 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem("Log" , "login done" )        
        // console.log(sessionStorage.getItem("Log"))
       }  , err => alert("credential are wrong check Email and Password")) 
-      
-      // if dara present
-      //generate  token
-      // validate in EACH EVVENTS
-      //stone in local
-      //when logout 
-      // clear localstorage
-      // redirect to  root home    
+          
   }  
 }

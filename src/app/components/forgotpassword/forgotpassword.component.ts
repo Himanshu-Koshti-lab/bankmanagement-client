@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/classes/user/user';
-import { Userotp } from 'src/app/classes/userotp';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -11,52 +10,52 @@ import { MainService } from 'src/app/services/main.service';
   styleUrls: ['./forgotpassword.component.css']
 })
 export class ForgotpasswordComponent implements OnInit {
-  ForgetForm: FormGroup;
-  PasswordOtpForm:FormGroup;
-  IsValidEmail = false;
-  OtpBased:false;
+  forgotPassByQue:FormGroup;
+  Confirmpassword:String;
+  OtpBased:boolean;
+  user;
+  Updateuser:any;
   submitted = false;
-  selectedQuestion:any;
-  user:any;
-  message:any;
   constructor(private _service: MainService, private _router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.ForgetForm = this.formBuilder.group({
-      emailID: ['', [Validators.required, Validators.email]]
-    });
+    this.forgotPassByQue = this.formBuilder.group({
+      emailID: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      securityQuestion:[''],
+      Confirmpassword: ['', [Validators.required, Validators.minLength(4)]],
+      answer:['', [Validators.required, Validators.minLength(8)]],
+  });
   }
-  public forgetPass(user: User) {
-    this.submitted = true;
-    // stop the process here if form is invalid
-    if (this.ForgetForm.invalid) {
-      return;
-    }
-    const resp = this._service.forgotPasswordByOtp(user);
-    resp.subscribe(data => {
-      this.user = data
-      this.IsValidEmail = true;
-    })
+  //Show Otp Based Form
+  showOtp(){
+    this.OtpBased = true;
   }
-  public ChangePassWord(){
-    console.log("change password in porgress")
+  //Show AnswerBased Form
+  showAnswer(){
+    this.OtpBased = false;
   }
-
-  public verifyOtp(otpver: Userotp){
-    const resp = this._service.verifyotp(otpver);
-    resp.subscribe(data => this.message = data,err => console.error("not change")
-    )
-  }
-
-  //QuestionBased
-
-  forgetPassByQuestion(user :User){
-    const response = this._service.forgetPassByQuestionSer(user);
-  }
-
-  selectedOne(event:any){
-    this.selectedQuestion = event.target.value;
-  }
+  //Function For Submit forgotPassByQue Form
+  forgotPassByQueF(user:User){
+    const resp =  this._service.forgetPassByQuestionSer(user);
+    resp.subscribe(
+      data => {
+        this.Updateuser = data
+        this._router.navigateByUrl('home')
+        console.log(this.Updateuser)
+        alert("Done Update Password")
+      },
+      err => 
+      alert("Something went wrong with Email,Question and Password"))
+  }  
+  selectedQuestion: string = 'What Is your favorite book?';
   
+
+  //event handler for the select element's change event
+  selectChangeHandler (event: any) {
+    //update the ui
+    this.selectedQuestion = event.target.value;
+  } 
 }
+
 
