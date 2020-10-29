@@ -3,7 +3,6 @@ import {NgForm,FormGroup} from '@angular/forms';
 import { from } from 'rxjs';
 import {MainService} from 'src/app/services/main.service';
 import {User} from 'src/app/classes/user/user';
-import {Role} from 'src/app/classes/role';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DialogboxComponent } from '../dialogbox/dialogbox.component';
@@ -16,7 +15,6 @@ import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 export class RegistrationComponent implements OnInit {
 
   user =new User();
-  role = new Role();
   msg='';
 
   siteKey:string;
