@@ -22,14 +22,14 @@ export class MainService {
     return this._http.post('http://localhost:8080/forgotPasswordByOtp', user);
   }
 
-  // //Veriy Otp
-  // verifyotp(userotp : Userotp){
-  //   return this._http.put('Updatelink',userotp);
-  // }
+  //Veriy Otp
+  verifyotp(userotp : User){
+    return this._http.put('http://localhost:8080/VerifyOtp',userotp);
+  }
 
   forgetPassByQuestionSer(user :User){
     console.log(user)
-    return this._http.put('http://localhost:8080/forgotPasswordByAnswer',user)
+    return this._http.put('http://localhost:8080/forgotPasswordByQuestion',user)
   }
 // End Here
   constructor(private _http:HttpClient) { }
