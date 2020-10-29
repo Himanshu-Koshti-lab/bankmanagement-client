@@ -70,37 +70,57 @@
 
 <!--login with validation-->
 <mat-card class="design">
-<div class="login-form">
-        <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
-          <div class="form-group">
-            <label>Email</label>
-            <input type="text" formControlName="emailID" class="form-control"
-              [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }" />
-            <div *ngIf="submitted && loginForm.controls.emailID.errors" class="text-danger">
-              <div *ngIf="loginForm.controls.emailID.errors.required">Email is required</div>
-              <div *ngIf="loginForm.controls.emailID.errors.email">Email must be a valid email address</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" formControlName="password" class="form-control"
-              [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }" />
-            <div *ngIf="submitted && loginForm.controls.password.errors" class="text-danger">
-              <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
-              <div *ngIf="loginForm.controls.password.errors.minlength">Password must be at least 4 characters</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary">Login</button>
-          </div>
-        </form>
-          <div class="form-group">
-            <button type="button" routerLink="/home" class="btn btn-danger cancelbtn">Cancel</button>
-            <span class="psw"><button><a routerLink="/forgot_password">Forgot password ?</a></button></span>
-          </div>
-          <div class="form-group">
-          <span class="reg"><button><a routerLink="/register">Register here</a></button></span>
-          </div>        
+  <div class="login-form">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+      <div class="form-group">
+        <div class="required">
+          <label>Email</label>
+        </div>
+        <input type="text" formControlName="emailID" class="form-control"
+          pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+          [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }" />
+        <!-- <div *ngIf="submitted && loginForm.controls.emailID.errors" class="text-danger">
+          <div *ngIf=" loginForm.controls.emailID.errors.required">Email is required</div>
+          <div *ngIf="loginForm.controls.emailID.errors.email && loginForm.controls.emailID.errors.pattern">Email must
+            be a valid email address</div>
+        </div> -->
+        <div *ngIf=" loginForm.controls.emailID.touched && loginForm.controls.emailID.invalid" class="text-danger" >
+          <div *ngIf="loginForm.controls.emailID.errors.required">Email is required
+            field.</div>
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="required">
+          <label>Password</label>
+        </div>
+        <input type="password" formControlName="password"  class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }" />
+        <!-- <div *ngIf="submitted && loginForm.controls.password.errors" class="text-danger">
+          <div *ngIf="loginForm.controls.password.errors && loginForm.controls.password.invalid && loginForm.controls.password.touched">
+            <small class="text-danger" *ngIf="loginForm.controls.password.errors.required">Password is required
+                field</small>
+            <small class="text-danger" *ngIf="loginForm.controls.password.errors.pattern">Password should be in proper
+                format (It must contains minimum eight characters, at least one uppercase letter, one
+                lowercase
+                letter, one number and one special character)</small>
+        </div>
+        </div> -->
+        <div *ngIf=" loginForm.controls.password.touched && loginForm.controls.password.invalid" class="text-danger" >
+          <div *ngIf="loginForm.controls.password.errors.required">Password is required
+            field.</div>
+      </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" [disabled]="!loginForm.valid" >Login</button>
+      </div>
+    </form>
+    <div class="form-group">
+      <button type="button" routerLink="/home" class="btn btn-danger cancelbtn">Cancel</button>
+      <span class="psw"><button><a routerLink="/forgot_password">Forgot password ?</a></button></span>
+    </div>
+    <div class="form-group">
+      <span class="reg"><button><a routerLink="/register">Register here</a></button></span>
+    </div>
   </div>
 </mat-card>
 
