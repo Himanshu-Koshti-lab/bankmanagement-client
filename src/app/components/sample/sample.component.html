@@ -1,0 +1,58 @@
+<div class="logo">
+    <img src="../../assets/images/header.jpg" alt="image not found">
+</div>
+<app-adminnavbar></app-adminnavbar>
+<p>sample works!</p>
+
+<nav class="navbar navbar-dark bg-primary" id="Nav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">Home</a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <!-- <ul class="nav navbar-nav">
+                <li><a href="#">Customer</a></li>
+                <li><a href="#">Employee</a></li>
+                <li><a href="#">Request</a></li>
+            </ul> -->
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown" appDropdown>
+                    <a style="cursor: pointer;" class="dropdown-toggle" role="button">Customer <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a style="cursor: pointer;">Account details</a></li>
+                        <li><a style="cursor: pointer;">Customer details</a></li>
+                        <li><a style="cursor: pointer;">Account Statement</a></li>
+                    </ul>
+                </li>
+            </ul> 
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown" appDropdown>
+                    <a style="cursor: pointer;" class="dropdown-toggle" role="button">Employee <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a style="cursor: pointer;">Employee details</a></li>
+                    </ul>
+                </li>
+            </ul> 
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown" appDropdown>
+                    <a style="cursor: pointer;" class="dropdown-toggle" role="button">Request <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a style="cursor: pointer;">Employee</a></li>
+                        <li><a style="cursor: pointer;">Customer</a></li>
+                        <li><a style="cursor: pointer;">Registration</a></li>
+                        <li><a style="cursor: pointer;">Update profile</a></li>
+                    </ul>
+                </li>
+            </ul> 
+
+            <ul class="nav navbar-nav">
+                <li><a href="#" (click)="onLogout()"
+                    *ngIf="isUserLoggedIn">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

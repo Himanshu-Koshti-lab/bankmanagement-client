@@ -4,7 +4,7 @@
     <form #registrationForm="ngForm" (ngSubmit)="registerUser(); registrationForm.reset()" fxLayoutAlign="stretch"
         class="register-form">
         <mat-card fxFlex="50">
-            <mat-toolbar color="primary"><!--By Himanshu Update-->
+            <mat-toolbar class="bg-primary"><!--By Himanshu Update-->
                 <!-- <mat-toolbar class="bg-primary"> By Rohit-->
                 Register here
             </mat-toolbar>
@@ -321,6 +321,7 @@
 
             </div>
 
+            
             <div class="form-group">
 
                 <div class="row">
@@ -396,11 +397,11 @@
                     </div>
 
                     <div class="col">
-                        <input type="radio" id="role" name="role" [(ngModel)]="user.role" required #Customer="ngModel"
-                            value="Customer" [class.is-invalid]="Customer.invalid && Customer.touched" checked> Customer
+                        <input type="radio" id="role" name="role" ngModel = "role" [(ngModel)]="user.role" required #Customer="ngModel"
+                            value="1" [class.is-invalid]="Customer.invalid && Customer.touched"> Customer
 
-                        <input type="radio" id="role" name="role" [(ngModel)]="user.role" required
-                            #Employee="ngModel" value="Employee"
+                        <input type="radio" id="role" name="role" ngModel = "role" [(ngModel)]="user.role" required
+                            #Employee="ngModel" value="2"
                             [class.is-invalid]="Employee.invalid && Employee.touched"> Employee
                     </div>
                     
@@ -460,8 +461,15 @@
                     condition</small>
             </div>
 
-            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey"> </ngx-recaptcha2>
-            <br>
+            <!-- <input type="text" class="form-control" id="firstName" name="firstName"
+                            aria-describedby="firstNameHelp" placeholder="Enter first name" [(ngModel)]="user.firstName"
+                            required #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched"
+                            maxlength="25"> -->
+
+            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" id="captcha" name="captcha"
+            [(ngModel)]="user.captcha" #captcha="ngModel" [class.is-invalid]="captcha.invalid && captcha.touched"
+            required> </ngx-recaptcha2>
+            <br> <br>
             <div class="row">
                 <div class="col">
                     <button type="submit" class="btn btn-primary"
