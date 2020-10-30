@@ -28,12 +28,11 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminnavbarComponent } from './components/navbar/AdminNavbar/adminnavbar/adminnavbar.component';
 import { SampleComponent } from './components/sample/sample.component';
 import {DropdownDirective} from './shared/dropdown.directive';
-import { CcustomerdetailsComponent } from './components/customer/ccustomerdetails/ccustomerdetails.component';
-import { CcreateAccountComponent } from './components/customer/ccreate-account/ccreate-account.component';
-import { CaccountStatementComponent } from './components/customer/caccount-statement/caccount-statement.component';
-import { CFundTransferComponent } from './components/customer/cfund-transfer/cfund-transfer.component';
-import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
-import { CHomeComponent } from './components/customer/chome/chome.component';
+import { AccountDetailsComponent } from './components/admin/customer/account-details/account-details.component';
+import { CustomerDetailsComponent } from './components/admin/customer/customer-details/customer-details.component';
+import { AccountStatementComponent } from './components/admin/customer/account-statement/account-statement.component';
+import { EmployeeDetailsComponent } from './components/admin/employee/employee-details/employee-details.component';
+
 
 @NgModule({
   declarations: [
@@ -51,12 +50,10 @@ import { CHomeComponent } from './components/customer/chome/chome.component';
     AdminnavbarComponent,
     SampleComponent,
     DropdownDirective,
-    CcustomerdetailsComponent,
-    CcreateAccountComponent,
-    CaccountStatementComponent,
-    CFundTransferComponent,
-    CupdateDetailsComponent,
-    CHomeComponent
+    AccountDetailsComponent,
+    CustomerDetailsComponent,
+    AccountStatementComponent,
+    EmployeeDetailsComponent,
   ],
   entryComponents:[DialogboxComponent],
   imports: [
