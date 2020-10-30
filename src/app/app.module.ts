@@ -27,7 +27,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminnavbarComponent } from './components/navbar/AdminNavbar/adminnavbar/adminnavbar.component';
 import { SampleComponent } from './components/sample/sample.component';
 import {DropdownDirective} from './shared/dropdown.directive';
-import { from } from 'rxjs';
+
 @NgModule({
   declarations: [
     AppComponent,

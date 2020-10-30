@@ -23,7 +23,7 @@ export class ForgotpasswordComponent implements OnInit {
     this.forgotPassByQue = this.formBuilder.group({
       emailID: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      otp: ['', [Validators.required, Validators.minLength(4)]],
+      otp: ['', [Validators.required, Validators.minLength(4),Validators.maxLength(4)]],
       Confirmpassword: ['',[Validators.required]],
       securityQuestion:['',[Validators.required]],
       answer:['',[Validators.required]]
@@ -33,11 +33,13 @@ export class ForgotpasswordComponent implements OnInit {
   showOtp(){
     this.OtpBased = true;
     this.validEmail=  false;
+    this.forgotPassByQue.reset();
   }
   //Show AnswerBased Form
   showAnswer(){
     this.OtpBased = false;
     this.validEmail = false;
+    this.forgotPassByQue.reset();
   }
   //Function For Submit forgotPassByQue Form
   forgotPassByQueF(user:User){

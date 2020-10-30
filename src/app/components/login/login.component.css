@@ -32,3 +32,14 @@ input[type=text], input[type=password] {
 span.reg {
   float: center;
 }
+
+.design{
+  margin-top: 20px;
+  max-width: 500px;
+  min-width: 500px;
+  }
+
+.main-div{
+    display: inline;
+    float: right;    
+  }
