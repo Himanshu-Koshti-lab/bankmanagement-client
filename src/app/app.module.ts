@@ -32,6 +32,10 @@ import { AccountDetailsComponent } from './components/admin/customer/account-det
 import { CustomerDetailsComponent } from './components/admin/customer/customer-details/customer-details.component';
 import { AccountStatementComponent } from './components/admin/customer/account-statement/account-statement.component';
 import { EmployeeDetailsComponent } from './components/admin/employee/employee-details/employee-details.component';
+import { EmployeeRegistrationRequestsComponent } from './components/admin/request/employee/employee-registration-requests/employee-registration-requests.component';
+import { EmployeeUpdateProfileComponent } from './components/admin/request/employee/employee-update-profile/employee-update-profile.component';
+import { CustomerRegistrationRequestComponent } from './components/admin/request/customer/customer-registration-request/customer-registration-request.component';
+import { CustomerUpdateProfileComponent } from './components/admin/request/customer/customer-update-profile/customer-update-profile.component';
 
 
 @NgModule({
@@ -54,6 +58,10 @@ import { EmployeeDetailsComponent } from './components/admin/employee/employee-d
     CustomerDetailsComponent,
     AccountStatementComponent,
     EmployeeDetailsComponent,
+    EmployeeRegistrationRequestsComponent,
+    EmployeeUpdateProfileComponent,
+    CustomerRegistrationRequestComponent,
+    CustomerUpdateProfileComponent,
   ],
   entryComponents:[DialogboxComponent],
   imports: [

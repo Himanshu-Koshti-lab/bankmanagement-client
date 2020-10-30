@@ -10,6 +10,10 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SampleComponent } from './components/sample/sample.component';
+import { EmployeeRegistrationRequestsComponent } from './components/admin/request/employee/employee-registration-requests/employee-registration-requests.component';
+import { EmployeeUpdateProfileComponent } from './components/admin/request/employee/employee-update-profile/employee-update-profile.component';
+import { CustomerRegistrationRequestComponent } from './components/admin/request/customer/customer-registration-request/customer-registration-request.component';
+import { CustomerUpdateProfileComponent } from './components/admin/request/customer/customer-update-profile/customer-update-profile.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -24,7 +28,11 @@ const routes: Routes = [
   {path:'accountDetails', component:AccountDetailsComponent},
   {path:'accountStatement', component: AccountStatementComponent},
   {path:'customerDetails', component: CustomerDetailsComponent},
-  {path:'employeeDetails', component:EmployeeDetailsComponent}
+  {path:'employeeDetails', component:EmployeeDetailsComponent},
+  {path:'employeeRegistrationRequest', component:EmployeeRegistrationRequestsComponent},
+  {path:'employeeUpdateProfile', component:EmployeeUpdateProfileComponent},
+  {path:'customerRegistrationRequest',component:CustomerRegistrationRequestComponent},
+  {path:'customerUpdateProfile',component:CustomerUpdateProfileComponent}
 ];
 
 @NgModule({
