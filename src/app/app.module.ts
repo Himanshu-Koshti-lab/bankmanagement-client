@@ -17,6 +17,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { FooterComponent } from './components/footer/footer.component';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
@@ -27,6 +28,12 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminnavbarComponent } from './components/navbar/AdminNavbar/adminnavbar/adminnavbar.component';
 import { SampleComponent } from './components/sample/sample.component';
 import {DropdownDirective} from './shared/dropdown.directive';
+import { AccountDetailsComponent } from './admin/account-details/account-details.component';
+import { CustomerDetailsComponent } from './admin/customer/customer-details/customer-details.component';
+import { AccountStatementComponent } from './admin/account-statement/account-statement.component';
+import { EmployeeDetailsComponent } from './admin/employee/employee-details/employee-details.component';
+import { RegistrationRequestComponent } from './admin/request/employee/registration-request/registration-request.component';
+import { UpdateProfileComponent } from './admin/request/employee/update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +50,13 @@ import {DropdownDirective} from './shared/dropdown.directive';
     AdminDashboardComponent,
     AdminnavbarComponent,
     SampleComponent,
-    DropdownDirective
+    DropdownDirective,
+    AccountDetailsComponent,
+    CustomerDetailsComponent,
+    AccountStatementComponent,
+    EmployeeDetailsComponent,
+    RegistrationRequestComponent,
+    UpdateProfileComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
@@ -58,6 +71,7 @@ import {DropdownDirective} from './shared/dropdown.directive';
     MatCardModule,
     MatToolbarModule,
     MatDialogModule,
+    MatMenuModule,
     NgxCaptchaModule,
     AppRoutingModule,
     BrowserAnimationsModule

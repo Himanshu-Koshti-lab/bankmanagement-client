@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
       emailID: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
   });
-  
 
   if(sessionStorage.getItem("Log") !== null){
     this._router.navigateByUrl('home')

@@ -1,28 +1,32 @@
-<br>
-<nav class="navbar navbar-expand-md bg-primary">
-    <a class="navbar-brand text-dark" routerLink="/Admin" *ngIf="isUserLoggedIn">Home</a>
-
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" 
-                data-toggle="dropdown" data-target="dropdown_target">Customer
-                    <span class="caret"></span>
-                </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                        <a class="dropdown-item">Account details</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Customer details</a>
-                        <a class="dropdown-item">Account Statement</a>
-                    </div>
-            </li>
-            <li class="nav-item"><a href="#" class="nav-link text-dark">Employee</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-dark">Request</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-dark" (click)="onLogout()"
-                    *ngIf="isUserLoggedIn">Logout</a></li>
-
-        </ul>
-    </div>
+<div class="logo">
+    <img src="../../assets/images/header.jpg" alt="image not found">
+</div>
+<nav>
+    <mat-toolbar  class="bg-primary">
+    <button mat-button > Home </button>
+    <button mat-button [matMenuTriggerFor]="customer">Customer</button>
+    <mat-menu #customer="matMenu" class="bg-info">
+      <button mat-menu-item>Account details</button>
+      <button mat-menu-item>Customer details</button>
+      <button mat-menu-item>Account Statement</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="employee">Employee</button>
+    <mat-menu #employee="matMenu" class="bg-info">  
+      <button mat-menu-item>Employee details</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="request">Request</button>
+    <mat-menu #request="matMenu" class="bg-info">
+      <button mat-menu-item [matMenuTriggerFor]="employeeSub">Employee</button>
+      <mat-menu #employeeSub="matMenu" class="bg-info">
+        <button mat-menu-item>Registration Request</button>
+        <button mat-menu-item>Update Profile</button>
+      </mat-menu>
+      <button mat-menu-item [matMenuTriggerFor]="customerSub">Customer</button>
+      <mat-menu #customerSub="matMenu" class="bg-info">
+        <button mat-menu-item>Registration Request</button>
+        <button mat-menu-item>Update Profile</button>
+      </mat-menu>
+    </mat-menu>
+    <button mat-button > Logout </button>
+</mat-toolbar>
 </nav>
-

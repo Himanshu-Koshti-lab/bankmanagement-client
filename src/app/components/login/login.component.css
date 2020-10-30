@@ -5,6 +5,7 @@ input[type=text], input[type=password] {
   }
 
   button {
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     width:100%;
