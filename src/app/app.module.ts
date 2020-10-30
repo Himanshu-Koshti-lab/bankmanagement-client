@@ -32,7 +32,15 @@ import { AccountDetailsComponent } from './components/admin/customer/account-det
 import { CustomerDetailsComponent } from './components/admin/customer/customer-details/customer-details.component';
 import { AccountStatementComponent } from './components/admin/customer/account-statement/account-statement.component';
 import { EmployeeDetailsComponent } from './components/admin/employee/employee-details/employee-details.component';
-import { importType } from '@angular/compiler/src/output/output_ast';
+import { CustomerNavbarComponent } from './components/customer/customer-navbar/customer-navbar.component';
+import { CHomeComponent } from './components/customer/chome/chome.component';
+import { CcreateAccountComponent } from './components/customer/ccreate-account/ccreate-account.component';
+import { CFundTransferComponent } from './components/customer/cfund-transfer/cfund-transfer.component';
+import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
+import { CaccountStatementComponent } from './components/customer/caccount-statement/caccount-statement.component';
+import { CcustomerdetailsComponent } from './components/customer/ccustomerdetails/ccustomerdetails.component';
+
+
 
 
 @NgModule({
@@ -55,6 +63,13 @@ import { importType } from '@angular/compiler/src/output/output_ast';
     CustomerDetailsComponent,
     AccountStatementComponent,
     EmployeeDetailsComponent,
+    CustomerNavbarComponent,
+    CHomeComponent,
+    CcreateAccountComponent,
+    CFundTransferComponent,
+    CupdateDetailsComponent,
+    CaccountStatementComponent,
+    CcustomerdetailsComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [

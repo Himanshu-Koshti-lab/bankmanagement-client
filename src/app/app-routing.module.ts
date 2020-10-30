@@ -10,6 +10,11 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SampleComponent } from './components/sample/sample.component';
+import { CHomeComponent } from './components/customer/chome/chome.component';
+import { CcreateAccountComponent } from './components/customer/ccreate-account/ccreate-account.component';
+import { CaccountStatementComponent } from './components/customer/caccount-statement/caccount-statement.component';
+import { CFundTransferComponent } from './components/customer/cfund-transfer/cfund-transfer.component';
+import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -21,10 +26,16 @@ const routes: Routes = [
   //End
   {path:'register',component:RegistrationComponent},
   {path:'sample', component:SampleComponent},
-  {path:'accountDetails', component:AccountDetailsComponent},
-  {path:'accountStatement', component: AccountStatementComponent},
-  {path:'customerDetails', component: CustomerDetailsComponent},
-  {path:'employeeDetails', component:EmployeeDetailsComponent}
+  {path:'Admin_accountDetails', component:AccountDetailsComponent},
+  {path:'Admin_accountStatement', component: AccountStatementComponent},
+  {path:'Admin_customerDetails', component: CustomerDetailsComponent},
+  {path:'Admin_employeeDetails', component:EmployeeDetailsComponent},
+  {path:'CustomerHome',component:CHomeComponent},
+  {path:'CustomerDetails',component:CustomerDetailsComponent},
+  {path:'Account_Information/Create_Account',component:CcreateAccountComponent},
+  {path:'Account_Information/Account_Statement',component:CaccountStatementComponent},
+  {path:'Fund_Transfer',component:CFundTransferComponent},
+  {path:'UserDetails',component:CupdateDetailsComponent}
 ];
 
 @NgModule({
