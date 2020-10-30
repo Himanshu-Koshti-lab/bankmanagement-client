@@ -2,3 +2,9 @@ h1{
     text-align: center;
     padding-top: 30px;
   }
+
+  .importantNotice {
+    position:fixed;
+    bottom:50px;
+    left:5%;
+  }

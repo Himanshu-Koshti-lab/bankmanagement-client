@@ -38,7 +38,7 @@ const routes: Routes = [
   {path:'employeeRegistrationRequest', component:EmployeeRegistrationRequestsComponent},
   {path:'employeeUpdateProfile', component:EmployeeUpdateProfileComponent},
   {path:'customerRegistrationRequest',component:CustomerRegistrationRequestComponent},
-  {path:'customerUpdateProfile',component:CustomerUpdateProfileComponent}
+  {path:'customerUpdateProfile',component:CustomerUpdateProfileComponent},
   {path:'Admin_accountDetails', component:AccountDetailsComponent},
   {path:'Admin_accountStatement', component: AccountStatementComponent},
   {path:'Admin_customerDetails', component: CustomerDetailsComponent},
