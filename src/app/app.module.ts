@@ -28,12 +28,11 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminnavbarComponent } from './components/navbar/AdminNavbar/adminnavbar/adminnavbar.component';
 import { SampleComponent } from './components/sample/sample.component';
 import {DropdownDirective} from './shared/dropdown.directive';
-import { AccountDetailsComponent } from './admin/customer/account-details/account-details.component';
-import { CustomerDetailsComponent } from './admin/customer/customer-details/customer-details.component';
-import { AccountStatementComponent } from './admin/customer/account-statement/account-statement.component';
-import { EmployeeDetailsComponent } from './admin/employee/employee-details/employee-details.component';
-import { RegistrationRequestComponent } from './admin/request/employee/registration-request/registration-request.component';
-import { UpdateProfileComponent } from './admin/request/employee/update-profile/update-profile.component';
+import { AccountDetailsComponent } from './components/admin/customer/account-details/account-details.component';
+import { CustomerDetailsComponent } from './components/admin/customer/customer-details/customer-details.component';
+import { AccountStatementComponent } from './components/admin/customer/account-statement/account-statement.component';
+import { EmployeeDetailsComponent } from './components/admin/employee/employee-details/employee-details.component';
+
 
 @NgModule({
   declarations: [
@@ -55,8 +54,6 @@ import { UpdateProfileComponent } from './admin/request/employee/update-profile/
     CustomerDetailsComponent,
     AccountStatementComponent,
     EmployeeDetailsComponent,
-    RegistrationRequestComponent,
-    UpdateProfileComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
