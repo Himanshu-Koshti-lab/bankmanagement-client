@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CupdateDetailsComponent } from './cupdate-details.component';
+import { CustomerNavbarComponent } from './customer-navbar.component';
 
-describe('CupdateDetailsComponent', () => {
-  let component: CupdateDetailsComponent;
-  let fixture: ComponentFixture<CupdateDetailsComponent>;
+describe('CustomerNavbarComponent', () => {
+  let component: CustomerNavbarComponent;
+  let fixture: ComponentFixture<CustomerNavbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CupdateDetailsComponent ]
+      declarations: [ CustomerNavbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CupdateDetailsComponent);
+    fixture = TestBed.createComponent(CustomerNavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

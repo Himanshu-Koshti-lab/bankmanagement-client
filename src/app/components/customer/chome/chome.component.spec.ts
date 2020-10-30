@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CupdateDetailsComponent } from './cupdate-details.component';
+import { CHomeComponent } from './chome.component';
 
-describe('CupdateDetailsComponent', () => {
-  let component: CupdateDetailsComponent;
-  let fixture: ComponentFixture<CupdateDetailsComponent>;
+describe('CHomeComponent', () => {
+  let component: CHomeComponent;
+  let fixture: ComponentFixture<CHomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CupdateDetailsComponent ]
+      declarations: [ CHomeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CupdateDetailsComponent);
+    fixture = TestBed.createComponent(CHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

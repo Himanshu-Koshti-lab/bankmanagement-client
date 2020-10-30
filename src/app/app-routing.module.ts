@@ -14,6 +14,12 @@ import { EmployeeRegistrationRequestsComponent } from './components/admin/reques
 import { EmployeeUpdateProfileComponent } from './components/admin/request/employee/employee-update-profile/employee-update-profile.component';
 import { CustomerRegistrationRequestComponent } from './components/admin/request/customer/customer-registration-request/customer-registration-request.component';
 import { CustomerUpdateProfileComponent } from './components/admin/request/customer/customer-update-profile/customer-update-profile.component';
+import { CHomeComponent } from './components/customer/chome/chome.component';
+import { CcreateAccountComponent } from './components/customer/ccreate-account/ccreate-account.component';
+import { CaccountStatementComponent } from './components/customer/caccount-statement/caccount-statement.component';
+import { CFundTransferComponent } from './components/customer/cfund-transfer/cfund-transfer.component';
+import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
+import { CcustomerdetailsComponent } from './components/customer/ccustomerdetails/ccustomerdetails.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -33,6 +39,16 @@ const routes: Routes = [
   {path:'employeeUpdateProfile', component:EmployeeUpdateProfileComponent},
   {path:'customerRegistrationRequest',component:CustomerRegistrationRequestComponent},
   {path:'customerUpdateProfile',component:CustomerUpdateProfileComponent}
+  {path:'Admin_accountDetails', component:AccountDetailsComponent},
+  {path:'Admin_accountStatement', component: AccountStatementComponent},
+  {path:'Admin_customerDetails', component: CustomerDetailsComponent},
+  {path:'Admin_employeeDetails', component:EmployeeDetailsComponent},
+  {path:'CustomerHome',component:CHomeComponent},
+  {path:'CustomerDetails',component:CcustomerdetailsComponent},
+  {path:'Account_Information/Create_Account',component:CcreateAccountComponent},
+  {path:'Account_Information/Account_Statement',component:CaccountStatementComponent},
+  {path:'Fund_Transfer',component:CFundTransferComponent},
+  {path:'UserDetails',component:CupdateDetailsComponent}
 ];
 
 @NgModule({

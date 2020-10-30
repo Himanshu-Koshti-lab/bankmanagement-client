@@ -36,6 +36,15 @@ import { EmployeeRegistrationRequestsComponent } from './components/admin/reques
 import { EmployeeUpdateProfileComponent } from './components/admin/request/employee/employee-update-profile/employee-update-profile.component';
 import { CustomerRegistrationRequestComponent } from './components/admin/request/customer/customer-registration-request/customer-registration-request.component';
 import { CustomerUpdateProfileComponent } from './components/admin/request/customer/customer-update-profile/customer-update-profile.component';
+import { CustomerNavbarComponent } from './components/customer/customer-navbar/customer-navbar.component';
+import { CHomeComponent } from './components/customer/chome/chome.component';
+import { CcreateAccountComponent } from './components/customer/ccreate-account/ccreate-account.component';
+import { CFundTransferComponent } from './components/customer/cfund-transfer/cfund-transfer.component';
+import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
+import { CaccountStatementComponent } from './components/customer/caccount-statement/caccount-statement.component';
+import { CcustomerdetailsComponent } from './components/customer/ccustomerdetails/ccustomerdetails.component';
+
+
 
 
 @NgModule({
@@ -62,6 +71,13 @@ import { CustomerUpdateProfileComponent } from './components/admin/request/custo
     EmployeeUpdateProfileComponent,
     CustomerRegistrationRequestComponent,
     CustomerUpdateProfileComponent,
+    CustomerNavbarComponent,
+    CHomeComponent,
+    CcreateAccountComponent,
+    CFundTransferComponent,
+    CupdateDetailsComponent,
+    CaccountStatementComponent,
+    CcustomerdetailsComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
