@@ -15,6 +15,7 @@ import { CcreateAccountComponent } from './components/customer/ccreate-account/c
 import { CaccountStatementComponent } from './components/customer/caccount-statement/caccount-statement.component';
 import { CFundTransferComponent } from './components/customer/cfund-transfer/cfund-transfer.component';
 import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
+import { CcustomerdetailsComponent } from './components/customer/ccustomerdetails/ccustomerdetails.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path:'Admin_customerDetails', component: CustomerDetailsComponent},
   {path:'Admin_employeeDetails', component:EmployeeDetailsComponent},
   {path:'CustomerHome',component:CHomeComponent},
-  {path:'CustomerDetails',component:CustomerDetailsComponent},
+  {path:'CustomerDetails',component:CcustomerdetailsComponent},
   {path:'Account_Information/Create_Account',component:CcreateAccountComponent},
   {path:'Account_Information/Account_Statement',component:CaccountStatementComponent},
   {path:'Fund_Transfer',component:CFundTransferComponent},
