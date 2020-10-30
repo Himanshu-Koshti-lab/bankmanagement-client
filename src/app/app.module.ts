@@ -28,12 +28,12 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminnavbarComponent } from './components/navbar/AdminNavbar/adminnavbar/adminnavbar.component';
 import { SampleComponent } from './components/sample/sample.component';
 import {DropdownDirective} from './shared/dropdown.directive';
-import { AccountDetailsComponent } from './admin/customer/account-details/account-details.component';
-import { CustomerDetailsComponent } from './admin/customer/customer-details/customer-details.component';
-import { AccountStatementComponent } from './admin/customer/account-statement/account-statement.component';
-import { EmployeeDetailsComponent } from './admin/employee/employee-details/employee-details.component';
-import { RegistrationRequestComponent } from './admin/request/employee/registration-request/registration-request.component';
-import { UpdateProfileComponent } from './admin/request/employee/update-profile/update-profile.component';
+import { CcustomerdetailsComponent } from './components/customer/ccustomerdetails/ccustomerdetails.component';
+import { CcreateAccountComponent } from './components/customer/ccreate-account/ccreate-account.component';
+import { CaccountStatementComponent } from './components/customer/caccount-statement/caccount-statement.component';
+import { CFundTransferComponent } from './components/customer/cfund-transfer/cfund-transfer.component';
+import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
+import { CHomeComponent } from './components/customer/chome/chome.component';
 
 @NgModule({
   declarations: [
@@ -51,12 +51,12 @@ import { UpdateProfileComponent } from './admin/request/employee/update-profile/
     AdminnavbarComponent,
     SampleComponent,
     DropdownDirective,
-    AccountDetailsComponent,
-    CustomerDetailsComponent,
-    AccountStatementComponent,
-    EmployeeDetailsComponent,
-    RegistrationRequestComponent,
-    UpdateProfileComponent
+    CcustomerdetailsComponent,
+    CcreateAccountComponent,
+    CaccountStatementComponent,
+    CFundTransferComponent,
+    CupdateDetailsComponent,
+    CHomeComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
