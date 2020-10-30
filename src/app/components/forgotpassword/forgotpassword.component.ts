@@ -23,6 +23,7 @@ export class ForgotpasswordComponent implements OnInit {
     this.forgotPassByQue = this.formBuilder.group({
       emailID: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
+      otp: ['', [Validators.required, Validators.minLength(4)]],
       Confirmpassword: ['',[Validators.required]],
       securityQuestion:['',[Validators.required]],
       answer:['',[Validators.required]]
