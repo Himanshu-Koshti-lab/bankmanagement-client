@@ -32,6 +32,7 @@ import { AccountDetailsComponent } from './components/admin/customer/account-det
 import { CustomerDetailsComponent } from './components/admin/customer/customer-details/customer-details.component';
 import { AccountStatementComponent } from './components/admin/customer/account-statement/account-statement.component';
 import { EmployeeDetailsComponent } from './components/admin/employee/employee-details/employee-details.component';
+import { importType } from '@angular/compiler/src/output/output_ast';
 
 
 @NgModule({
