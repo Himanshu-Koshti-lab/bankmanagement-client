@@ -34,5 +34,10 @@ export class MainService {
     return this._http.put('http://localhost:8080/forgotPasswordByQuestion',user)
   }
 // End Here
+
+getUserFromRemote():Observable<any> {
+  return this._http.get<any>("http://localhost:8080/register");
+}
+
   constructor(private _http:HttpClient) { }
 }

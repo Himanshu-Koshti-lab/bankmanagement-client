@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-employee-registration-requests',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeRegistrationRequestsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service:MainService) { }
 
   ngOnInit(): void {
+
   }
 
 }
