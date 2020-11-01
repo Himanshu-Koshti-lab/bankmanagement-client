@@ -1,0 +1,20 @@
+<div class="logo">
+    <img src="../../assets/images/header.jpg" alt="image not found">
+</div>
+<nav>
+    <mat-toolbar  class="bg-primary">
+    <button mat-button > Home </button>
+    <button mat-button [matMenuTriggerFor]="customer">Customer</button>
+    <mat-menu #customer="matMenu" class="bg-info">
+      <button mat-menu-item routerLink="/Employee/customer/customerAccountDetails">Account details</button>
+      <button mat-menu-item routerLink="/Employee/customer/customerProfileDetails">Customer details</button>
+      <button mat-menu-item routerLink="/Employee/customer/customerAccountStatement">Account Statement</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="employee">Update Details</button>
+    <mat-menu #employee="matMenu" class="bg-info">  
+      <button mat-menu-item routerLink="/Employee/customer/changePassword" >Change password</button>
+    </mat-menu>
+    
+    <button mat-button > Logout </button>
+</mat-toolbar>
+</nav>

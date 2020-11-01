@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,17 @@ export class AdminnavbarComponent implements OnInit {
   constructor(private router:Router) { }
   public isUserLoggedIn;
 
+  @Output() featureSelected=new EventEmitter<string>();
+
+  onSelect(feature:string)
+  {
+    this.featureSelected.emit(feature);
+  }
+  loadedFeature='accountDetails'
+  onNavigate(feature:string)
+  {
+    this.loadedFeature=feature;
+  }
   ngOnInit(): void {
     if(sessionStorage.getItem("Log"))
     {

@@ -1,12 +1,13 @@
 <div class="logo">
     <img src="../../assets/images/header.jpg" alt="image not found">
 </div>
+
 <nav>
     <mat-toolbar  class="bg-primary">
-    <button mat-button > Home </button>
+    <button mat-button routerLink="/home" > Home </button>
     <button mat-button [matMenuTriggerFor]="customer">Customer</button>
     <mat-menu #customer="matMenu" class="bg-info">
-      <button mat-menu-item routerLink="/accountDetails">Account details</button>
+      <button mat-menu-item routerLink="/Customer/accountDetails">Account details</button>
       <button mat-menu-item routerLink="/customerDetails">Customer details</button>
       <button mat-menu-item routerLink="/accountStatement">Account Statement</button>
     </mat-menu>

@@ -43,6 +43,12 @@ import { CFundTransferComponent } from './components/customer/cfund-transfer/cfu
 import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
 import { CaccountStatementComponent } from './components/customer/caccount-statement/caccount-statement.component';
 import { CcustomerdetailsComponent } from './components/customer/ccustomerdetails/ccustomerdetails.component';
+import { EmployeeDashboardComponent } from './components/Employee/employee-dashboard/employee-dashboard.component';
+import { EmployeeNavbarComponent } from './components/Employee/employee-navbar/employee-navbar.component';
+import { CustomerAccountDetailsComponent } from './components/Employee/customer/customer-account-details/customer-account-details.component';
+import { CustomerAccountStatementComponent } from './components/Employee/customer/customer-account-statement/customer-account-statement.component';
+import { ChangePasswordComponent } from './components/Employee/updateDetails/change-password/change-password.component';
+import { CustomerProfileDetailsComponent } from './components/Employee/customer/customer-profile-details/customer-profile-details.component';
 
 
 
@@ -77,7 +83,13 @@ import { CcustomerdetailsComponent } from './components/customer/ccustomerdetail
     CFundTransferComponent,
     CupdateDetailsComponent,
     CaccountStatementComponent,
-    CcustomerdetailsComponent
+    CcustomerdetailsComponent,
+    EmployeeDashboardComponent,
+    EmployeeNavbarComponent,
+    CustomerAccountDetailsComponent,
+    CustomerAccountStatementComponent,
+    ChangePasswordComponent,
+    CustomerProfileDetailsComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [

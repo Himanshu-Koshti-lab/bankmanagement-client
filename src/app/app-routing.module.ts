@@ -20,6 +20,11 @@ import { CaccountStatementComponent } from './components/customer/caccount-state
 import { CFundTransferComponent } from './components/customer/cfund-transfer/cfund-transfer.component';
 import { CupdateDetailsComponent } from './components/customer/cupdate-details/cupdate-details.component';
 import { CcustomerdetailsComponent } from './components/customer/ccustomerdetails/ccustomerdetails.component';
+import { CustomerAccountDetailsComponent } from './components/Employee/customer/customer-account-details/customer-account-details.component';
+import { CustomerAccountStatementComponent } from './components/Employee/customer/customer-account-statement/customer-account-statement.component';
+import { CustomerProfileDetailsComponent } from './components/Employee/customer/customer-profile-details/customer-profile-details.component';
+import { ChangePasswordComponent } from './components/Employee/updateDetails/change-password/change-password.component';
+import { EmployeeDashboardComponent } from './components/Employee/employee-dashboard/employee-dashboard.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -31,7 +36,7 @@ const routes: Routes = [
   //End
   {path:'register',component:RegistrationComponent},
   {path:'sample', component:SampleComponent},
-  {path:'accountDetails', component:AccountDetailsComponent},
+  {path:'Customer/accountDetails', component:AccountDetailsComponent},
   {path:'accountStatement', component: AccountStatementComponent},
   {path:'customerDetails', component: CustomerDetailsComponent},
   {path:'employeeDetails', component:EmployeeDetailsComponent},
@@ -48,7 +53,12 @@ const routes: Routes = [
   {path:'Account_Information/Create_Account',component:CcreateAccountComponent},
   {path:'Account_Information/Account_Statement',component:CaccountStatementComponent},
   {path:'Fund_Transfer',component:CFundTransferComponent},
-  {path:'UserDetails',component:CupdateDetailsComponent}
+  {path:'UserDetails',component:CupdateDetailsComponent},
+  {path:'Employee/customer/customerAccountDetails', component:CustomerAccountDetailsComponent},
+  {path:'Employee/customer/customerAccountStatement',component:CustomerAccountStatementComponent},
+  {path:'Employee/customer/customerProfileDetails',component:CustomerProfileDetailsComponent},
+  {path:'Employee/customer/changePassword',component:ChangePasswordComponent},
+  {path:'employeeDashboard',component:EmployeeDashboardComponent}
 ];
 
 @NgModule({
