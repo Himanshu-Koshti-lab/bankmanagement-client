@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-account-details',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service:MainService) { }
 
   ngOnInit(): void {
   }
 
+  getAccountDetailsList()
+  {
+    this._service.getEmployeeFromRemote().subscribe(
+      data =>{
+        console.log("response received");
+      },
+      error =>{
+        console.log("exception occured");
+      }
+    )
+  }
 }

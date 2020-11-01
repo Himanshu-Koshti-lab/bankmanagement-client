@@ -11,7 +11,14 @@ export class EmployeeRegistrationRequestsComponent implements OnInit {
   constructor(private _service:MainService) { }
 
   ngOnInit(): void {
-
+    this._service.getEmployeeFromRemote().subscribe(
+      data =>{
+        console.log("response received");
+      },
+      error =>{
+        console.log("exception occured");
+      }
+    )
   }
 
 }

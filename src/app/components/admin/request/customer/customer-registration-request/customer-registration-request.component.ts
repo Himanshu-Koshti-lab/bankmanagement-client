@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-customer-registration-request',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerRegistrationRequestComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service:MainService) { }
 
   ngOnInit(): void {
+
+    this._service.getCustomerFromRemote().subscribe(
+      data =>{
+        console.log("response received");
+      },
+      error =>{
+        console.log("exception occured");
+      }
+    )
   }
 
 }

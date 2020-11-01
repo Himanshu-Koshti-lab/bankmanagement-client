@@ -35,8 +35,12 @@ export class MainService {
   }
 // End Here
 
-getUserFromRemote():Observable<any> {
-  return this._http.get<any>("http://localhost:8080/register");
+getCustomerFromRemote():Observable<any> {
+  return this._http.get<any>("http://localhost:8080/getCustomerList");
+}
+
+getEmployeeFromRemote():Observable<any> {
+  return this._http.get<any>("http://localhost:8080/getEmployeeList");
 }
 
   constructor(private _http:HttpClient) { }
