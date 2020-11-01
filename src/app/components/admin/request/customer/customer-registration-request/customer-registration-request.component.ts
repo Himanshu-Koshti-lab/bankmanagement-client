@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 
@@ -7,19 +8,15 @@ import { MainService } from 'src/app/services/main.service';
   styleUrls: ['./customer-registration-request.component.css']
 })
 export class CustomerRegistrationRequestComponent implements OnInit {
+  AllCustomers;
 
-  constructor(private _service:MainService) { }
+  constructor(private _service:MainService,private _http:HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+      this._service.getCustomerFromRemote().subscribe((data) => this.AllCustomers = data);
+    }
 
-    this._service.getCustomerFromRemote().subscribe(
-      data =>{
-        console.log("response received");
-      },
-      error =>{
-        console.log("exception occured");
-      }
-    )
-  }
-
+    showData(){
+      this._service.getCustomerFromRemote().subscribe((data) => this.AllCustomers = data);
+    }
 }
