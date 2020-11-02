@@ -26,7 +26,7 @@ export class MainService {
 
   //Veriy Otp
   verifyotp(userotp : User){
-    return this._http.put('http://localhost:8080//VerifyOtp',userotp);
+    return this._http.post('http://localhost:8080//VerifyOtp',userotp);
   }
 
   forgetPassByQuestionSer(user :User){
@@ -41,6 +41,11 @@ getCustomerFromRemote():Observable<any> {
 
 getEmployeeFromRemote():Observable<any> {
   return this._http.get<any>("http://localhost:8080/getEmployeeList");
+}
+
+
+approveRegistrationRequest(user: User){
+  return this._http.post('http://localhost:8080/service/register-userRegistrationVerify', user);
 }
 
   constructor(private _http:HttpClient) { }

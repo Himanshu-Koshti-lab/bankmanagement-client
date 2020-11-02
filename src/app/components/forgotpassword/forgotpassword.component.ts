@@ -65,8 +65,16 @@ export class ForgotpasswordComponent implements OnInit {
       err => 
       alert("Something went wrong with Email,Question and Password"))
   }
-  public verifyOtp(){
+  public verifyOtp(user:User){
     this.validEmail=false
+    const resp =  this._service.verifyotp(user);
+    resp.subscribe(
+      data => {
+        this.validEmail=data
+        console.log(this.validEmail)
+      },
+      err => 
+      alert("Something went wrong with Email,Question and Password"))
     console.log("UnderConstruction")
   }
   selectedQuestion: string = 'What Is your favorite book?';

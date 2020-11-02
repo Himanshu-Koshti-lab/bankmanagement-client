@@ -1,9 +1,8 @@
 <app-adminnavbar></app-adminnavbar>
-<p>customer-registration-request works!</p>
 <div class="">
     <table class="table table-striped">
         <tr>
-          <th>Sr no.</th>
+          <th>User Id</th>
           <th>Name</th>
           <th>Email ID</th>
           <th>Birth Date</th>
@@ -11,13 +10,15 @@
         </tr>       
     
         <tr *ngFor="let customer of AllCustomers">
-          <td>{{customer.name}}</td>
-          <td>{{customer.emaiID}}</td>
+          <td>{{customer.id}}</td>
+          <td>{{customer.firstName +" "+customer.lastName}}</td>
+          <td>{{customer.emailID}}</td>
           <td>{{customer.dob}}</td>
-          <td>{{customer.status}}</td>
-          <td><button>{{customer.registrationStatus}}</button></td>
+          <td *ngIf="customer.registrationStatus===1"><button click="approveCustomer(customer.emailID)">Approve</button> <button>Reject</button></td>
+          <td *ngIf="customer.registrationStatus===2">Approved</td>
+          <td *ngIf="customer.registrationStatus===3">Rejected</td>
         </tr>
        
       </table>
-      <button onclick="showData()"> Show Data </button>    
+      <button click="showData()"> Show Data </button>
 </div>

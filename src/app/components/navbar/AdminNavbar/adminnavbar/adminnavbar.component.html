@@ -28,6 +28,6 @@
         <button mat-menu-item routerLink="/customerUpdateProfile">Update Profile</button>
       </mat-menu>
     </mat-menu>
-    <button mat-button > Logout </button>
+    <button mat-button (click)="onLogout()" *ngIf="isUserLoggedIn" > Logout </button>
 </mat-toolbar>
 </nav>
