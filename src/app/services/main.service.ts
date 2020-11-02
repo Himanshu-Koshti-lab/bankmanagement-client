@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { User } from '../classes/user/user';
 import { Observable } from 'rxjs';
+import { CustomerResponse } from '../model/customer-response';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class MainService {
   
   registerUserFromRemote(user: User):Observable<any> {
-    return this._http.post<any>("http://localhost:8080/register",user);
+    return this._http.post<any>("http://localhost:8080/service/register-user",user);
   }
 
   
@@ -44,8 +45,20 @@ getEmployeeFromRemote():Observable<any> {
 }
 
 
-approveRegistrationRequest(user: User){
-  return this._http.post('http://localhost:8080/service/register-userRegistrationVerify', user);
+approveRegistrationRequest(customerResponse: CustomerResponse){
+  return this._http.post('http://localhost:8080/service/register-userRegistrationVerify', customerResponse);
+}
+
+rejectRegistrationRequest(customerResponse: CustomerResponse){
+  return this._http.post('http://localhost:8080/service/register-userRegistrationReject', customerResponse);
+}
+
+approveEmployeeRegistrationRequest(customerResponse: CustomerResponse){
+  return this._http.post('http://localhost:8080/service/register-userEmployeeRegistrationVerify', customerResponse);
+}
+
+rejectEmployeeRegistrationRequest(customerResponse: CustomerResponse){
+  return this._http.post('http://localhost:8080/service/register-userEmployeeRegistrationReject', customerResponse);
 }
 
   constructor(private _http:HttpClient) { }

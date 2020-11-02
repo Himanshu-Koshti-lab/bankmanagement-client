@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerResponse } from 'src/app/model/customer-response';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -8,17 +9,38 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class EmployeeRegistrationRequestsComponent implements OnInit {
 
+  AllEmployee;
+
   constructor(private _service:MainService) { }
 
   ngOnInit(): void {
-    this._service.getEmployeeFromRemote().subscribe(
-      data =>{
-        console.log("response received");
-      },
-      error =>{
-        console.log("exception occured");
-      }
-    )
+    this._service.getEmployeeFromRemote().subscribe((data) => this.AllEmployee = data);
   }
+
+  approveEmployee(customerResponse:CustomerResponse)
+    {
+      this._service.approveRegistrationRequest(customerResponse).subscribe(
+        data=>{
+          this._service.getEmployeeFromRemote().subscribe((data) => this.AllEmployee = data);
+          console.log("Employee Approved");
+        },
+        error=>{
+          console.log("User not approved");
+        }
+      )
+    }
+
+    rejectemployeeRegistrationRequest(customerResponse:CustomerResponse)
+    {
+      this._service.rejectEmployeeRegistrationRequest(customerResponse).subscribe(
+        data=>{
+          this._service.getCustomerFromRemote().subscribe((data) => this.AllEmployee = data);
+          console.log("User rejected");
+        },
+        error=>{
+          console.log("User not rejected");
+        }
+      )
+    }
 
 }

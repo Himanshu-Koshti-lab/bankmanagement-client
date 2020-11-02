@@ -1,4 +1,5 @@
 <app-adminnavbar></app-adminnavbar>
+<h1 style="text-align: center;">Customer Registration Request</h1>
 <div class="">
     <table class="table table-striped">
         <tr>
@@ -14,11 +15,10 @@
           <td>{{customer.firstName +" "+customer.lastName}}</td>
           <td>{{customer.emailID}}</td>
           <td>{{customer.dob}}</td>
-          <td *ngIf="customer.registrationStatus===1"><button click="approveCustomer(customer.emailID)">Approve</button> <button>Reject</button></td>
-          <td *ngIf="customer.registrationStatus===2">Approved</td>
-          <td *ngIf="customer.registrationStatus===3">Rejected</td>
+          <td *ngIf="customer.registrationStatus===1"><button (click)="approveCustomer(customer)" class="btn btn-success">Approve</button> <button (click)="rejectRegistrationRequest(customer)" class="btn btn-danger">Reject</button></td>
+          <td *ngIf="customer.registrationStatus===2" class="text-success">Approved</td>
+          <td *ngIf="customer.registrationStatus===3" class="text-danger">Rejected</td>
         </tr>
        
       </table>
-      <button click="showData()"> Show Data </button>
 </div>

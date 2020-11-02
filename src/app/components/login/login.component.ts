@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         console.log(data)
         sessionStorage.setItem("Log" , "login done" )        
        // console.log(sessionStorage.getItem("Log"))
-      }  , err => alert("credential are wrong check Email and Password")) 
+      }  , err => alert("credential are wrong check Email and Password or Pending for review")) 
           
   }  
 }

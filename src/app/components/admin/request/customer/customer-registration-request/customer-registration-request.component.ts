@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 import { User } from 'src/app/classes/user/user';
 import { MainService } from 'src/app/services/main.service';
+import {CustomerResponse} from 'src/app/model/customer-response'
 
 @Component({
   selector: 'app-customer-registration-request',
@@ -20,18 +22,28 @@ export class CustomerRegistrationRequestComponent implements OnInit {
       this._service.getCustomerFromRemote().subscribe((data) => this.AllCustomers = data);
     }
 
-    showData(){
-      this._service.getCustomerFromRemote().subscribe((data) => this.AllCustomers = data);
-    }
-
-    approveCustomer()
+    approveCustomer(customerResponse:CustomerResponse)
     {
-      this._service.approveRegistrationRequest(this.user).subscribe(
+      this._service.approveRegistrationRequest(customerResponse).subscribe(
         data=>{
+          this._service.getCustomerFromRemote().subscribe((data) => this.AllCustomers = data);
           console.log("User Approved");
         },
         error=>{
           console.log("User not approved");
+        }
+      )
+    }
+
+    rejectRegistrationRequest(customerResponse:CustomerResponse)
+    {
+      this._service.rejectRegistrationRequest(customerResponse).subscribe(
+        data=>{
+          this._service.getCustomerFromRemote().subscribe((data) => this.AllCustomers = data);
+          console.log("User rejected");
+        },
+        error=>{
+          console.log("User not rejected");
         }
       )
     }

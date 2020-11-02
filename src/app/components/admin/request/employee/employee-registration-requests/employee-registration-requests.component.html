@@ -1,2 +1,24 @@
 <app-adminnavbar></app-adminnavbar>
-<h1>Employee Registration Requests</h1>
+<h1 style="text-align: center; ">Employee Registration Requests</h1>
+<div class="">
+    <table class="table table-striped">
+        <tr>
+          <th>User Id</th>
+          <th>Name</th>
+          <th>Email ID</th>
+          <th>Birth Date</th>
+          <th>Action</th>
+        </tr>       
+    
+        <tr *ngFor="let employee of AllEmployee">
+          <td>{{employee.id}}</td>
+          <td>{{employee.firstName +" "+employee.lastName}}</td>
+          <td>{{employee.emailID}}</td>
+          <td>{{employee.dob}}</td>
+          <td *ngIf="employee.registrationStatus===1"><button (click)="approveEmployee(employee)" class="btn btn-success">Approve</button> <button (click)="rejectemployeeRegistrationRequest(employee)" class="btn btn-danger">Reject</button></td>
+          <td *ngIf="employee.registrationStatus===2" class="text-success">Approved</td>
+          <td *ngIf="employee.registrationStatus===3" class="text-danger">Rejected</td>
+        </tr>
+       
+      </table>
+</div>
