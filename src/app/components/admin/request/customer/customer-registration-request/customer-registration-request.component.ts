@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { from } from 'rxjs';
 import { User } from 'src/app/classes/user/user';
 import { MainService } from 'src/app/services/main.service';
 import {CustomerResponse} from 'src/app/model/customer-response'
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-customer-registration-request',
@@ -15,7 +16,7 @@ export class CustomerRegistrationRequestComponent implements OnInit {
 
   user=new User();
   
-  
+
   constructor(private _service:MainService,private _http:HttpClient) { }
 
   ngOnInit(): void {    

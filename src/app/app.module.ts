@@ -50,6 +50,7 @@ import { CustomerAccountStatementComponent } from './components/Employee/custome
 import { ChangePasswordComponent } from './components/Employee/updateDetails/change-password/change-password.component';
 import { CustomerProfileDetailsComponent } from './components/Employee/customer/customer-profile-details/customer-profile-details.component';
 
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -107,6 +108,7 @@ import { CustomerProfileDetailsComponent } from './components/Employee/customer/
     MatMenuModule,
     NgxCaptchaModule,
     AppRoutingModule,
+    MatPaginatorModule,
     BrowserAnimationsModule
   ],
   providers: [],
