@@ -1,2 +1,19 @@
 <app-adminnavbar></app-adminnavbar>
-<p>employee-details works!</p>
+<h1>Employee Details</h1>
+<div class="">
+    <table class="table table-striped">
+        <tr>
+          <th>User Id</th>
+          <th>Name</th>
+          <th>Email ID</th>
+          <th>Birth Date</th>
+        </tr>       
+    
+        <tr *ngFor="let employee of AllEmployee" >
+          <td *ngIf="employee.registrationStatus===2">{{employee.id}}</td>
+          <td *ngIf="employee.registrationStatus===2">{{employee.firstName +" "+employee.lastName}}</td>
+          <td *ngIf="employee.registrationStatus===2">{{employee.emailID}}</td>
+          <td *ngIf="employee.registrationStatus===2">{{employee.dob}}</td>
+        </tr>
+      </table>
+</div>
