@@ -1,2 +1,30 @@
 <app-employee-navbar></app-employee-navbar>
-<p>customer-profile-details works!</p>
+
+<h1 style="text-align: center;">Customer Details</h1>
+<div class="">
+    <table class="table table-striped">
+        <tr>
+          <th>User Id</th>
+          <th>Name</th>
+          <th>Account No</th>
+          <th>Email ID</th>
+          <th>Mobile No</th>
+          <th>Account Status</th>
+          <th>Action</th>
+        </tr>       
+    
+        <tr *ngFor="let customer of AllCustomers">
+          <td>{{customer.id}}</td>
+          <td>{{customer.firstName +" "+customer.lastName}}</td>
+          <td *ngIf="customer.accountNumber===0" style="color: red;"><span>Pending</span></td>
+          <td *ngIf="customer.accountNumber!==0">{{"41350627868" + customer.accountNumber}}</td>
+          <td>{{customer.emailID}}</td>
+          <td>{{customer.mobileNo}}</td>
+          <td *ngIf="customer.accountStatusId===0" style="color: red;"><span>Pending</span></td>
+          <td *ngIf="customer.accountStatusId===1" style="color: green;"><span>Active</span></td>
+          <td *ngIf="customer.accountStatusId===2" style="color: blue;"><span>Inactive</span></td>
+
+          <td><button (click)="deleteCustomer(customer)" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </table>
+</div>
