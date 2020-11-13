@@ -40,6 +40,10 @@ getCustomerFromRemote():Observable<any> {
   return this._http.get<any>("http://localhost:8080/getCustomerList");
 }
 
+getCustomerForEmployeeFromRemote():Observable<any>{
+  return this._http.get<any>("http://localhost:8080/getCustomerDetails");
+}
+
 getEmployeeFromRemote():Observable<any> {
   return this._http.get<any>("http://localhost:8080/getEmployeeList");
 }
@@ -48,6 +52,10 @@ getEmployeeFromRemote():Observable<any> {
 approveRegistrationRequest(customerResponse: CustomerResponse){
   return this._http.post('http://localhost:8080/service/register-userRegistrationVerify', customerResponse);
 }
+
+// deleteCustomer(customerResponse: CustomerResponse){
+//   return this._http.delete('http://localhost:8080/service/register-userRegistrationVerify', customerResponse);
+// }
 
 rejectRegistrationRequest(customerResponse: CustomerResponse){
   return this._http.post('http://localhost:8080/service/register-userRegistrationReject', customerResponse);
