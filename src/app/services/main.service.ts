@@ -27,7 +27,7 @@ export class MainService {
 
   //Veriy Otp
   verifyotp(userotp : User){
-    return this._http.post('http://localhost:8080//VerifyOtp',userotp);
+    return this._http.post('http://localhost:8080/VerifyOtp',userotp);
   }
 
   forgetPassByQuestionSer(user :User){
