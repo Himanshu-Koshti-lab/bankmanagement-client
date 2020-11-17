@@ -11,28 +11,28 @@ import { CustomerResponse } from '../model/customer-response';
 export class MainService {
   
   registerUserFromRemote(user: User):Observable<any> {
-    return this._http.post<any>("http://localhost:8080/service/register-user",user);
+    return this._http.post<any>("http://localhost:8080/userManagement-api/service/register-user",user);
   }
 
   
 // HimanshuEdits Start Here
   loginuser(user: User){
-    return this._http.post('http://localhost:8080/login', user);
+    return this._http.post('http://localhost:8080/userManagement-api/login', user);
   }
 
   // Email For Generate OTP
   forgetPassByOtpSer(user:User){
-    return this._http.post('http://localhost:8080/forgotPasswordByOtp', user);
+    return this._http.post('http://localhost:8080/userManagement-api/forgotPasswordByOtp', user);
   }
 
   //Veriy Otp
   verifyotp(userotp : User){
-    return this._http.post('http://localhost:8080/VerifyOtp',userotp);
+    return this._http.post('http://localhost:8080/userManagement-api/VerifyOtp',userotp);
   }
 
   forgetPassByQuestionSer(user :User){
     console.log(user)
-    return this._http.put('http://localhost:8080/forgotPasswordByQuestion',user)
+    return this._http.put('http://localhost:8080/userManagement-api/forgotPasswordByQuestion',user)
   }
 // End Here
 
