@@ -14,6 +14,7 @@ export class ForgotpasswordComponent implements OnInit {
   Confirmpassword:String;
   OtpBased:boolean;
   validEmail:any;
+  GenOtp:any;
   //user;
   Updateuser:any;
   submitted = false;
@@ -59,8 +60,10 @@ export class ForgotpasswordComponent implements OnInit {
     const resp =  this._service.forgetPassByOtpSer(user);
     resp.subscribe(
       data => {
-        this.validEmail=data
+        this.validEmail=true
+        this.GenOtp = data;
         console.log(this.validEmail)
+        console.log(this.GenOtp)
       },
       err => 
       alert("Something went wrong with Email,Question and Password"))
