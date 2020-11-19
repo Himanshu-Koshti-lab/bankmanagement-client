@@ -23,7 +23,7 @@ export class AdminnavbarComponent implements OnInit {
     this.loadedFeature=feature;
   }
   ngOnInit(): void {
-    if(sessionStorage.getItem("Log"))
+    if(sessionStorage.getItem("token"))
     {
       this.isUserLoggedIn = true;
     }else{
@@ -31,8 +31,8 @@ export class AdminnavbarComponent implements OnInit {
     }
   }
   onLogout(){    
-    if(sessionStorage.getItem("Log") !== null){
-      sessionStorage.removeItem("Log")
+    if(sessionStorage.getItem("token") !== null){
+      sessionStorage.removeItem("token")
       this.router.navigateByUrl('home')
       console.log("SuccessFull Logout")
     }

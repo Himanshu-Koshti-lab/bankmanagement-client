@@ -72,7 +72,7 @@
 <div class="main-div">
 <mat-card class="design">
   <div class="login-form">
-    <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <div class="required">
           <label>Email</label>
