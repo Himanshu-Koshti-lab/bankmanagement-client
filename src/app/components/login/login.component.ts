@@ -59,8 +59,20 @@ export class LoginComponent implements OnInit {
 
     this.apiService.login(body.toString()).subscribe(data => {
       window.sessionStorage.setItem('token', JSON.stringify(data));
-      console.log(window.sessionStorage.getItem('token'));
-      this._router.navigateByUrl('Admin')
+      const jwt = JSON.stringify(data);
+      let jwtData = jwt.split('.')[1]
+      let decodedJwtJsonData = window.atob(jwtData)
+      let decodedJwtData = JSON.parse(decodedJwtJsonData)
+      // console.log(decodedJwtData.authorities)
+      // console.log(window.sessionStorage.getItem('token'));
+      
+      if(decodedJwtData.authorities == "ROLE_ADMIN")
+        this._router.navigateByUrl('Admin')
+      else if (decodedJwtData.authorities == "ROLE_EMPLOYEE")
+      this._router.navigateByUrl('employeeDashboard')
+      else 
+          this._router.navigateByUrl('CustomerHome')
+        
     }, error => {
         alert(error.error.error_description)
     });
