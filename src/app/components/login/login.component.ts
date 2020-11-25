@@ -64,7 +64,6 @@ export class LoginComponent implements OnInit {
       window.sessionStorage.setItem('token',jwtData)
       let decodedJwtJsonData = window.atob(jwtData)
       let decodedJwtData = JSON.parse(decodedJwtJsonData)
-      console.log(decodedJwtData.authorities)
       if(decodedJwtData.authorities == "ROLE_ADMIN")
         this._router.navigateByUrl('Admin')
       else if (decodedJwtData.authorities == "ROLE_EMPLOYEE")

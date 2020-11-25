@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
+  static getToken(): any {
+    throw new Error('Method not implemented.');
+  }
   baseUrl: string = 'http://localhost:8080/userManagement-api';
 
   constructor(private http: HttpClient) { }
@@ -15,12 +18,4 @@ export class ApiService {
     }
     return this.http.post<any>('http://localhost:8081/' + 'oauth/token', loginPayload, {headers});
   }
-
-
-  getToken(){
-    let jwt1 = sessionStorage.getItem("token");
-    let jwtData11 = jwt1.split('.')[1]
-     return jwtData11
-  }
-  
 }

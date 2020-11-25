@@ -49,7 +49,7 @@ import { CustomerAccountDetailsComponent } from './components/Employee/customer/
 import { CustomerAccountStatementComponent } from './components/Employee/customer/customer-account-statement/customer-account-statement.component';
 import { ChangePasswordComponent } from './components/Employee/updateDetails/change-password/change-password.component';
 import { CustomerProfileDetailsComponent } from './components/Employee/customer/customer-profile-details/customer-profile-details.component';
-//import { TokenInterceptorService } from './services/token-interceptor.service'
+import { TokenInterceptorService } from './services/token-interceptor.service'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { from } from 'rxjs';
 
@@ -110,11 +110,11 @@ import { from } from 'rxjs';
     MatPaginatorModule,
     BrowserAnimationsModule
   ],
-  // providers: [{
-  //   provide: HTTP_INTERCEPTORS,
-  //   useClass:TokenInterceptorService,
-  //   multi:true
-  // }],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

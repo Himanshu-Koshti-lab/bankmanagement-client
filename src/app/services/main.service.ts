@@ -15,12 +15,6 @@ export class MainService {
     return this._http.post<any>("http://localhost:8081/service/register-user", user);
   }
 
-
-  // HimanshuEdits Start Here
-  // loginuser(user: User) {
-  //   return this._http.post('http://localhost:8080/userManagement-api/login', user);
-  // }
-
   // Email For Generate OTP
   forgetPassByOtpSer(user: User) {
     return this._http.post('http://localhost:8081/forgotPasswordByOtp', user);
