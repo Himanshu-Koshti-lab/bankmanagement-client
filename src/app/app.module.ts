@@ -8,7 +8,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -49,8 +49,9 @@ import { CustomerAccountDetailsComponent } from './components/Employee/customer/
 import { CustomerAccountStatementComponent } from './components/Employee/customer/customer-account-statement/customer-account-statement.component';
 import { ChangePasswordComponent } from './components/Employee/updateDetails/change-password/change-password.component';
 import { CustomerProfileDetailsComponent } from './components/Employee/customer/customer-profile-details/customer-profile-details.component';
-
+import { TokenInterceptorService } from './services/token-interceptor.service'
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { from } from 'rxjs';
 
 
 
@@ -111,7 +112,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatPaginatorModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

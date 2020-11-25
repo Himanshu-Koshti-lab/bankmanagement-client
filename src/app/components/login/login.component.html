@@ -78,7 +78,7 @@
           <label>Email</label>
         </div>
         <input type="text" formControlName="emailID" class="form-control"
-          pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+          pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
           [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }" />
         <!-- <div *ngIf="submitted && loginForm.controls.emailID.errors" class="text-danger">
           <div *ngIf=" loginForm.controls.emailID.errors.required">Email is required</div>

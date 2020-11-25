@@ -60,7 +60,9 @@ export class LoginComponent implements OnInit {
     this.apiService.login(body.toString()).subscribe(data => {
       window.sessionStorage.setItem('token', JSON.stringify(data));
       const jwt = JSON.stringify(data);
+      console.log(jwt)
       let jwtData = jwt.split('.')[1]
+      console.log(jwtData)
       let decodedJwtJsonData = window.atob(jwtData)
       let decodedJwtData = JSON.parse(decodedJwtJsonData)
       // console.log(decodedJwtData.authorities)

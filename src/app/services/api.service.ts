@@ -15,5 +15,12 @@ export class ApiService {
     }
     return this.http.post<any>('http://localhost:8081/' + 'oauth/token', loginPayload, {headers});
   }
+
+
+  getToken(){
+    let jwt1 = sessionStorage.getItem("token");
+    let jwtData11 = jwt1.split('.')[1]
+     return jwtData11
+  }
   
 }
