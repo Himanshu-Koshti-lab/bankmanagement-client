@@ -22,6 +22,8 @@
     "@angular/platform-browser": "~10.0.14",
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
+    "@ng-bootstrap/ng-bootstrap": "^8.0.0",
+    "angular-carousel": "^1.1.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",

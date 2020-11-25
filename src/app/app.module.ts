@@ -52,8 +52,6 @@ import { CustomerProfileDetailsComponent } from './components/Employee/customer/
 
 import {MatPaginatorModule} from '@angular/material/paginator';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
