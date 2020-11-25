@@ -53,8 +53,6 @@ import { TokenInterceptorService } from './services/token-interceptor.service'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { from } from 'rxjs';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
