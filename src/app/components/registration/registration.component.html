@@ -459,11 +459,6 @@
                         condition</small>
                 </div>
 
-                <!-- <input type="text" class="form-control" id="firstName" name="firstName"
-                            aria-describedby="firstNameHelp" placeholder="Enter first name" [(ngModel)]="user.firstName"
-                            required #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched"
-                            maxlength="25"> -->
-
                 <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" id="captcha" name="captcha" [(ngModel)]="user.captcha"
                     #captcha="ngModel" [class.is-invalid]="captcha.invalid && captcha.touched" required>
                 </ngx-recaptcha2>
@@ -471,11 +466,10 @@
                 <div class="row">
                     <div class="col">
                         <button type="submit" class="btn btn-primary" [disabled]="registrationForm.form.invalid"
-                            mat-raised-button (click)="openDialog()">Register</button>
+                            mat-raised-button (click)="openDialog()" style="border-radius: 10px;">Register</button>
                     </div>
                 </div>
             </mat-card>
         </form>
     </div>
 </div>
-
