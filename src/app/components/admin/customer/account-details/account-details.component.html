@@ -1,2 +1,24 @@
 <app-adminnavbar></app-adminnavbar>
-<p>account-details works!</p>
+<h1 style="text-align: center;">Customer Account Details</h1>
+<div class="">
+    <table class="table table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Account Number</th>
+          <th>Balance</th>
+          <th>Acccount Type</th>
+          <th>Acccount Status</th>
+        </tr>       
+    
+        <tr *ngFor="let customer of AllCustomers">
+          <td>{{customer.firstName +" "+customer.lastName}}</td>
+          <td>{{customer.accountNumber}}</td>
+          <td>{{customer.balance}}</td>
+          <td *ngIf="customer.accountTypeId===1">Salary</td>
+          <td *ngIf="customer.accountTypeId===2" class="text-success">Current</td>
+          <td *ngIf="customer.accountStatusId===1" class="text-success">Active</td>
+          <td *ngIf="customer.accountStatusId===2" class="text-danger">Inactive</td>
+          <td *ngIf="customer.accountStatusId===3" class="text-primary">Deactivated</td>
+        </tr>
+      </table>
+</div>

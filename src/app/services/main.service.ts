@@ -13,6 +13,7 @@ import { UpdateUser } from '../classes/update-user';
   providedIn: 'root',
 })
 export class MainService {
+  
   registerUserFromRemote(user: User): Observable<any> {
     return this._http.post<any>(
       'http://localhost:8081/service/register-user',
@@ -41,6 +42,10 @@ export class MainService {
 
   getCustomerFromRemote(): Observable<any> {
     return this._http.get<any>('http://localhost:8083/getCustomerList');
+  }
+
+  getAccountDetails(): Observable<any> {
+    return this._http.get<any>('http://localhost:8083/accountDetails');
   }
 
   getCustomerForEmployeeFromRemote(): Observable<any> {
@@ -104,6 +109,8 @@ export class MainService {
       accountCreate
     );
   }
+
+
   doUpdate(update : UpdateUser):Observable<any> {
     return this._http.post<any>('http://localhost:8081/Request', update);
   }
