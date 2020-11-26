@@ -18,4 +18,9 @@ export class ApiService {
     }
     return this.http.post<any>('http://localhost:8081/' + 'oauth/token', loginPayload, {headers});
   }
+
+
+  getToken(){
+    return sessionStorage.getItem('token')
+}
 }

@@ -6,13 +6,14 @@ import { ApiService } from './api.service'
 })
 export class TokenInterceptorService implements HttpInterceptor{
 
-  constructor(private injector:Injector , private apiService:ApiService) { }
+  constructor(private injector:Injector) { }
   
   intercept(req,next){
+    let apiService = this.injector.get(ApiService)
     if(!!sessionStorage.getItem('token')){
      let tokenized =  req.clone({
       setHeaders:{
-        Authorization: "Bearer " + this.getToken()
+        Authorization: `Bearer ${apiService.getToken()}`
       }
     })
     return next.handle(tokenized)    
@@ -20,10 +21,5 @@ export class TokenInterceptorService implements HttpInterceptor{
     return next.handle(req)
   }
 
-  getToken(){
-    let jwt1 = sessionStorage.getItem('token');
-    let jwtData11 = jwt1.split('.')[1]
-    console.log("lol   " +jwtData11)
-     return jwtData11
-  }
+  
 }
