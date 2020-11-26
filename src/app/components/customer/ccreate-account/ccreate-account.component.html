@@ -1,2 +1,33 @@
 <app-customer-navbar></app-customer-navbar>
 <p>ccreate-account works!</p>
+
+<mat-card>
+    <div class="login-form">
+        <form [formGroup]="accountForm" (ngSubmit)="onSubmit(accountForm.value)">
+            <div class="form-group">
+                <div class="required">
+                    <label>Email</label>
+                </div>
+                <input type="text" formControlName="emailID" class="form-control" placeholder="{{ Customer.emailID }}" value="{{ Customer.emailID }}" disabled />
+            </div>
+
+            <div class="form-group">
+                <div class="required">
+                    <label>Account Type: </label>
+                </div>
+                <select class="custom-select" formControlName="accountType" (change)="selectChangeHandler($event)">
+                    <option label="Account Type" disabled></option>
+                    <option value="1" selected>Salary</option>
+                    <option value="2">Current</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" style="color: black;">Create
+                    Account</button>
+            </div>
+        </form>
+
+
+    </div>
+</mat-card>

@@ -4,6 +4,7 @@ import { User } from '../classes/user/user';
 import { Observable } from 'rxjs';
 import { CustomerResponse } from '../model/customer-response';
 import { TransferFundRequest } from '../model/transfer-fund-request';
+import { AccountCreate } from '../model/account-create';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
@@ -69,6 +70,14 @@ export class MainService {
     return this._http.post("http://localhost:8082/sendMoney", pro);
   }
 
+  getCustomer(): Observable<any> {
+    return this._http.get<any>("http://localhost:8083/getCustomer");
+  }
+
+
+  createAccount(accountCreate:AccountCreate) {
+    return this._http.post('http://localhost:8084/register-account', accountCreate);
+  }
 
 
   constructor(private _http: HttpClient) { }
