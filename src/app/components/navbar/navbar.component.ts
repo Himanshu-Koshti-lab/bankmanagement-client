@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   public isUserLoggedIn;
 
   ngOnInit(): void {
-    if(sessionStorage.getItem("Log"))
+    if(sessionStorage.getItem("token"))
     {
       this.isUserLoggedIn = true;
     }else{
@@ -20,8 +20,8 @@ export class NavbarComponent implements OnInit {
     }
   }
   onLogout(){    
-    if(sessionStorage.getItem("Log") !== null){
-      sessionStorage.removeItem("Log")
+    if(sessionStorage.getItem("token") !== null){
+      sessionStorage.removeItem("token")
       this.router.navigateByUrl('home')
       console.log("SuccessFull Logout")
     }

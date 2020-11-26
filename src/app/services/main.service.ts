@@ -4,6 +4,7 @@ import { User } from '../classes/user/user';
 import { Observable } from 'rxjs';
 import { CustomerResponse } from '../model/customer-response';
 import { TransferFundRequest } from '../model/transfer-fund-request';
+import { Router } from '@angular/router';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
@@ -68,9 +69,16 @@ export class MainService {
   public doTransfer(pro: TransferFundRequest) {
     return this._http.post("http://localhost:8082/sendMoney", pro);
   }
+  onLogout(){    
+    if(sessionStorage.getItem("token") !== null){
+      sessionStorage.removeItem("token")
+      this.router.navigateByUrl('home')
+      console.log("SuccessFull Logout")
+    }
+  }
 
 
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient, private router:Router) { }
 
 }
