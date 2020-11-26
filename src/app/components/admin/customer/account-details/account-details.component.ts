@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 
@@ -8,20 +9,13 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class AccountDetailsComponent implements OnInit {
 
-  constructor(private _service:MainService) { }
+  constructor(private _service:MainService,private _http:HttpClient) { }
+
+  AllCustomers:any;
 
   ngOnInit(): void {
+    this._service.getAccountDetails().subscribe((data) => this.AllCustomers = data);
   }
 
-  getAccountDetailsList()
-  {
-    this._service.getEmployeeFromRemote().subscribe(
-      data =>{
-        console.log("response received");
-      },
-      error =>{
-        console.log("exception occured");
-      }
-    )
-  }
+  
 }
