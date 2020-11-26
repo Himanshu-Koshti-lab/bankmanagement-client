@@ -1,13 +1,12 @@
 <app-customer-navbar></app-customer-navbar>
-<p>cfund-transfer works!</p>
-<div class="container pt-5" class="col-sm-6" >
+<h1>Fund Transfer</h1>
+<div class="container" >
     <div class="row justify-content-sm-center pt-5">
         <div class="col-sm-6 shadow round pb-3">
-            <h3>Transfer Fund</h3>
           <form [formGroup]="transferFundForm" (ngSubmit)="Transfernow(transferFundForm.value); transferFundForm.reset()">
             <div class="form-group">
             <label class="col-form-label">Sender Account Number:</label>
-            <input formControlName="senderAccountNumber"  type="number" pattern="^[1-9][0-9]{5}$"  onKeyPress="if(this.value.length==6) return false;"  onkeydown="return event.keyCode === 8 ||
+            <input formControlName="senderAccountNumber"  type="number" pattern="^[1-9][0-9]{5}$"  onKeyPress="if(this.value.length==6) return false;"  placeholder="Enter Sender Account Number" onkeydown="return event.keyCode === 8 ||
             event.keyCode === 46 ? true : !isNaN(Number(event.key))"   class="form-control">
             <!-- <small *ngIf =" transferFundForm.get('senderAccountNumber').invalid && transferFundForm.get('senderAccountNumber').touched " class="text-danger">sender account number is invalid and must be of 6 digits</small> -->
             <div *ngIf="transferFundForm.get('senderAccountNumber').errors && (transferFundForm.get('senderAccountNumber').invalid && transferFundForm.get('senderAccountNumber').touched)">
@@ -20,9 +19,8 @@
             </div>
             <div class="form-group">
                 <label class="col-form-label">Receiver Account Number:</label>
-                <input formControlName="receiverAccountNumber" type="number" pattern="^[1-9][0-9]{5}$"  onKeyPress="if(this.value.length==6) return false;" onkeydown="return event.keyCode === 8 ||
+                <input formControlName="receiverAccountNumber" type="number" pattern="^[1-9][0-9]{5}$"  onKeyPress="if(this.value.length==6) return false;" placeholder="Enter Reciever Account Number" onkeydown="return event.keyCode === 8 ||
                 event.keyCode === 46 ? true : !isNaN(Number(event.key))"  class="form-control">
-                <!-- <small *ngIf =" transferFundForm.get('receiverAccountNumber').invalid && transferFundForm.get('receiverAccountNumber').touched" class="text-danger">receiver account number is invalid and must be of 6 digits</small>  -->
                 <div *ngIf="transferFundForm.get('receiverAccountNumber').errors && (transferFundForm.get('receiverAccountNumber').invalid && transferFundForm.get('receiverAccountNumber').touched)">
                   <small class="text-danger" *ngIf="transferFundForm.get('receiverAccountNumber').errors.required">receiver account Number is required
                       field</small>
@@ -33,7 +31,7 @@
                 </div>
               <div class="form-group">
                 <label class="col-form-label">Amount:</label>
-                <input formControlName="amount" type="number"   onkeydown="return event.keyCode === 8 ||
+                <input formControlName="amount" type="number" placeholder="Enter Amount"  onkeydown="return event.keyCode === 8 ||
                 event.keyCode === 46 ? true : !isNaN(Number(event.key))" minlength="1" maxlength="5" class="form-control">
                 <small  *ngIf =" transferFundForm.get('amount').invalid && transferFundForm.get('amount').touched && transferFundForm.controls.amount.errors" class="text-danger"> Enter Amount it cannot be empty</small>
                 </div>
@@ -41,7 +39,7 @@
                   <button   [disabled]="transferFundForm.invalid" class="btn btn-primary">Transfer</button>
                </div>
                 <br>
-                  <h6>Notes:</h6>
+                  <h5>Notes:</h5>
                <p>Wecare Bank is not responsible for</p>
                <p>  1.Fund transferred to any unintended recipient.</p>
                <p>  2.Retrieval of fund transferred to any unauthorised recipient.</p>

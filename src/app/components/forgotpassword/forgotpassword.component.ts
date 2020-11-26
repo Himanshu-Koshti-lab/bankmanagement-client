@@ -53,7 +53,7 @@ export class ForgotpasswordComponent implements OnInit {
         alert("Done Update Password")
       },
       err => 
-      alert("Something went wrong with Email,Question and Password"))
+      alert("Something went wrong Question and Answer"))
   }
   
   forgotPassByOtp(user:User){
@@ -67,19 +67,20 @@ export class ForgotpasswordComponent implements OnInit {
         alert("Your One Time Password is " + this.GenOtp)
       },
       err => 
-      alert("Something went wrong with Email,Question and Password"))
+      alert("Something went wrong with Email"))
   }
   public verifyOtp(user:User){
     this.validEmail=false
     const resp =  this._service.verifyotp(user);
+    this.forgotPassByQue.reset();
     resp.subscribe(
       data => {
         this.validEmail=data
         console.log(this.validEmail)
+        alert("Password Updated Successfully")
       },
       err => 
       alert("Something went wrong with Email,Question and Password"))
-    console.log("UnderConstruction")
   }
   selectedQuestion: string = 'What Is your favorite book?';
   
