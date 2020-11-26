@@ -7,13 +7,13 @@ import { TransferFundRequest } from '../model/transfer-fund-request';
 import { Router } from '@angular/router';
 import { AccountCreate } from '../model/account-create';
 import { UpdateUser } from '../classes/update-user';
+import { UpdateRequests } from '../classes/update-requests';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MainService {
-  
   registerUserFromRemote(user: User): Observable<any> {
     return this._http.post<any>(
       'http://localhost:8081/service/register-user',
@@ -110,9 +110,39 @@ export class MainService {
     );
   }
 
+  getTransactionStatement(): Observable<any> {
+    return this._http.post<any>(
+      'http://localhost:8082/getAlltransaction',
+      null
+    );
+  }
 
-  doUpdate(update : UpdateUser):Observable<any> {
+  getTransactionCustomersStatement(): Observable<any> {
+    return this._http.post<any>(
+      'http://localhost:8082/getAllCustomertransaction',
+      null
+    );
+  }
+
+  doUpdate(update: UpdateUser): Observable<any> {
     return this._http.post<any>('http://localhost:8081/Request', update);
+  }
+  getCustomerUpdateRequest(): Observable<any> {
+    return this._http.get<any>('http://localhost:8081/requestlist');
+  }
+
+  approveUpdateRequest(updaterequests: UpdateRequests) {
+    return this._http.post(
+      'http://localhost:8081/RequestVerifyUpdate',
+      updaterequests
+    );
+  }
+
+  rejectUpdateRequest(updaterequests: UpdateRequests) {
+    return this._http.post(
+      'http://localhost:8081/RequestReject',
+      updaterequests
+    );
   }
   constructor(private _http: HttpClient, private router: Router) {}
 }
