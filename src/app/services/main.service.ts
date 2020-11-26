@@ -13,7 +13,6 @@ import { UpdateUser } from '../classes/update-user';
   providedIn: 'root',
 })
 export class MainService {
-  
   registerUserFromRemote(user: User): Observable<any> {
     return this._http.post<any>(
       'http://localhost:8081/service/register-user',
@@ -110,9 +109,12 @@ export class MainService {
     );
   }
 
-
-  doUpdate(update : UpdateUser):Observable<any> {
+  doUpdate(update: UpdateUser): Observable<any> {
     return this._http.post<any>('http://localhost:8081/Request', update);
+  }
+
+  getTransactionStatement(): Observable<any> {
+    return this._http.post<any>('http://localhost:8082/getAlltransaction',null);
   }
   constructor(private _http: HttpClient, private router: Router) {}
 }
