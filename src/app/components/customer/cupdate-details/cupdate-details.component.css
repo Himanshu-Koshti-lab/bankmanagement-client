@@ -1,0 +1,51 @@
+input[type=number], input[type=dropdown] {
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  
+    width: 100%;
+  }
+  .h1{
+    color: black;
+    background-color:rgb(61, 187, 57);
+    text-align: center;
+  }
+ 
+label{
+    color: black;
+    font-family: sans-serif;
+    font-size: 17px;  
+}
+.form-group {
+        display: flex;
+        flex: 0 0 auto;
+        flex-flow: row wrap;
+        align-items: center;
+        margin-bottom: 0;
+      }
+.cancelbtn{
+    width: 30%;
+    padding: 10px 18px;
+}
+.container{
+    background: rgb(255, 217,210);
+}
+button{
+    padding: 9px 10px;
+    margin-left: 50px;
+    width: 30%;
+    border: 3px;
+    text-align: center;
+}
+.form-control{
+ 
+    width: 95%;
+}
+.update-form{
+    padding: 20px;
+}
+.required label:after 
+{ 
+    content:"*";
+    color: red; 
+}

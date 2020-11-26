@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
         else this._router.navigateByUrl('CustomerHome');
       },
       (error) => {
-        alert(error.error_description);
+        alert(error.error.error_description);
       }
     );
   }

@@ -6,6 +6,7 @@ import { CustomerResponse } from '../model/customer-response';
 import { TransferFundRequest } from '../model/transfer-fund-request';
 import { Router } from '@angular/router';
 import { AccountCreate } from '../model/account-create';
+import { UpdateUser } from '../classes/update-user';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
@@ -103,6 +104,8 @@ export class MainService {
       accountCreate
     );
   }
-
+  doUpdate(update : UpdateUser):Observable<any> {
+    return this._http.post<any>('http://localhost:8081/Request', update);
+  }
   constructor(private _http: HttpClient, private router: Router) {}
 }
