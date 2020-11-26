@@ -5,15 +5,18 @@ import { Observable } from 'rxjs';
 import { CustomerResponse } from '../model/customer-response';
 import { TransferFundRequest } from '../model/transfer-fund-request';
 import { Router } from '@angular/router';
+import { AccountCreate } from '../model/account-create';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MainService {
-
   registerUserFromRemote(user: User): Observable<any> {
-    return this._http.post<any>("http://localhost:8081/service/register-user", user);
+    return this._http.post<any>(
+      'http://localhost:8081/service/register-user',
+      user
+    );
   }
 
   // Email For Generate OTP
@@ -27,26 +30,31 @@ export class MainService {
   }
 
   forgetPassByQuestionSer(user: User) {
-    console.log(user)
-    return this._http.put('http://localhost:8081/forgotPasswordByQuestion', user)
+    console.log(user);
+    return this._http.put(
+      'http://localhost:8081/forgotPasswordByQuestion',
+      user
+    );
   }
   // End Here
 
   getCustomerFromRemote(): Observable<any> {
-    return this._http.get<any>("http://localhost:8083/getCustomerList");
+    return this._http.get<any>('http://localhost:8083/getCustomerList');
   }
 
   getCustomerForEmployeeFromRemote(): Observable<any> {
-    return this._http.get<any>("http://localhost:8083/getCustomerDetails");
+    return this._http.get<any>('http://localhost:8083/getCustomerDetails');
   }
 
   getEmployeeFromRemote(): Observable<any> {
-    return this._http.get<any>("http://localhost:8083/getEmployeeList");
+    return this._http.get<any>('http://localhost:8083/getEmployeeList');
   }
 
-
   approveRegistrationRequest(customerResponse: CustomerResponse) {
-    return this._http.post('http://localhost:8081/service/register-userRegistrationVerify', customerResponse);
+    return this._http.post(
+      'http://localhost:8081/service/register-userRegistrationVerify',
+      customerResponse
+    );
   }
 
   // deleteCustomer(customerResponse: CustomerResponse){
@@ -54,31 +62,47 @@ export class MainService {
   // }
 
   rejectRegistrationRequest(customerResponse: CustomerResponse) {
-    return this._http.post('http://localhost:8081/service/register-userRegistrationReject', customerResponse);
+    return this._http.post(
+      'http://localhost:8081/service/register-userRegistrationReject',
+      customerResponse
+    );
   }
 
   approveEmployeeRegistrationRequest(customerResponse: CustomerResponse) {
-    return this._http.post('http://localhost:8081/service/register-userEmployeeRegistrationVerify', customerResponse);
+    return this._http.post(
+      'http://localhost:8081/service/register-userEmployeeRegistrationVerify',
+      customerResponse
+    );
   }
 
   rejectEmployeeRegistrationRequest(customerResponse: CustomerResponse) {
-    return this._http.post('http://localhost:8081/service/register-userEmployeeRegistrationReject', customerResponse);
+    return this._http.post(
+      'http://localhost:8081/service/register-userEmployeeRegistrationReject',
+      customerResponse
+    );
   }
-
 
   public doTransfer(pro: TransferFundRequest) {
-    return this._http.post("http://localhost:8082/sendMoney", pro);
+    return this._http.post('http://localhost:8082/sendMoney', pro);
   }
-  onLogout(){    
-    if(sessionStorage.getItem("token") !== null){
-      sessionStorage.removeItem("token")
-      this.router.navigateByUrl('home')
-      console.log("SuccessFull Logout")
+  onLogout() {
+    if (sessionStorage.getItem('token') !== null) {
+      sessionStorage.removeItem('token');
+      this.router.navigateByUrl('home');
+      console.log('SuccessFull Logout');
     }
   }
 
+  getCustomer(): Observable<any> {
+    return this._http.get<any>('http://localhost:8083/getCustomer');
+  }
 
+  createAccount(accountCreate: AccountCreate) {
+    return this._http.post(
+      'http://localhost:8084/register-account',
+      accountCreate
+    );
+  }
 
-  constructor(private _http: HttpClient, private router:Router) { }
-
+  constructor(private _http: HttpClient, private router: Router) {}
 }
