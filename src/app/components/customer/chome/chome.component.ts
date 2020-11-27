@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-chome',
@@ -25,6 +26,34 @@ export class CHomeComponent implements OnInit {
           this.router.navigateByUrl('employeeDashboard')
         else 
           this.router.navigateByUrl('CustomerHome')
+  }
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay: true,
+    dots: true,
+    autoWidth:true,
+    autoHeight:true,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      840: {
+        items: 1
+      }
+    },
+    nav: true
   }
 
 }

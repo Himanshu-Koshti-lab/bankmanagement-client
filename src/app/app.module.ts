@@ -51,6 +51,7 @@ import { ChangePasswordComponent } from './components/Employee/updateDetails/cha
 import { CustomerProfileDetailsComponent } from './components/Employee/customer/customer-profile-details/customer-profile-details.component';
 import { TokenInterceptorService } from './services/token-interceptor.service'
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { from } from 'rxjs';
 
 @NgModule({
@@ -108,6 +109,7 @@ import { from } from 'rxjs';
     NgxCaptchaModule,
     AppRoutingModule,
     MatPaginatorModule,
+    CarouselModule,
     BrowserAnimationsModule
   ],
   providers: [{
