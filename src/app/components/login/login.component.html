@@ -79,7 +79,7 @@
         </div>
         <input type="text" formControlName="emailID" class="form-control"
           pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
-          [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }" />
+          [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }" placeholder="Enter Email ID"/>
         <!-- <div *ngIf="submitted && loginForm.controls.emailID.errors" class="text-danger">
           <div *ngIf=" loginForm.controls.emailID.errors.required">Email is required</div>
           <div *ngIf="loginForm.controls.emailID.errors.email && loginForm.controls.emailID.errors.pattern">Email must
@@ -94,7 +94,7 @@
         <div class="required">
           <label>Password</label>
         </div>
-        <input type="password" formControlName="password"  class="form-control"
+        <input type="password" formControlName="password"  class="form-control" placeholder="Enter Password"
           [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }" />
         <!-- <div *ngIf="submitted && loginForm.controls.password.errors" class="text-danger">
           <div *ngIf="loginForm.controls.password.errors && loginForm.controls.password.invalid && loginForm.controls.password.touched">
