@@ -5,6 +5,7 @@
 <nav>
     <mat-toolbar  class="bg-primary">
     <button mat-button routerLink="/Admin" > Home </button>
+    <button mat-button routerLink="/adminProfile">Admin Profile</button>
     <button mat-button [matMenuTriggerFor]="customer">Customer</button>
     <mat-menu #customer="matMenu" class="bg-info">
       <button mat-menu-item routerLink="/Customer/accountDetails">Account details</button>

@@ -54,6 +54,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { from } from 'rxjs';
 import { EmpDetailsComponent } from './components/Employee/emp-details/emp-details.component';
+import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { EmpDetailsComponent } from './components/Employee/emp-details/emp-detai
     CustomerAccountStatementComponent,
     ChangePasswordComponent,
     CustomerProfileDetailsComponent,
-    EmpDetailsComponent
+    EmpDetailsComponent,
+    AdminProfileComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [

@@ -8,8 +8,10 @@
   } */
 
   .footer {
-    top: 100% !important;
+    /* top: 100% !important; */
     width: 100%;
+    bottom: 0;
+    position: fixed;
     text-align: center;
     color:#000000;
     font-size:.8rem;

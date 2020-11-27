@@ -107,6 +107,10 @@ export class MainService {
     return this._http.get<any>('http://localhost:8083/getEmployee');
   }
 
+  getAdmin(): Observable<any> {
+    return this._http.get<any>('http://localhost:8083/getAdmin');
+  }
+
   createAccount(accountCreate: AccountCreate) {
     return this._http.post(
       'http://localhost:8084/register-account',
