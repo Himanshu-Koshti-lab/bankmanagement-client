@@ -1,155 +1,47 @@
 <app-navbar></app-navbar>
-<!--only login -->
-<!-- <div class="login-form">
-    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)" >      
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="emailID"  ngModel required autocomplete="off" >
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" minlength="8" ngModel required autocomplete="off">
-          
-      <button class="btn btn-primary" type="submit">Login</button>
-    </div>
-  
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" class="btn btn-danger cancelbtn" >Cancel</button>
-      <span class="psw"><a routerLink="forgot_password">Forgot password?</a></span>
-    </div>
-  </form>
-</div> -->
-
-<!-- without validation -->
-<!-- <div class="login-form">
-    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)" >      
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="emailID"  ngModel required autocomplete="off" >
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" minlength="8" ngModel required autocomplete="off">
-          
-      <button class="btn btn-primary" type="submit">Login</button>
-    </div>
-  
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" class="btn btn-danger cancelbtn" >Cancel</button>
-      <span class="psw"><a routerLink="forgot_password">Forgot password?</a></span>
-    </div>
-  </form>
-</div> -->
-
-<!-- without login  with validation -->
-<!-- <div class="container">
-  <div class="row">
-      <div class="col-md-6 offset-md-3">
-          <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
-              <div class="form-group">
-                  <label>Email</label>
-                  <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.email.errors }" />
-                  <div *ngIf="submitted && loginForm.controls.email.errors" class="text-danger">
-                      <div *ngIf="loginForm.controls.email.errors.required">Email is required</div>
-                      <div *ngIf="loginForm.controls.email.errors.email">Email must be a valid email address</div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }"  />
-                  <div *ngIf="submitted && loginForm.controls.password.errors" class="text-danger">
-                      <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
-                      <div *ngIf="loginForm.controls.password.errors.minlength">Password must be at least 6 characters</div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <button class="btn btn-primary">Login</button>
-              </div>
-          </form>
+<div class="container">
+  <div class="row justify-content-sm-center pt-5">
+    <mat-card class="design">
+      <div class="login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <div class="required">
+              <label>Email</label>
+            </div>
+            <input type="text" formControlName="emailID" class="form-control"
+              pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }"
+              placeholder="Enter Email ID" />
+            <div *ngIf=" loginForm.controls.emailID.touched && loginForm.controls.emailID.invalid" class="text-danger">
+              <div *ngIf="loginForm.controls.emailID.errors.required">Email is required
+                field.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="required">
+              <label>Password</label>
+            </div>
+            <input type="password" formControlName="password" class="form-control" placeholder="Enter Password"
+              [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }" />
+            <div *ngIf=" loginForm.controls.password.touched && loginForm.controls.password.invalid"
+              class="text-danger">
+              <div *ngIf="loginForm.controls.password.errors.required">Password is required
+                field.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" style="color: black;" [disabled]="!loginForm.valid">Login</button>
+          </div>
+        </form>
+        <div class="form-group">
+          <button routerLink="/home" class="btn btn-danger cancelbtn">Cancel</button>
+          <span class="psw"><button class="btn btn-primary" routerLink="/forgot_password">Forgot password
+              ?</button></span>
+        </div>
+        <div class="form-group">
+          <span class="reg"><button class="btn btn-primary" routerLink="/register">Register here</button></span>
+        </div>
       </div>
+    </mat-card>
   </div>
-</div> -->
-
-<!--login with validation-->
-<div class="main-div">
-<mat-card class="design">
-  <div class="login-form">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <div class="required">
-          <label>Email</label>
-        </div>
-        <input type="text" formControlName="emailID" class="form-control"
-          pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
-          [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }" placeholder="Enter Email ID"/>
-        <!-- <div *ngIf="submitted && loginForm.controls.emailID.errors" class="text-danger">
-          <div *ngIf=" loginForm.controls.emailID.errors.required">Email is required</div>
-          <div *ngIf="loginForm.controls.emailID.errors.email && loginForm.controls.emailID.errors.pattern">Email must
-            be a valid email address</div>
-        </div> -->
-        <div *ngIf=" loginForm.controls.emailID.touched && loginForm.controls.emailID.invalid" class="text-danger" >
-          <div *ngIf="loginForm.controls.emailID.errors.required">Email is required
-            field.</div>
-      </div>
-      </div>
-      <div class="form-group">
-        <div class="required">
-          <label>Password</label>
-        </div>
-        <input type="password" formControlName="password"  class="form-control" placeholder="Enter Password"
-          [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }" />
-        <!-- <div *ngIf="submitted && loginForm.controls.password.errors" class="text-danger">
-          <div *ngIf="loginForm.controls.password.errors && loginForm.controls.password.invalid && loginForm.controls.password.touched">
-            <small class="text-danger" *ngIf="loginForm.controls.password.errors.required">Password is required
-                field</small>
-            <small class="text-danger" *ngIf="loginForm.controls.password.errors.pattern">Password should be in proper
-                format (It must contains minimum eight characters, at least one uppercase letter, one
-                lowercase
-                letter, one number and one special character)</small>
-        </div>
-        </div> -->
-        <div *ngIf=" loginForm.controls.password.touched && loginForm.controls.password.invalid" class="text-danger" >
-          <div *ngIf="loginForm.controls.password.errors.required">Password is required
-            field.</div>
-      </div>
-      </div>
-      <div class="form-group">
-          <button class="btn btn-primary" style="color: black;" [disabled]="!loginForm.valid" >Login</button>       
-      </div>
-    </form>
-    <div class="form-group">
-      <button  routerLink="/home" class="btn btn-danger cancelbtn">Cancel</button>
-      <span class="psw"><button class="btn btn-primary" routerLink="/forgot_password" >Forgot password ?</button></span>
-    </div>
-    <div class="form-group">
-      <span class="reg"><button class="btn btn-primary"routerLink="/register">Register here</button></span>
-    </div>
-  </div>
-</mat-card>
 </div>
-<!-- with login and validation -->
-<!-- <div class="container">
-  <div class="row">
-      <div class="col-md-6 offset-md-3">
-          <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
-              <div class="form-group">
-                  <label>Email</label>
-                  <input type="text" formControlName="emailID" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }" />
-                  <div *ngIf="submitted && loginForm.controls.emailID.errors" class="text-danger">
-                      <div *ngIf="loginForm.controls.emailID.errors.required">Email is required</div>
-                      <div *ngIf="loginForm.controls.emailID.errors.email">Email must be a valid email address</div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }"  />
-                  <div *ngIf="submitted && loginForm.controls.password.errors" class="text-danger">
-                      <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
-                      <div *ngIf="loginForm.controls.password.errors.minlength">Password must be at least 6 characters</div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <button class="btn btn-primary">Login</button>
-              </div>
-          </form>
-      </div>
-  </div>
-</div> -->
