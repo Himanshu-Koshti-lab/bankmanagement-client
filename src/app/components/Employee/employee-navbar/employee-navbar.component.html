@@ -3,7 +3,8 @@
 </div>
 <nav>
     <mat-toolbar  class="bg-primary">
-    <button mat-button > Home </button>
+    <button mat-button  routerLink="/employeeDashboard" > Home </button>
+    <button mat-button routerLink="/employeeProfile">Employee Details</button>
     <button mat-button [matMenuTriggerFor]="customer">Customer</button>
     <mat-menu #customer="matMenu" class="bg-info">
       <button mat-menu-item routerLink="/Employee/customer/customerAccountDetails">Account details</button>

@@ -25,6 +25,8 @@ import { CustomerAccountStatementComponent } from './components/Employee/custome
 import { CustomerProfileDetailsComponent } from './components/Employee/customer/customer-profile-details/customer-profile-details.component';
 import { ChangePasswordComponent } from './components/Employee/updateDetails/change-password/change-password.component';
 import { EmployeeDashboardComponent } from './components/Employee/employee-dashboard/employee-dashboard.component';
+import {EmpDetailsComponent} from './components/Employee/emp-details/emp-details.component';
+  import { from } from 'rxjs';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -58,7 +60,8 @@ const routes: Routes = [
   {path:'Employee/customer/customerAccountStatement',component:CustomerAccountStatementComponent},
   {path:'Employee/customer/customerProfileDetails',component:CustomerProfileDetailsComponent},
   {path:'Employee/customer/changePassword',component:ChangePasswordComponent},
-  {path:'employeeDashboard',component:EmployeeDashboardComponent}
+  {path:'employeeDashboard',component:EmployeeDashboardComponent},
+  {path:'employeeProfile',component:EmpDetailsComponent}
 ];
 
 @NgModule({

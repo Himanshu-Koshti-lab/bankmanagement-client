@@ -53,6 +53,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { from } from 'rxjs';
+import { EmpDetailsComponent } from './components/Employee/emp-details/emp-details.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { from } from 'rxjs';
     CustomerAccountDetailsComponent,
     CustomerAccountStatementComponent,
     ChangePasswordComponent,
-    CustomerProfileDetailsComponent
+    CustomerProfileDetailsComponent,
+    EmpDetailsComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
