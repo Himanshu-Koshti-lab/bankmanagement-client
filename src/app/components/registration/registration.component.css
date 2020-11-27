@@ -13,11 +13,7 @@
 .register-form{
     padding: 20px;
 }
-.required label:after 
-{ 
-    content:"*";
-    color: red; 
-}
+
 
 .btn{
     color: #000000;
