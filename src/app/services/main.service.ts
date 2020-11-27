@@ -125,22 +125,22 @@ export class MainService {
   }
 
   doUpdate(update: UpdateUser): Observable<any> {
-    return this._http.post<any>('http://localhost:8081/Request', update);
+    return this._http.post<any>('http://localhost:8084/Request', update);
   }
   getCustomerUpdateRequest(): Observable<any> {
-    return this._http.get<any>('http://localhost:8081/requestlist');
+    return this._http.get<any>('http://localhost:8084/requestlist');
   }
 
   approveUpdateRequest(updaterequests: UpdateRequests) {
     return this._http.post(
-      'http://localhost:8081/RequestVerifyUpdate',
+      'http://localhost:8084/RequestVerifyUpdate',
       updaterequests
     );
   }
 
   rejectUpdateRequest(updaterequests: UpdateRequests) {
     return this._http.post(
-      'http://localhost:8081/RequestReject',
+      'http://localhost:8084/RequestReject',
       updaterequests
     );
   }
