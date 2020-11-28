@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { AboutUsComponent } from '../about-us/about-us.component';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +10,12 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,public dialog:MatDialog) { }
   public isUserLoggedIn;
 
+  openDialog(){
+    this.dialog.open(AboutUsComponent,{width:'1400px'});
+  }
   ngOnInit(): void {
     if(sessionStorage.getItem("token"))
     {

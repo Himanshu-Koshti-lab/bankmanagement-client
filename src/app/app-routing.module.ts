@@ -28,6 +28,7 @@ import { EmployeeDashboardComponent } from './components/Employee/employee-dashb
 import {EmpDetailsComponent} from './components/Employee/emp-details/emp-details.component';
 import {AdminProfileComponent} from './components/admin/admin-profile/admin-profile.component';
   import { from } from 'rxjs';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -64,7 +65,6 @@ const routes: Routes = [
   {path:'employeeDashboard',component:EmployeeDashboardComponent},
   {path:'employeeProfile',component:EmpDetailsComponent},
   {path:'adminProfile',component:AdminProfileComponent}
-  
 ];
 
 @NgModule({

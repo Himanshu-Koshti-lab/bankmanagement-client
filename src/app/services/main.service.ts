@@ -15,10 +15,7 @@ import { UpdateRequests } from '../classes/update-requests';
 })
 export class MainService {
   registerUserFromRemote(user: User): Observable<any> {
-    return this._http.post<any>(
-      'http://localhost:8081/service/register-user',
-      user
-    );
+    return this._http.post<any>('http://localhost:8081/service/register-user',user);
   }
 
   // Email For Generate OTP
