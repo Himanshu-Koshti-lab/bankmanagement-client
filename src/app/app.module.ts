@@ -55,6 +55,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { from } from 'rxjs';
 import { EmpDetailsComponent } from './components/Employee/emp-details/emp-details.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
+import { CustomerCareComponent } from './components/customer-care/customer-care.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { AdminProfileComponent } from './components/admin/admin-profile/admin-pr
     ChangePasswordComponent,
     CustomerProfileDetailsComponent,
     EmpDetailsComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    CustomerCareComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
