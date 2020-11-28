@@ -30,9 +30,13 @@ span.reg {
 }
 
 .design {
-  margin-top: 20px;
+  /* margin-top: 10px; */
   max-width: 500px;
   min-width: 500px;
   max-height: auto;
   margin-bottom: 20px;
+}
+h1{
+  text-align: center;
+  padding-top: 30px;
 }

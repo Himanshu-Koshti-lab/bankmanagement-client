@@ -1,4 +1,8 @@
 <app-navbar></app-navbar>
+
+<h1 >
+  Login here
+</h1>
 <div class="container">
   <div class="row justify-content-sm-center pt-5">
     <mat-card class="design">
@@ -30,16 +34,16 @@
             </div>
           </div>
           <div class="form-group">
-            <button class="btn btn-primary" style="color: black;" [disabled]="!loginForm.valid">Login</button>
+            <button class="btn btn-primary" style="color: black;" [disabled]="!loginForm.valid" data-toggle="tooltip" data-placement="bottom" title="Login Here!">Login</button>
           </div>
         </form>
         <div class="form-group">
-          <button routerLink="/home" class="btn btn-danger cancelbtn">Cancel</button>
-          <span class="psw"><button class="btn btn-primary" routerLink="/forgot_password">Forgot password
+          <button routerLink="/home" class="btn btn-danger cancelbtn" data-toggle="tooltip" data-placement="bottom" title="Cancel">Cancel</button>
+          <span class="psw"><button class="btn btn-primary" routerLink="/forgot_password" data-toggle="tooltip" data-placement="bottom" title="Forgot Password Here!">Forgot password
               ?</button></span>
         </div>
         <div class="form-group">
-          <span class="reg"><button class="btn btn-primary" routerLink="/register">Register here</button></span>
+          <span class="reg"><button class="btn btn-primary" routerLink="/register" data-toggle="tooltip" data-placement="bottom" title="Register New User!">Register here</button></span>
         </div>
       </div>
     </mat-card>

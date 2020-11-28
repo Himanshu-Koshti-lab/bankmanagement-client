@@ -9,3 +9,10 @@ a{
   font-weight: 400;
   font-size: medium;
 }
+
+.right {
+  margin-top: 50px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
