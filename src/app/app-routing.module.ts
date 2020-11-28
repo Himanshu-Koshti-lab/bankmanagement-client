@@ -40,14 +40,14 @@ const routes: Routes = [
   //End
   {path:'register',component:RegistrationComponent},
   {path:'sample', component:SampleComponent},
-  {path:'Customer/accountDetails', component:AccountDetailsComponent},
-  {path:'accountStatement', component: AccountStatementComponent},
-  {path:'customerDetails', component: CustomerDetailsComponent},
-  {path:'employeeDetails', component:EmployeeDetailsComponent},
-  {path:'employeeRegistrationRequest', component:EmployeeRegistrationRequestsComponent},
-  {path:'employeeUpdateProfile', component:EmployeeUpdateProfileComponent},
-  {path:'customerRegistrationRequest',component:CustomerRegistrationRequestComponent},
-  {path:'customerUpdateProfile',component:CustomerUpdateProfileComponent},
+  {path:'Admin/Customer/accountDetails', component:AccountDetailsComponent},
+  {path:'Admin/Customer/accountStatement', component: AccountStatementComponent},
+  {path:'Admin/Customer/customerDetails', component: CustomerDetailsComponent},
+  {path:'Admin/Employee/employeeDetails', component:EmployeeDetailsComponent},
+  {path:'Admin/employeeRequest/employeeRegistrationRequest', component:EmployeeRegistrationRequestsComponent},
+  {path:'Admin/employeeRequest/employeeUpdateProfile', component:EmployeeUpdateProfileComponent},
+  {path:'Admin/customerRequest/customerRegistrationRequest',component:CustomerRegistrationRequestComponent},
+  {path:'Admin/customerRequest/customerUpdateProfile',component:CustomerUpdateProfileComponent},
   {path:'Admin_accountDetails', component:AccountDetailsComponent},
   {path:'Admin_accountStatement', component: AccountStatementComponent},
   {path:'Admin_customerDetails', component: CustomerDetailsComponent},
@@ -64,7 +64,7 @@ const routes: Routes = [
   {path:'Employee/customer/changePassword',component:ChangePasswordComponent},
   {path:'employeeDashboard',component:EmployeeDashboardComponent},
   {path:'employeeProfile',component:EmpDetailsComponent},
-  {path:'adminProfile',component:AdminProfileComponent}
+  {path:'Admin/adminProfile',component:AdminProfileComponent}
 ];
 
 @NgModule({

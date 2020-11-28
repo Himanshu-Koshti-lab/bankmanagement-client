@@ -56,6 +56,7 @@ import { from } from 'rxjs';
 import { EmpDetailsComponent } from './components/Employee/emp-details/emp-details.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { CustomerCareComponent } from './components/customer-care/customer-care.component';
+import { HeadersComponent } from './components/headers/headers.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { CustomerCareComponent } from './components/customer-care/customer-care.
     CustomerProfileDetailsComponent,
     EmpDetailsComponent,
     AdminProfileComponent,
-    CustomerCareComponent
+    CustomerCareComponent,
+    HeadersComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
