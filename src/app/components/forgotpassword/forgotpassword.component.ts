@@ -7,101 +7,105 @@ import { MainService } from 'src/app/services/main.service';
 @Component({
   selector: 'app-forgotpassword',
   templateUrl: './forgotpassword.component.html',
-  styleUrls: ['./forgotpassword.component.css']
+  styleUrls: ['./forgotpassword.component.css'],
 })
 export class ForgotpasswordComponent implements OnInit {
-  forgotPassByQue:FormGroup;
-  Confirmpassword:String;
-  OtpBased:boolean;
-  validEmail:any;
-  GenOtp:any;
+  forgotPassByQue: FormGroup;
+  Confirmpassword: String;
+  OtpBased: boolean;
+  validEmail: any;
+  GenOtp: any;
   //user;
-  Updateuser:any;
+  Updateuser: any;
   submitted = false;
-  constructor(private _service: MainService, private _router: Router, private formBuilder: FormBuilder) { }
+  constructor(
+    private _service: MainService,
+    private _router: Router,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit() {
     this.forgotPassByQue = this.formBuilder.group({
       emailID: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      otp: ['', [Validators.required, Validators.minLength(4),Validators.maxLength(4)]],
-      Confirmpassword: ['',[Validators.required]],
-      securityQuestion:['',[Validators.required]],
-      answer:['',[Validators.required]]
-  });
+      otp: [
+        '',
+        [Validators.required, Validators.minLength(4), Validators.maxLength(4)],
+      ],
+      Confirmpassword: ['', [Validators.required]],
+      securityQuestion: ['', [Validators.required]],
+      answer: ['', [Validators.required]],
+    });
   }
   //Show Otp Based Form
-  showOtp(){
+  showOtp() {
     this.OtpBased = true;
-    this.validEmail=  false;
+    this.validEmail = false;
     this.forgotPassByQue.reset();
   }
   //Show AnswerBased Form
-  showAnswer(){
+  showAnswer() {
     this.OtpBased = false;
     this.validEmail = false;
     this.forgotPassByQue.reset();
   }
   //Function For Submit forgotPassByQue Form
-  forgotPassByQueF(user:User){
-    const resp =  this._service.forgetPassByQuestionSer(user);
+  forgotPassByQueF(user: User) {
+    const resp = this._service.forgetPassByQuestionSer(user);
     resp.subscribe(
-      data => {
-        this.Updateuser = data
-        this._router.navigateByUrl('home')
-        console.log(this.Updateuser)
-        alert("Done Update Password")
+      (data) => {
+        this.Updateuser = data;
+        this._router.navigateByUrl('home');
+        console.log(this.Updateuser);
+        alert('Done Update Password');
       },
-      err => 
-      alert("Something went wrong Question and Answer"))
+      (err) => alert('Something went wrong Question and Answer')
+    );
   }
-  
-  forgotPassByOtp(user:User){
-    const resp =  this._service.forgetPassByOtpSer(user);
+
+  forgotPassByOtp(user: User) {
+    const resp = this._service.forgetPassByOtpSer(user);
     resp.subscribe(
-      data => {
-        this.validEmail=true
+      (data) => {
         this.GenOtp = data;
-        console.log(this.validEmail)
-        console.log(this.GenOtp)
-        if(this.GenOtp == 101){
-          alert("Otp Not generated")
-        }else if(this.GenOtp == 202){
-          alert("User Not Found")
-        }else{
-          alert("Your One Time Password is " + this.GenOtp)
+        console.log(this.validEmail);
+        console.log(this.GenOtp);
+        if (this.GenOtp == 202) {
+          alert('User Not Found');
+        } else {
+          this.validEmail = true;
+          alert('Your One Time Password is ' + this.GenOtp);
         }
-        
       },
-      err => 
-      alert("Something went wrong with Email"))
+      (err) => {
+        this.validEmail = false;
+        alert('Please Enter Email First');
+      }
+    );
   }
-  public verifyOtp(user:User){
-    this.validEmail=false
-    const resp =  this._service.verifyotp(user);
+  public verifyOtp(user: User) {
+    this.validEmail = false;
+    const resp = this._service.verifyotp(user);
     this.forgotPassByQue.reset();
     resp.subscribe(
-      data => {
-        this.validEmail=data
-        console.log(this.validEmail)
-        alert("Password Updated Successfully")
+      (data) => {
+        this.validEmail = data;
+        console.log(this.validEmail);
+        alert('Password Updated Successfully');
       },
-      err => 
-      alert("Something went wrong with Email,Question and Password"))
+      (err) => alert('Something went wrong with Email,Question and Password')
+    );
   }
   selectedQuestion: string = 'What Is your favorite book?';
-  
 
   //event handler for the select element's change event
-  selectChangeHandler (event: any) {
+  selectChangeHandler(event: any) {
     //update the ui
     this.selectedQuestion = event.target.value;
   }
-  
-  SentOtp(){
-    console.log("Sending....")
-    this.validEmail=true;
+
+  SentOtp() {
+    console.log('Sending....');
+    this.validEmail = true;
   }
 }
-
-
