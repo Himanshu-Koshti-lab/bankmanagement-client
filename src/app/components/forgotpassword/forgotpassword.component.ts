@@ -64,7 +64,14 @@ export class ForgotpasswordComponent implements OnInit {
         this.GenOtp = data;
         console.log(this.validEmail)
         console.log(this.GenOtp)
-        alert("Your One Time Password is " + this.GenOtp)
+        if(this.GenOtp == 101){
+          alert("Otp Not generated")
+        }else if(this.GenOtp == 202){
+          alert("User Not Found")
+        }else{
+          alert("Your One Time Password is " + this.GenOtp)
+        }
+        
       },
       err => 
       alert("Something went wrong with Email"))
