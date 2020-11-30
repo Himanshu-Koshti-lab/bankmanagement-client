@@ -58,6 +58,8 @@ import { AdminProfileComponent } from './components/admin/admin-profile/admin-pr
 import { CustomerCareComponent } from './components/customer-care/customer-care.component';
 import { HeadersComponent } from './components/headers/headers.component';
 import { AdminChangePasswordComponent } from './components/admin/admin-change-password/admin-change-password.component';
+import { EmployeeChangePasswordComponent } from './components/Employee/employee-change-password/employee-change-password.component';
+import { CustomerChangePasswordComponent } from './components/customer/customer-change-password/customer-change-password.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +102,9 @@ import { AdminChangePasswordComponent } from './components/admin/admin-change-pa
     AdminProfileComponent,
     CustomerCareComponent,
     HeadersComponent,
-    AdminChangePasswordComponent
+    AdminChangePasswordComponent,
+    EmployeeChangePasswordComponent,
+    CustomerChangePasswordComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [

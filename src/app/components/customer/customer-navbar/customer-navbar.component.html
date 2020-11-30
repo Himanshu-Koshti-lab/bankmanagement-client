@@ -4,7 +4,14 @@
 <nav>
   <mat-toolbar class="bg-primary">
     <button mat-button routerLink="/CustomerHome">Home</button>
-    <button mat-button routerLink="/Customer/CustomerDetails">Customer Details</button>
+    
+
+    <button mat-button [matMenuTriggerFor]="customer">Customer</button>
+    <mat-menu #customer="matMenu" class="bg-info">
+      <button mat-menu-item routerLink="/Customer/CustomerDetails">Customer Details</button>
+      <button mat-menu-item routerLink="/Customer/changePassword">Change Password</button>
+    </mat-menu>
+
     <button mat-button [matMenuTriggerFor]="accountinfoSub">Account Information</button>
     <mat-menu #accountinfoSub="matMenu" class="bg-info">
       <button mat-menu-item routerLink="/Customer/Account_Information/Create_Account">Create Account</button>
