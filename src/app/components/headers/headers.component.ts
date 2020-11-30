@@ -6,6 +6,7 @@ import {
 } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AboutUsComponent } from '../about-us/about-us.component';
+import { CustomerCareComponent } from '../customer-care/customer-care.component';
 
 @Component({
   selector: 'app-headers',
@@ -19,5 +20,9 @@ export class HeadersComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(AboutUsComponent, { width: '1400px' });
+  }
+
+  openCustomerCare(){
+    this.dialog.open(CustomerCareComponent, { width: '1400px' });
   }
 }
