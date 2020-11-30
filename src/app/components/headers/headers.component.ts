@@ -23,6 +23,6 @@ export class HeadersComponent implements OnInit {
   }
 
   openCustomerCare(){
-    this.dialog.open(CustomerCareComponent, { width: '1400px' });
+    this.dialog.open(CustomerCareComponent, { width: '1000px' });
   }
 }
