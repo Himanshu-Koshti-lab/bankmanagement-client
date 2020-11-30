@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../classes/user/user';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { CustomerResponse } from '../model/customer-response';
 import { TransferFundRequest } from '../model/transfer-fund-request';
 import { Router } from '@angular/router';
 import { AccountCreate } from '../model/account-create';
 import { UpdateUser } from '../classes/update-user';
 import { UpdateRequests } from '../classes/update-requests';
+import {ChangePassword} from '../model/change-password';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
@@ -55,7 +56,7 @@ export class MainService {
 
   approveRegistrationRequest(customerResponse: CustomerResponse) {
     return this._http.post(
-      'http://localhost:8081/service/register-userRegistrationVerify',
+      'http://localhost:8083/service/register-userEmployeeRegistrationVerify',
       customerResponse
     );
   }
@@ -73,7 +74,7 @@ export class MainService {
 
   approveEmployeeRegistrationRequest(customerResponse: CustomerResponse) {
     return this._http.post(
-      'http://localhost:8081/service/register-userEmployeeRegistrationVerify',
+      'http://localhost:8083/service/register-userEmployeeRegistrationVerify',
       customerResponse
     );
   }
@@ -148,6 +149,9 @@ export class MainService {
       'http://localhost:8084/RequestReject',
       updaterequests
     );
+  }
+  changePasswordService(changePassword: ChangePassword) {
+    return this._http.put('http://localhost:8081/UpdatePassword',changePassword);
   }
   constructor(private _http: HttpClient, private router: Router) {}
 }

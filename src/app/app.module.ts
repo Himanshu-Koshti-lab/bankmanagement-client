@@ -57,6 +57,7 @@ import { EmpDetailsComponent } from './components/Employee/emp-details/emp-detai
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { CustomerCareComponent } from './components/customer-care/customer-care.component';
 import { HeadersComponent } from './components/headers/headers.component';
+import { AdminChangePasswordComponent } from './components/admin/admin-change-password/admin-change-password.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { HeadersComponent } from './components/headers/headers.component';
     EmpDetailsComponent,
     AdminProfileComponent,
     CustomerCareComponent,
-    HeadersComponent
+    HeadersComponent,
+    AdminChangePasswordComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
