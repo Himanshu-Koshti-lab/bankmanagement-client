@@ -56,7 +56,7 @@ export class MainService {
 
   approveRegistrationRequest(customerResponse: CustomerResponse) {
     return this._http.post(
-      'http://localhost:8083/service/register-userEmployeeRegistrationVerify',
+      'http://localhost:8081/service/register-userRegistrationVerify',
       customerResponse
     );
   }
@@ -124,10 +124,8 @@ export class MainService {
   }
 
   getTransactionCustomersStatement(): Observable<any> {
-    return this._http.post<any>(
-      'http://localhost:8082/getAllCustomertransaction',
-      null
-    );
+    return this._http.get<any>(
+      'http://localhost:8082/getCustomerTransaction');
   }
 
   doUpdate(update: UpdateUser): Observable<any> {

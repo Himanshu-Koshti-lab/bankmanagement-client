@@ -16,9 +16,7 @@ export class AccountStatementComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._service
-      .getTransactionCustomersStatement()
-      .subscribe((data) => (this.Transactions = data));
+    this._service.getTransactionCustomersStatement().subscribe((data) => (this.Transactions = data));
     this.temp = this.Transactions;
   }
 

@@ -19,7 +19,7 @@ export class EmployeeRegistrationRequestsComponent implements OnInit {
 
   approveEmployee(customerResponse:CustomerResponse)
     {
-      this._service.approveRegistrationRequest(customerResponse).subscribe(
+      this._service.approveEmployeeRegistrationRequest(customerResponse).subscribe(
         data=>{
           this._service.getEmployeeFromRemote().subscribe((data) => this.AllEmployee = data);
           console.log("Employee Approved");

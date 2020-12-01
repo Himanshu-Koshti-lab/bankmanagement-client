@@ -12,8 +12,10 @@
     
         <tr *ngFor="let customer of AllCustomers">
           <td>{{customer.firstName +" "+customer.lastName}}</td>
-          <td>{{customer.accountNumber}}</td>
-          <td>{{customer.balance}}</td>
+          <td *ngIf="customer.accountNumber===0" class="text-danger">Pending</td>
+          <td *ngIf="customer.accountNumber!=0">{{customer.accountNumber}}</td>
+          <td *ngIf="customer.balance===0" class="text-danger">Pending</td>
+          <td *ngIf="customer.balance!=0">{{customer.balance}}</td>
           <td *ngIf="customer.accountTypeId===1">Salary</td>
           <td *ngIf="customer.accountTypeId===2" class="text-success">Current</td>
           <td *ngIf="customer.accountStatusId===1" class="text-success">Active</td>

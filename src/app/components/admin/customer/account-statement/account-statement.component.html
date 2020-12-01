@@ -17,8 +17,8 @@
         <td>{{Transaction.senderAccountNumber}}</td>
         <td>{{Transaction.receiverAccountNumber}}</td>
         <td>{{Transaction.amount}}</td>
-        <td *ngIf="Transaction.transactionStatus" class="text-success">Success</td>
-        <td *ngIf="!Transaction.transactionStatus" class="text-danger">Fail</td>
+        <td *ngIf="Transaction.transactionStatus===1" class="text-success">Success</td>
+        <td *ngIf="!Transaction.transactionStatus===0" class="text-danger">Fail</td>
       </tr>
     </tbody>
   </table>
