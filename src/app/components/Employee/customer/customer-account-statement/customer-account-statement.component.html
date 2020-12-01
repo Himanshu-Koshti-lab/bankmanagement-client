@@ -1,2 +1,25 @@
 <app-employee-navbar></app-employee-navbar>
-<p>customer-account-statement works!</p>
+<div class="container">
+    <h1>Customers Account Statement</h1>
+    <table class="table table-bordered" style="width:50%">
+      <thead>
+        <tr>
+          <th>Transaction Id</th>
+          <th>Sender Account Number</th>
+          <th>Receiver Account Number</th>
+          <th>Amount</th>
+          <th>Transaction Status </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Transaction of Transactions ">
+          <td>{{Transaction.transactionId}}</td>
+          <td>{{Transaction.senderAccountNumber}}</td>
+          <td>{{Transaction.receiverAccountNumber}}</td>
+          <td>{{Transaction.amount}}</td>
+          <td *ngIf="Transaction.transactionStatus===1" class="text-success">Success</td>
+          <td *ngIf="!Transaction.transactionStatus===0" class="text-danger">Fail</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-customer-account-statement',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerAccountStatementComponent implements OnInit {
 
-  constructor() { }
+  Transactions;
+  temp: any;
+
+  constructor(private _service: MainService) { }
 
   ngOnInit(): void {
+    this._service.getTransactionCustomersStatement().subscribe((data) => (this.Transactions = data));
+    this.temp = this.Transactions;
   }
 
 }
