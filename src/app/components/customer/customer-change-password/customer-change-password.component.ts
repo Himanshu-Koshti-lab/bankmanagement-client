@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MainService } from 'src/app/services/main.service';
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators}from '@angular/forms';
 import { ChangePassword } from 'src/app/model/change-password';
@@ -17,6 +16,7 @@ export class CustomerChangePasswordComponent implements OnInit {
 
   constructor(private  _service:MainService) { }
 
+  
   ngOnInit(): void {
     this.changePasswordForm = new FormGroup({
       'currentPassword': new FormControl(null,[Validators.required]),
