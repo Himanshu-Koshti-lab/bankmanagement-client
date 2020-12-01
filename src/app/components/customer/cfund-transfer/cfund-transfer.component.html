@@ -1,77 +1,9 @@
 <app-customer-navbar></app-customer-navbar>
-<h1>Fund Transfer</h1>
-<!--
-<div id="overflowTest">
-<div class="container">
-  <div class="row justify-content-sm-center pt-5">
-    <div class="col-sm-6 shadow round pb-3">
-      <form [formGroup]="transferFundForm" (ngSubmit)="Transfernow(transferFundForm.value); transferFundForm.reset()">
-        <div class="form-group">
-          <div class="required">
-            <label class="col-form-label">Sender Account Number:</label>
-          </div>
-          <input formControlName="senderAccountNumber" type="number" pattern="^[1-9][0-9]{5}$"
-            onKeyPress="if(this.value.length==6) return false;" placeholder="Enter Sender Account Number" onkeydown="return event.keyCode === 8 ||
-            event.keyCode === 46 ? true : !isNaN(Number(event.key))" class="form-control">
+<h2>Transfer Funds</h2>
 
-          <div
-            *ngIf="transferFundForm.get('senderAccountNumber').errors && (transferFundForm.get('senderAccountNumber').invalid && transferFundForm.get('senderAccountNumber').touched)">
-            <small class="text-danger" *ngIf="transferFundForm.get('senderAccountNumber').errors.required">sender
-              account number is required
-              field</small>
-            <small class="text-danger" *ngIf="transferFundForm.get('senderAccountNumber').errors.pattern">sender account
-              number should be 6
-              digit
-              long.</small>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="required">
-            <label class="col-form-label">Receiver Account Number:</label>
-          </div>
-          <input formControlName="receiverAccountNumber" type="number" pattern="^[1-9][0-9]{5}$"
-            onKeyPress="if(this.value.length==6) return false;" placeholder="Enter Reciever Account Number" onkeydown="return event.keyCode === 8 ||
-                event.keyCode === 46 ? true : !isNaN(Number(event.key))" class="form-control">
-          <div
-            *ngIf="transferFundForm.get('receiverAccountNumber').errors && (transferFundForm.get('receiverAccountNumber').invalid && transferFundForm.get('receiverAccountNumber').touched)">
-            <small class="text-danger" *ngIf="transferFundForm.get('receiverAccountNumber').errors.required">receiver
-              account Number is required
-              field</small>
-            <small class="text-danger" *ngIf="transferFundForm.get('receiverAccountNumber').errors.pattern">receiver
-              account number should be 6
-              digit
-              long.</small>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="required">
-            <label class="col-form-label">Amount:</label>
-          </div>
-          <input formControlName="amount" type="number" placeholder="Enter Amount" onkeydown="return event.keyCode === 8 ||
-                event.keyCode === 46 ? true : !isNaN(Number(event.key))" minlength="1" maxlength="5"
-            class="form-control">
-          <small
-            *ngIf=" transferFundForm.get('amount').invalid && transferFundForm.get('amount').touched && transferFundForm.controls.amount.errors"
-            class="text-danger"> Enter Amount it cannot be empty</small>
-        </div>
-        <div class="form-group">
-          <button [disabled]="transferFundForm.invalid" class="btn btn-primary" style="color: black;">Transfer</button>
-        </div>
-        <h5> <b> Notes:</b></h5>
-        <p>Wecare Bank is not responsible for</p>
-        <p> 1.Fund transferred to any unintended recipient.</p>
-        <p> 2.Retrieval of fund transferred to any unauthorised recipient.</p>
-        <p> 3.Charges/commission of any kind levied/charged by the payee's bank.</p>
-      </form>
-    </div>
-  </div>
-</div>
-</div> -->
-
-<form
+<!-- <form
   [formGroup]="transferFundForm"
-  (ngSubmit)="Transfernow(transferFundForm.value); transferFundForm.reset()"
->
+  (ngSubmit)="Transfernow(transferFundForm.value); transferFundForm.reset()">
   <div class="container">
     <div class="row justify-content-end">
       <div class="col-4">
@@ -206,4 +138,164 @@
 <p>Wecare Bank is not responsible for</p>
 <p>1.Fund transferred to any unintended recipient.</p>
 <p>2.Retrieval of fund transferred to any unauthorised recipient.</p>
-<p>3.Charges/commission of any kind levied/charged by the payee's bank.</p>
+<p>3.Charges/commission of any kind levied/charged by the payee's bank.</p> -->
+
+<div id="overflowTest">
+  
+<form
+  [formGroup]="transferFundForm"
+  (ngSubmit)="Transfernow(transferFundForm.value); transferFundForm.reset()"
+>
+  <div class="container">
+    <div class="row justify-content-sm-center">
+      <div class="col-3">
+        <div class="required">
+          <label>Sender Account Number : </label>
+        </div>
+      </div>
+      <div class="col-3">
+        <input
+          formControlName="senderAccountNumber"
+          type="number"
+          pattern="^[1-9][0-9]{5}$"
+          onKeyPress="if(this.value.length==6) return false;"
+          placeholder="Enter Sender Account Number"
+          onkeydown="return event.keyCode === 8 ||
+        event.keyCode === 46 ? true : !isNaN(Number(event.key))"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            transferFundForm.get('senderAccountNumber').errors &&
+            transferFundForm.get('senderAccountNumber').invalid &&
+              transferFundForm.get('senderAccountNumber').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="transferFundForm.get('senderAccountNumber').errors.required"
+            >sender account number is required field</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="transferFundForm.get('senderAccountNumber').errors.pattern"
+            >sender account number should be 6 digit long.</small
+          >
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="row justify-content-sm-center">
+      <div class="col-3">
+        <div class="required">
+          <label class="col-form-label"> Receiver Account Number : </label>
+        </div>
+      </div>
+      <div class="col-3">
+        <input
+          formControlName="receiverAccountNumber"
+          type="number"
+          pattern="^[1-9][0-9]{5}$"
+          onKeyPress="if(this.value.length==6) return false;"
+          placeholder="Enter Reciever Account Number"
+          onkeydown="return event.keyCode === 8 ||
+            event.keyCode === 46 ? true : !isNaN(Number(event.key))"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            transferFundForm.get('receiverAccountNumber').errors &&
+            transferFundForm.get('receiverAccountNumber').invalid &&
+              transferFundForm.get('receiverAccountNumber').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="
+              transferFundForm.get('receiverAccountNumber').errors.required
+            "
+            >receiver account Number is required field</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="transferFundForm.get('receiverAccountNumber').errors.pattern"
+            >receiver account number should be 6 digit long.</small
+          >
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="row justify-content-sm-center">
+      <div class="col-3">
+        <div class="required">
+          <label class="col-form-label"> Amount : </label>
+        </div>
+      </div>
+      <div class="col-3">
+        <input
+          formControlName="amount"
+          type="number"
+          placeholder="Enter Amount"
+          onkeydown="return event.keyCode === 8 ||
+    event.keyCode === 46 ? true : !isNaN(Number(event.key))"
+          minlength="1"
+          maxlength="5"
+          class="form-control"
+        />
+        <div>
+          <small
+            *ngIf="
+              transferFundForm.get('amount').invalid &&
+              transferFundForm.get('amount').touched &&
+              transferFundForm.controls.amount.errors
+            "
+            class="text-danger"
+          >
+            Enter Amount it cannot be empty</small
+          >
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="row justify-content-sm-center">
+      <div class="col-3">
+        <button
+          class="btn btn-danger cancelbtn"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Cancel!"
+        >
+          Cancel
+        </button>
+      </div>
+      <div class="col-3">
+        <button
+          [disabled]="transferFundForm.invalid"
+          class="btn btn-primary"
+          style="color: black"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Transfer!"
+        >
+          Transfer
+        </button>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-sm-end">
+      <div class="col">
+        <h5><b> Notes:</b></h5>
+        <p>1. Wecare Bank is not responsible for</p>
+        <p> &nbsp;&nbsp;&nbsp; 1.Fund transferred to any unintended recipient.</p>
+        <p>&nbsp;&nbsp;&nbsp;  2.Retrieval of fund transferred to any unauthorised recipient.</p>
+        <p>&nbsp;&nbsp;&nbsp;  3.Charges/commission of any kind levied/charged by the payee's bank.</p>
+        <p>2. Funds transfer will be carried out instantaneously</p>
+        <p>3. For any quesries,please feel free to contact us at <b>Customer care</b></p>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
