@@ -61,6 +61,7 @@ import { AdminChangePasswordComponent } from './components/admin/admin-change-pa
 import { EmployeeChangePasswordComponent } from './components/Employee/employee-change-password/employee-change-password.component';
 import { CustomerChangePasswordComponent } from './components/customer/customer-change-password/customer-change-password.component';
 import { ForgotPasswordDialogboxComponent } from './components/forgot-password-dialogbox/forgot-password-dialogbox.component';
+import { LogindialogComponent } from './components/dialogs/logindialog/logindialog.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import { ForgotPasswordDialogboxComponent } from './components/forgot-password-d
     AdminChangePasswordComponent,
     EmployeeChangePasswordComponent,
     CustomerChangePasswordComponent,
-    ForgotPasswordDialogboxComponent
+    ForgotPasswordDialogboxComponent,
+    LogindialogComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [

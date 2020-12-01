@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { User } from 'src/app/classes/user/user';
 import { MainService } from 'src/app/services/main.service';
+import { LogindialogComponent } from '../dialogs/logindialog/logindialog.component';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -15,13 +17,14 @@ export class ForgotpasswordComponent implements OnInit {
   OtpBased: boolean;
   validEmail: any;
   GenOtp: any;
-  //user;
   Updateuser: any;
   submitted = false;
+  GeneratedOtp: string;
   constructor(
     private _service: MainService,
     private _router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -49,6 +52,13 @@ export class ForgotpasswordComponent implements OnInit {
     this.validEmail = false;
     this.forgotPassByQue.reset();
   }
+  
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LogindialogComponent, {
+      width: '800px' ,
+      data: {GeneratedOtp: this.GenOtp}
+    });
+  }
   //Function For Submit forgotPassByQue Form
   forgotPassByQueF(user: User) {
     const resp = this._service.forgetPassByQuestionSer(user);
@@ -62,7 +72,6 @@ export class ForgotpasswordComponent implements OnInit {
       (err) => alert('Something went wrong Question and Answer')
     );
   }
-
   forgotPassByOtp(user: User) {
     const resp = this._service.forgetPassByOtpSer(user);
     resp.subscribe(
@@ -74,7 +83,7 @@ export class ForgotpasswordComponent implements OnInit {
           alert('User Not Found');
         } else {
           this.validEmail = true;
-          alert('Your One Time Password is ' + this.GenOtp);
+          this.openDialog();
         }
       },
       (err) => {
@@ -100,7 +109,6 @@ export class ForgotpasswordComponent implements OnInit {
 
   //event handler for the select element's change event
   selectChangeHandler(event: any) {
-    //update the ui
     this.selectedQuestion = event.target.value;
   }
 
