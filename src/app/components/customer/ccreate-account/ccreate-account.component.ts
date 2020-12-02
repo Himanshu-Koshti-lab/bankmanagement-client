@@ -27,20 +27,21 @@ export class CcreateAccountComponent implements OnInit {
 
     this.accountForm = this.formBuilder.group({
       emailID: ['', [Validators.required, Validators.email]],
-      accountType:['',[Validators.required]]
+      userAccountType:['',[Validators.required]]
   });
   this._service.getCustomer().subscribe((data) => this.Customer = data);
   }
 
-  accountType: number = 1;
+  userAccountType: number = 1;
 
   selectChangeHandler(event:any){
-    this.accountType = event.target.value;
-    console.log(this.accountType);
+    this.userAccountType = event.target.value;
+    console.log(this.userAccountType);
   }
 
   onSubmit(accountCreate:AccountCreate){
     accountCreate.emailID=this.Customer.emailID;
+    accountCreate.user_id=this.Customer.user_id;
     const resp =  this._service.createAccount(accountCreate);
     resp.subscribe(
       data => {

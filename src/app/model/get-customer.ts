@@ -1,4 +1,5 @@
 export class GetCustomer {
+    user_id:number;
     firstName:string;
     lastName:string;
     emailID:string;
