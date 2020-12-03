@@ -32,6 +32,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import {AdminChangePasswordComponent} from './components/admin/admin-change-password/admin-change-password.component';
 import {EmployeeChangePasswordComponent} from './components/Employee/employee-change-password/employee-change-password.component';
 import {CustomerChangePasswordComponent} from './components/customer/customer-change-password/customer-change-password.component';
+import {CustomerAccountRegistrationRequestComponent} from './components/admin/request/customer/customer-account-registration-request/customer-account-registration-request.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
   {path:'Admin/employeeRequest/employeeRegistrationRequest', component:EmployeeRegistrationRequestsComponent},
   {path:'Admin/employeeRequest/employeeUpdateProfile', component:EmployeeUpdateProfileComponent},
   {path:'Admin/customerRequest/customerRegistrationRequest',component:CustomerRegistrationRequestComponent},
+  {path:'Admin/customerRequest/customerAccountRegistrationRequest',component:CustomerAccountRegistrationRequestComponent},
   {path:'Admin/customerRequest/customerUpdateProfile',component:CustomerUpdateProfileComponent},
   {path:'CustomerHome',component:CHomeComponent},
   {path:'Customer/CustomerDetails',component:CcustomerdetailsComponent},

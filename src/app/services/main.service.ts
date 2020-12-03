@@ -9,6 +9,7 @@ import { AccountCreate } from '../model/account-create';
 import { UpdateUser } from '../classes/update-user';
 import { UpdateRequests } from '../classes/update-requests';
 import {ChangePassword} from '../model/change-password';
+import {AccountCreationApproveRejectRequest} from '../model/account-creation-approve-reject-request';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
@@ -139,6 +140,13 @@ export class MainService {
     return this._http.post(
       'http://localhost:8084/RequestVerifyUpdate',
       updaterequests
+    );
+  }
+
+  verifyAccountRequestApproved(accountCreationApproveRejectRequest: AccountCreationApproveRejectRequest) {
+    return this._http.post(
+      'http://localhost:8084/register-accountApprovereject',
+      accountCreationApproveRejectRequest
     );
   }
 

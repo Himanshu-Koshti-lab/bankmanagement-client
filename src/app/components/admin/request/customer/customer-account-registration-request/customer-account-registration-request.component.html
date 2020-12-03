@@ -1,0 +1,24 @@
+<app-adminnavbar></app-adminnavbar>
+<h1 style="text-align: center;">Customer Account Registration Request</h1>
+<div class="">
+    <table class="table table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Account Number</th>
+          <th>Balance</th>
+          <th>Account Type</th>
+          <th>Action</th>
+        </tr>       
+    
+        <tr *ngFor="let customer of AllCustomers">
+          <td>{{customer.firstName +" "+customer.lastName}}</td>
+          <td>{{customer.accountNumber}}</td>
+          <td>{{customer.balance}}</td>
+          <td *ngIf="customer.accountTypeId===1">Salary</td>
+          <td *ngIf="customer.accountTypeId===2">Current</td>
+          <td *ngIf="customer.accountStatusId===3"><button (click)="verifyAccount(accountCreationApproveRejectRequest)" class="btn btn-success">Approve</button> <button (click)="rejectRegistrationRequest(customer)" class="btn btn-danger">Reject</button></td>
+          <td *ngIf="customer.registrationStatus===2" class="text-success">Approved</td>
+          <td *ngIf="customer.registrationStatus===3" class="text-danger">Rejected</td>
+        </tr>
+      </table>
+</div>
