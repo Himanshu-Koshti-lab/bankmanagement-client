@@ -19,6 +19,7 @@ export class CcreateAccountComponent implements OnInit {
   
   Customer:any;
   Updateuser: Object;
+  temp:any;
 
 
   constructor( private _service: MainService, private _router: Router, private formBuilder: FormBuilder ) { }
@@ -44,10 +45,9 @@ export class CcreateAccountComponent implements OnInit {
     accountCreate.user_id=this.Customer.user_id;
     const resp =  this._service.createAccount(accountCreate);
     resp.subscribe(
-      data => {
-        this.Updateuser = data
-        console.log(this.Updateuser)
-        alert("Account Creation request submitted")
+      (data) => {
+        this.temp = data
+        alert(this.temp.message)
       },
       err => 
       alert("Something went wrong with Email/Account Type"))
