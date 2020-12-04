@@ -63,6 +63,8 @@ import { CustomerChangePasswordComponent } from './components/customer/customer-
 import { ForgotPasswordDialogboxComponent } from './components/forgot-password-dialogbox/forgot-password-dialogbox.component';
 import { LogindialogComponent } from './components/dialogs/logindialog/logindialog.component';
 import { CustomerAccountRegistrationRequestComponent } from './components/admin/request/customer/customer-account-registration-request/customer-account-registration-request.component';
+import {MatTableModule} from '@angular/material/table';
+import { CustomerCreateAccountDialogboxComponent } from './components/customer/customer-create-account-dialogbox/customer-create-account-dialogbox.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +112,8 @@ import { CustomerAccountRegistrationRequestComponent } from './components/admin/
     CustomerChangePasswordComponent,
     ForgotPasswordDialogboxComponent,
     LogindialogComponent,
-    CustomerAccountRegistrationRequestComponent
+    CustomerAccountRegistrationRequestComponent,
+    CustomerCreateAccountDialogboxComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
@@ -130,6 +133,7 @@ import { CustomerAccountRegistrationRequestComponent } from './components/admin/
     AppRoutingModule,
     MatPaginatorModule,
     CarouselModule,
+    MatTableModule,
     BrowserAnimationsModule
   ],
   providers: [{
