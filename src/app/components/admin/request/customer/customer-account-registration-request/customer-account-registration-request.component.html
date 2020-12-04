@@ -14,9 +14,11 @@
           <td>{{customer.firstName +" "+customer.lastName}}</td>
           <td>{{customer.accountNumber}}</td>
           <td>{{customer.balance}}</td>
-          <td *ngIf="customer.accountTypeId===1">Salary</td>
-          <td *ngIf="customer.accountTypeId===2">Current</td>
-          <td *ngIf="customer.accountRegStatus===1"><button (click)="verifyAccount(customer)" class="btn btn-success">Approve</button> <button (click)="rejectRegistrationRequest(customer)" class="btn btn-danger">Reject</button></td>
+          <td *ngIf="customer.accounttype===1">Salary</td>
+          <td *ngIf="customer.accounttype===2">Current</td>
+          <td *ngIf="customer.accountregstatus===1"><button (click)="verifyAccount(customer)" class="btn btn-success">Approve</button> <button (click)="rejectRegistrationRequest(customer)" class="btn btn-danger">Reject</button></td>
+          <td *ngIf="customer.accountregstatus===2" class="text-success">Approved</td>
+          <td *ngIf="customer.accountregstatus===3" class="text-danger">Rejected</td>
         </tr>
       </table>
 </div>
