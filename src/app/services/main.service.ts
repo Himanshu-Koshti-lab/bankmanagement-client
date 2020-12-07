@@ -10,6 +10,7 @@ import { UpdateUser } from '../classes/update-user';
 import { UpdateRequests } from '../classes/update-requests';
 import {ChangePassword} from '../model/change-password';
 import {AccountCreationApproveRejectRequest} from '../model/account-creation-approve-reject-request';
+import { CustomerUpdateMobile } from '../model/customer-update-mobile';
 // import { Userotp } from '../classes/userotp';
 
 @Injectable({
@@ -38,6 +39,22 @@ export class MainService {
     );
   }
   // End Here
+
+  raisemobnorequest(customerUpdateMobile:UpdateRequests):Observable<any> {
+    return this._http.post<any>("http://localhost:8081/MobileUpdateRequest",customerUpdateMobile);
+  }
+
+  getCustomerMobNoUpdateRequest():Observable<any> {
+    return this._http.get<any>('http://localhost:8081/requestlist');
+  }
+
+  approveMobNoRequest(updaterequests: CustomerUpdateMobile){
+    return this._http.post('http://localhost:8081/UpdateMobileNoRequestApproved', updaterequests);
+  }
+
+  rejectMobNoRequest(updaterequests: CustomerUpdateMobile){
+    return this._http.post('http://localhost:8081/UpdateMobileNoRequestReject', updaterequests);
+  }
 
   getCustomerFromRemote(): Observable<any> {
     return this._http.get<any>('http://localhost:8083/getCustomerList');

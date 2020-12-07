@@ -1,0 +1,18 @@
+<app-adminnavbar></app-adminnavbar>
+<h1 style="text-align: center;">Customer's Mobile No Update Requests</h1>
+<div class="">
+    <table class="table table-striped" style="width:50%">
+        <tr>
+          <th>User Request Id</th>
+          <th>Email ID</th>
+          <th>New Mobile No</th>
+          <th>Action</th>
+        </tr>
+            <tr *ngFor="let updaterequests of AllCustomers">
+              <td>{{updaterequests.req_id}}</td>
+              <td>{{updaterequests.emailID}}</td>
+              <td>{{updaterequests.newmobileNo}}</td>
+              <td><button (click)="approveMobNoRequest(updaterequests)" class="btn btn-success" style="margin-right: 30px;">Approve</button> <button (click)="rejectMobNoRequest(updaterequests)" class="btn btn-danger" style="margin-left: 20px;" >Reject</button></td>
+            </tr>
+      </table>
+</div>
