@@ -11,8 +11,10 @@
             <tr *ngFor="let updaterequests of AllCustomers">
               <td>{{updaterequests.req_id}}</td>
               <td>{{updaterequests.emailID}}</td>
-              <td>{{updaterequests.newmobileNo}}</td>
-              <td><button (click)="approveMobNoRequest(updaterequests)" class="btn btn-success" style="margin-right: 30px;">Approve</button> <button (click)="rejectMobNoRequest(updaterequests)" class="btn btn-danger" style="margin-left: 20px;" >Reject</button></td>
+              <td>{{updaterequests.newmobileNo}}</td>                 
+              <td *ngIf="updaterequests.userRequestStatus.id===1"><button (click)="approveMobNoRequest(updaterequests)"  class="btn btn-success" style="margin-right: 30px;">Approve</button> <button (click)="rejectMobNoRequest(updaterequests)"  class="btn btn-danger" style="margin-left: 20px;" >Reject</button>
+              <td *ngIf="updaterequests.userRequestStatus.id===2" class="text-success">Approved</td>
+              <td *ngIf="updaterequests.userRequestStatus.id===3" class="text-danger">Rejected</td>
             </tr>
       </table>
 </div>
