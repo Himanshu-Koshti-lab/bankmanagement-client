@@ -174,10 +174,6 @@ export class MainService {
   verifyAccountRequestApprovedReject(
     accountCreationApproveRejectRequest: AccountCreationApproveRejectRequest
   ) {
-    console.log(accountCreationApproveRejectRequest.accountregstatus);
-    console.log(accountCreationApproveRejectRequest.accounttype);
-    console.log(accountCreationApproveRejectRequest.user_id);
-
     return this._http.post(
       'http://localhost:8084/register-accountApprovereject',
       accountCreationApproveRejectRequest
