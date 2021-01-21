@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 import { AccountCreate } from '../model/account-create';
 import { UpdateUser } from '../classes/update-user';
 import { UpdateRequests } from '../classes/update-requests';
-import {ChangePassword} from '../model/change-password';
-import {AccountCreationApproveRejectRequest} from '../model/account-creation-approve-reject-request';
+import { ChangePassword } from '../model/change-password';
+import { AccountCreationApproveRejectRequest } from '../model/account-creation-approve-reject-request';
 import { CustomerUpdateMobile } from '../model/customer-update-mobile';
 // import { Userotp } from '../classes/userotp';
 
@@ -18,7 +18,10 @@ import { CustomerUpdateMobile } from '../model/customer-update-mobile';
 })
 export class MainService {
   registerUserFromRemote(user: User): Observable<any> {
-    return this._http.post<any>('http://localhost:8081/service/register-user',user);
+    return this._http.post<any>(
+      'http://localhost:8081/service/register-user',
+      user
+    );
   }
 
   // Email For Generate OTP
@@ -40,24 +43,33 @@ export class MainService {
   }
   // End Here
 
-  raisemobnorequest(customerUpdateMobile:UpdateRequests):Observable<any> {
-    return this._http.post<any>("http://localhost:8081/MobileUpdateRequest",customerUpdateMobile);
+  raisemobnorequest(customerUpdateMobile: UpdateRequests): Observable<any> {
+    return this._http.post<any>(
+      'http://localhost:8081/MobileUpdateRequest',
+      customerUpdateMobile
+    );
   }
 
-  getCustomerMobNoUpdateRequest():Observable<any> {
+  getCustomerMobNoUpdateRequest(): Observable<any> {
     return this._http.get<any>('http://localhost:8081/requestlist');
   }
 
-  approveMobNoRequest(updaterequests: CustomerUpdateMobile){
-    return this._http.post('http://localhost:8081/UpdateMobileNoRequestApproved', updaterequests);
+  approveMobNoRequest(updaterequests: CustomerUpdateMobile) {
+    return this._http.post(
+      'http://localhost:8081/UpdateMobileNoRequestApproved',
+      updaterequests
+    );
   }
 
-  rejectMobNoRequest(updaterequests: CustomerUpdateMobile){
-    return this._http.post('http://localhost:8081/UpdateMobileNoRequestReject', updaterequests);
+  rejectMobNoRequest(updaterequests: CustomerUpdateMobile) {
+    return this._http.post(
+      'http://localhost:8081/UpdateMobileNoRequestReject',
+      updaterequests
+    );
   }
 
   getCustomerFromRemote(): Observable<any> {
-    return this._http.get<any>('http://localhost:8083/getCustomerList');
+    return this._http.get<any>('http://localhost:8081/getCustomerList');
   }
 
   getAccountDetails(): Observable<any> {
@@ -69,7 +81,7 @@ export class MainService {
   }
 
   getEmployeeFromRemote(): Observable<any> {
-    return this._http.get<any>('http://localhost:8083/getEmployeeList');
+    return this._http.get<any>('http://localhost:8081/getEmployeeList');
   }
 
   approveRegistrationRequest(customerResponse: CustomerResponse) {
@@ -116,15 +128,15 @@ export class MainService {
   }
 
   getCustomer(): Observable<any> {
-    return this._http.get<any>('http://localhost:8083/getCustomer');
+    return this._http.get<any>('http://localhost:8081/getCustomer');
   }
 
   getEmployee(): Observable<any> {
-    return this._http.get<any>('http://localhost:8083/getEmployee');
+    return this._http.get<any>('http://localhost:8081/getEmployee');
   }
 
   getAdmin(): Observable<any> {
-    return this._http.get<any>('http://localhost:8083/getAdmin');
+    return this._http.get<any>('http://localhost:8081/getAdmin');
   }
 
   createAccount(accountCreate: AccountCreate) {
@@ -142,8 +154,7 @@ export class MainService {
   }
 
   getTransactionCustomersStatement(): Observable<any> {
-    return this._http.get<any>(
-      'http://localhost:8082/getCustomerTransaction');
+    return this._http.get<any>('http://localhost:8082/getCustomerTransaction');
   }
 
   doUpdate(update: UpdateUser): Observable<any> {
@@ -160,11 +171,13 @@ export class MainService {
     );
   }
 
-  verifyAccountRequestApprovedReject(accountCreationApproveRejectRequest: AccountCreationApproveRejectRequest) {
-    console.log(accountCreationApproveRejectRequest.accountregstatus)
-    console.log(accountCreationApproveRejectRequest.accounttype)
-    console.log(accountCreationApproveRejectRequest.user_id)
-    
+  verifyAccountRequestApprovedReject(
+    accountCreationApproveRejectRequest: AccountCreationApproveRejectRequest
+  ) {
+    console.log(accountCreationApproveRejectRequest.accountregstatus);
+    console.log(accountCreationApproveRejectRequest.accounttype);
+    console.log(accountCreationApproveRejectRequest.user_id);
+
     return this._http.post(
       'http://localhost:8084/register-accountApprovereject',
       accountCreationApproveRejectRequest
@@ -178,7 +191,10 @@ export class MainService {
     );
   }
   changePasswordService(changePassword: ChangePassword) {
-    return this._http.put('http://localhost:8081/UpdatePassword',changePassword);
+    return this._http.put(
+      'http://localhost:8081/UpdatePassword',
+      changePassword
+    );
   }
   constructor(private _http: HttpClient, private router: Router) {}
 }
