@@ -192,5 +192,6 @@ export class MainService {
       changePassword
     );
   }
+
   constructor(private _http: HttpClient, private router: Router) {}
 }

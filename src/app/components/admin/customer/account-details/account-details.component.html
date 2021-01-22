@@ -1,26 +1,64 @@
 <app-adminnavbar></app-adminnavbar>
 <h1 style="text-align: center;">Customer Account Details</h1>
 <div class="">
-    <table class="table table-striped">
-        <tr>
-          <th>Name</th>
-          <th>Account Number</th>
-          <th>Balance</th>
-          <th>Acccount Type</th>
-          <th>Acccount Status</th>
-        </tr>       
-    
-        <tr *ngFor="let customer of AllCustomers">
-          <td>{{customer.firstName +" "+customer.lastName}}</td>
-          <td *ngIf="customer.accountNumber===0" class="text-danger">Pending</td>
-          <td *ngIf="customer.accountNumber!=0">{{customer.accountNumber}}</td>
-          <td *ngIf="customer.balance===0" class="text-danger">Pending</td>
-          <td *ngIf="customer.balance!=0">{{customer.balance}}</td>
-          <td *ngIf="customer.accountTypeId===1">Salary</td>
-          <td *ngIf="customer.accountTypeId===2" class="text-success">Current</td>
-          <td *ngIf="customer.accountStatusId===1" class="text-success">Active</td>
-          <td *ngIf="customer.accountStatusId===2" class="text-danger">Inactive</td>
-          <td *ngIf="customer.accountStatusId===3" class="text-primary">Deactivated</td>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Account Number</th>
+      <th>Balance</th>
+      <th>Acccount Type</th>
+      <th>Acccount Status</th>
+
+
+    </tr>
+
+    <tr *ngFor="let customer of AllCustomers">
+      <td>{{customer.firstName +" "+customer.lastName}}</td>
+      <td *ngIf="customer.accountNumber===0" class="text-danger">Pending</td>
+      <td *ngIf="customer.accountNumber!=0">{{customer.accountNumber}}</td>
+      <td *ngIf="customer.balance===0" class="text-danger">Pending</td>
+      <td *ngIf="customer.balance!=0">{{customer.balance}}</td>
+      <td *ngIf="customer.accounttype===1">Salary</td>
+      <td *ngIf="customer.accounttype===2">Current</td>
+      <td *ngIf="customer.accountStatusId===1" class="text-success">Active</td>
+      <td *ngIf="customer.accountStatusId===2" class="text-danger">Inactive</td>
+      <td *ngIf="customer.accountStatusId===3" class="text-primary">Deactivated</td>
+    </tr>
+
+    <!-- <tr *ngFor="let a2 of AllUsers">
+
         </tr>
-      </table>
+        
+        <tr *ngFor="let a1 of Allaccounts" *ngIf = "a1.userId === a2.user_id">
+          <td>{{a1.firstName +" "+a1.lastName}}</td>
+          <td *ngIf="a1.accountNumber===0" class="text-danger">Pending</td>
+          <td *ngIf="a1.accountNumber!=0">{{a1.accountNumber}}</td>
+          <td *ngIf="a1.balance===0" class="text-danger">Pending</td>
+          <td *ngIf="a1.balance!=0">{{a1.balance}}</td>
+          <td *ngIf="a1.accountTypeId===1">Salary</td>
+          <td *ngIf="a1.accountTypeId===2" class="text-success">Current</td>
+          <td *ngIf="a1.accountStatusId===1" class="text-success">Active</td>
+          <td *ngIf="a1.accountStatusId===2" class="text-danger">Inactive</td>
+          <td *ngIf="a1.accountStatusId===3" class="text-primary">Deactivated</td>
+        </tr> -->
+    <!-- 
+    <tr *ngFor="let a1 of Allaccounts">
+      <span *ngFor="let a2 of AllUsers">
+        <span *ngIf="a1.userId === a2.user_id">
+          <td>{{a2.firstName +" "+a2.lastName}}</td>
+          <td *ngIf="a1.accountNumber===0" class="text-danger">Pending</td>
+          <td bgcolor="yellow" *ngIf="a1.accountNumber!=0">{{a1.accountNumber}}</td>
+          <td *ngIf="a1.balance===0" class="text-danger">Pending</td>
+          <td *ngIf="a1.balance!=0">{{a1.balance}}</td>
+          <td *ngIf="a1.userAccountType===1">Salary</td>
+          <td *ngIf="a1.userAccountType===2" class="text-success">Current</td>
+          <td *ngIf="a1.userAccountStatusType===1" class="text-success">Active</td>
+          <td *ngIf="a1.userAccountStatusType===2" class="text-danger">Inactive</td>
+          <td *ngIf="a1.userAccountStatusType===3" class="text-primary">Deactivated</td>
+        </span>
+      </span>
+    </tr> -->
+
+
+  </table>
 </div>
