@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -9,8 +10,10 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class EmployeeDashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private _service:MainService) { }
 
+  Employee;
+  
   ngOnInit(): void {
     if(sessionStorage.getItem("token") === null){
       this.router.navigateByUrl('login')
@@ -26,6 +29,7 @@ export class EmployeeDashboardComponent implements OnInit {
           this.router.navigateByUrl('employeeDashboard')
         else 
           this.router.navigateByUrl('CustomerHome')
+          this._service.getEmployee().subscribe((data) => this.Employee = data);
   }
 
   customOptions: OwlOptions = {
