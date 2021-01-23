@@ -12,6 +12,7 @@
     <mat-menu #accountinfoSub="matMenu" class="bg-info">
       <button mat-menu-item routerLink="/Customer/Account_Information/Create_Account">Create Account</button>
       <button mat-menu-item routerLink="/Customer/Account_Information/Account_Statement">Account Statement</button>
+      <button mat-menu-item routerLink="/Customer/CustomerAccountDetails">Account Details</button>
     </mat-menu>
     <button mat-button routerLink="/Customer/Fund_Transfer">Transfer Fund</button>
     
@@ -22,7 +23,7 @@
       <button mat-menu-item routerLink="/Customer/CustomerMobileNumberUpdateComponent">Mobile Number</button>
     </mat-menu>
 
-
+    <!-- Customer/CustomerAccountDetails -->
     <button mat-button  (click)="onLogout()" >Logout</button>
   </mat-toolbar>
 </nav>

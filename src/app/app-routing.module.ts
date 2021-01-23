@@ -36,6 +36,7 @@ import {CustomerAccountRegistrationRequestComponent} from './components/admin/re
 import { CustomerMobileNumberUpdateComponent } from './components/customer/customer-mobile-number-update/customer-mobile-number-update.component';
 import { CustomerMobileNumberRequestApproveComponent } from './components/admin/request/customer/customer-mobile-number-request-approve/customer-mobile-number-request-approve.component';
 import { TestingComponentComponent } from './components/testing-component/testing-component.component';
+import { AccountinfoComponent } from './components/customer/accountinfo/accountinfo.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
   {path:'Admin/customerRequest/customerUpdateProfile',component:CustomerUpdateProfileComponent},
   {path:'CustomerHome',component:CHomeComponent},
   {path:'Customer/CustomerDetails',component:CcustomerdetailsComponent},
+  {path:'Customer/CustomerAccountDetails',component:AccountinfoComponent},
   {path:'Customer/Account_Information/Create_Account',component:CcreateAccountComponent},
   {path:'Customer/Account_Information/Account_Statement',component:CaccountStatementComponent},
   {path:'Customer/Fund_Transfer',component:CFundTransferComponent},
@@ -74,8 +76,7 @@ const routes: Routes = [
   {path:'Employee/changePassword',component:EmployeeChangePasswordComponent},
   {path:'Customer/changePassword',component:CustomerChangePasswordComponent},
   {path:'Customer/CustomerMobileNumberUpdateComponent',component:CustomerMobileNumberUpdateComponent},
-  {path:'Admin/customerRequest/CustomerMobileNumberRequestApproveComponent',component:CustomerMobileNumberRequestApproveComponent}
-  ,
+  {path:'Admin/customerRequest/CustomerMobileNumberRequestApproveComponent',component:CustomerMobileNumberRequestApproveComponent},
   {path:'testing',component:TestingComponentComponent}
 ];
 
