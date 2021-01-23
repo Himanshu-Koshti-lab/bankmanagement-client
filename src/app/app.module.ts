@@ -68,6 +68,9 @@ import { CustomerCreateAccountDialogboxComponent } from './components/customer/c
 import { CustomerMobileNumberUpdateComponent } from './components/customer/customer-mobile-number-update/customer-mobile-number-update.component';
 import { CustomerMobileNumberRequestApproveComponent } from './components/admin/request/customer/customer-mobile-number-request-approve/customer-mobile-number-request-approve.component';
 
+import { ChartsModule } from 'ng2-charts';
+import { TestingComponentComponent } from './components/testing-component/testing-component.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -117,7 +120,8 @@ import { CustomerMobileNumberRequestApproveComponent } from './components/admin/
     CustomerAccountRegistrationRequestComponent,
     CustomerCreateAccountDialogboxComponent,
     CustomerMobileNumberUpdateComponent,
-    CustomerMobileNumberRequestApproveComponent
+    CustomerMobileNumberRequestApproveComponent,
+    TestingComponentComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [
@@ -138,7 +142,8 @@ import { CustomerMobileNumberRequestApproveComponent } from './components/admin/
     MatPaginatorModule,
     CarouselModule,
     MatTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChartsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

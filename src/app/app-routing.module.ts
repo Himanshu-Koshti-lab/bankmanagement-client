@@ -35,6 +35,7 @@ import {CustomerChangePasswordComponent} from './components/customer/customer-ch
 import {CustomerAccountRegistrationRequestComponent} from './components/admin/request/customer/customer-account-registration-request/customer-account-registration-request.component';
 import { CustomerMobileNumberUpdateComponent } from './components/customer/customer-mobile-number-update/customer-mobile-number-update.component';
 import { CustomerMobileNumberRequestApproveComponent } from './components/admin/request/customer/customer-mobile-number-request-approve/customer-mobile-number-request-approve.component';
+import { TestingComponentComponent } from './components/testing-component/testing-component.component';
 
 
 const routes: Routes = [
@@ -74,7 +75,8 @@ const routes: Routes = [
   {path:'Customer/changePassword',component:CustomerChangePasswordComponent},
   {path:'Customer/CustomerMobileNumberUpdateComponent',component:CustomerMobileNumberUpdateComponent},
   {path:'Admin/customerRequest/CustomerMobileNumberRequestApproveComponent',component:CustomerMobileNumberRequestApproveComponent}
-  
+  ,
+  {path:'testing',component:TestingComponentComponent}
 ];
 
 @NgModule({
