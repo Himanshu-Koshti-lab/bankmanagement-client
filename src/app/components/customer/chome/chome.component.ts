@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-chome',
@@ -9,7 +10,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class CHomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private _service: MainService) { }
+
+  Customer:any;
 
   ngOnInit(): void {
     if(sessionStorage.getItem("token") === null){
@@ -26,6 +29,9 @@ export class CHomeComponent implements OnInit {
           this.router.navigateByUrl('employeeDashboard')
         else 
           this.router.navigateByUrl('CustomerHome')
+
+          this._service.getCustomer().subscribe((data) => this.Customer = data);
+          
   }
 
   customOptions: OwlOptions = {
