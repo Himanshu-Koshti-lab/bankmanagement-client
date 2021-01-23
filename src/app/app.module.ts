@@ -67,6 +67,7 @@ import {MatTableModule} from '@angular/material/table';
 import { CustomerCreateAccountDialogboxComponent } from './components/customer/customer-create-account-dialogbox/customer-create-account-dialogbox.component';
 import { CustomerMobileNumberUpdateComponent } from './components/customer/customer-mobile-number-update/customer-mobile-number-update.component';
 import { CustomerMobileNumberRequestApproveComponent } from './components/admin/request/customer/customer-mobile-number-request-approve/customer-mobile-number-request-approve.component';
+import { AccountinfoComponent } from './components/customer/accountinfo/accountinfo.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +118,8 @@ import { CustomerMobileNumberRequestApproveComponent } from './components/admin/
     CustomerAccountRegistrationRequestComponent,
     CustomerCreateAccountDialogboxComponent,
     CustomerMobileNumberUpdateComponent,
-    CustomerMobileNumberRequestApproveComponent
+    CustomerMobileNumberRequestApproveComponent,
+    AccountinfoComponent
   ],
   entryComponents:[DialogboxComponent],
   imports: [

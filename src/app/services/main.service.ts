@@ -147,10 +147,7 @@ export class MainService {
   }
 
   getTransactionStatement(): Observable<any> {
-    return this._http.post<any>(
-      'http://localhost:8082/getAlltransaction',
-      null
-    );
+    return this._http.get<any>('http://localhost:8082/getMyTransaction');
   }
 
   getTransactionCustomersStatement(): Observable<any> {
