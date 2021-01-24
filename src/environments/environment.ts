@@ -7,10 +7,10 @@ export const environment = {
   clientId: 'ABCD',
   clientSecret: 'ABCD',
   scope: 'read',
-  USER_API: 'http://localhost:8081/',
-  TRANSACTION_API: 'http://localhost:8082/',
-  DASHBOARD_API: 'http://localhost:8083/',
-  ACCOUNT_API: 'http://localhost:8084/',
+  USER_API: 'http://localhost:8081',
+  TRANSACTION_API: 'http://localhost:8082',
+  DASHBOARD_API: 'http://localhost:8083',
+  ACCOUNT_API: 'http://localhost:8084',
 };
 
 /*
