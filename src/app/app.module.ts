@@ -71,6 +71,7 @@ import { AccountinfoComponent } from './components/customer/accountinfo/accounti
 
 import { ChartsModule } from 'ng2-charts';
 import { TestingComponentComponent } from './components/testing-component/testing-component.component';
+import { ChangePasswordDialogComponent } from './common/change-password-dialog/change-password-dialog.component';
 
 @NgModule({
   declarations: [
@@ -123,9 +124,10 @@ import { TestingComponentComponent } from './components/testing-component/testin
     CustomerMobileNumberUpdateComponent,
     CustomerMobileNumberRequestApproveComponent,
     TestingComponentComponent,
-    AccountinfoComponent
+    AccountinfoComponent,
+    ChangePasswordDialogComponent
   ],
-  entryComponents:[DialogboxComponent],
+  entryComponents:[DialogboxComponent, ChangePasswordDialogComponent],
   imports: [
     BrowserModule,
     FormsModule,
