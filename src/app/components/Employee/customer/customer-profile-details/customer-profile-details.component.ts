@@ -10,7 +10,8 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class CustomerProfileDetailsComponent implements OnInit {
   AllCustomers;
-
+  emailID;
+  
   constructor(private _service: MainService, private _http: HttpClient) {}
 
   ngOnInit(): void {
@@ -18,4 +19,8 @@ export class CustomerProfileDetailsComponent implements OnInit {
       .getCustomerForEmployeeFromRemote()
       .subscribe((data) => (this.AllCustomers = data));
   }
+
+  
+  
+  
 }

@@ -33,7 +33,6 @@ export class AdminChangePasswordComponent implements OnInit {
   public changePassword(changePassword:ChangePassword){
     let resp= this._service.changePasswordService(changePassword);
    resp.subscribe((data)=>this.message=data);
-   //alert("Password Updated Successfully");
    this.openDialog();
      }
 

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/classes/user/user';
 import { MainService } from 'src/app/services/main.service';
 import { LogindialogComponent } from '../dialogs/logindialog/logindialog.component';
+import { ForgotPasswordDialogboxComponent } from '../forgot-password-dialogbox/forgot-password-dialogbox.component';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -72,6 +73,7 @@ export class ForgotpasswordComponent implements OnInit {
       (err) => alert('Something went wrong Question and Answer')
     );
   }
+  
   forgotPassByOtp(user: User) {
     const resp = this._service.forgetPassByOtpSer(user);
     resp.subscribe(

@@ -48,7 +48,6 @@ export class CcreateAccountComponent implements OnInit {
     resp.subscribe(
       (data) => {
         this.temp = data
-        // alert(this.temp.message)
         this.openDialog();
       },
       err => 

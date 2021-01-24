@@ -72,6 +72,9 @@ import { AccountinfoComponent } from './components/customer/accountinfo/accounti
 import { ChartsModule } from 'ng2-charts';
 import { TestingComponentComponent } from './components/testing-component/testing-component.component';
 import { ChangePasswordDialogComponent } from './common/change-password-dialog/change-password-dialog.component';
+import { ForgotPasswordDialogComponent } from './common/forgot-password-dialog/forgot-password-dialog.component';
+
+
 
 @NgModule({
   declarations: [
@@ -125,7 +128,8 @@ import { ChangePasswordDialogComponent } from './common/change-password-dialog/c
     CustomerMobileNumberRequestApproveComponent,
     TestingComponentComponent,
     AccountinfoComponent,
-    ChangePasswordDialogComponent
+    ChangePasswordDialogComponent,
+    ForgotPasswordDialogComponent
   ],
   entryComponents:[DialogboxComponent, ChangePasswordDialogComponent],
   imports: [
@@ -147,7 +151,8 @@ import { ChangePasswordDialogComponent } from './common/change-password-dialog/c
     CarouselModule,
     MatTableModule,
     BrowserAnimationsModule,
-    ChartsModule
+    ChartsModule,
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
