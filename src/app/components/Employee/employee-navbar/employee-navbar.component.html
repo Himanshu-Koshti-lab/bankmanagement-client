@@ -1,15 +1,14 @@
 <div class="logo">
-    <img src="../../assets/images/header.jpg" alt="image not found">
+  <img src="../../assets/images/header.jpg" alt="image not found">
 </div>
 <nav>
-    <mat-toolbar  class="bg-primary">
-    <button mat-button  routerLink="/employeeDashboard" > Home </button>
-    
+  <mat-toolbar class="bg-primary">
+    <button mat-button routerLink="/employeeDashboard"> Home </button>
+
 
     <button mat-button [matMenuTriggerFor]="employee">Employee</button>
     <mat-menu #employee="matMenu" class="bg-info">
       <button mat-menu-item routerLink="/Employee/employeeProfile">Employee Details</button>
-      <button mat-menu-item routerLink="/Employee/changePassword">Change Password</button>
     </mat-menu>
 
     <button mat-button [matMenuTriggerFor]="customer">Customer</button>
@@ -18,11 +17,11 @@
       <button mat-menu-item routerLink="/Employee/customer/customerProfileDetails">Customer details</button>
       <button mat-menu-item routerLink="/Employee/customer/customerAccountStatement">Account Statement</button>
     </mat-menu>
-    <button mat-button [matMenuTriggerFor]="employee">Update Details</button>
-    <mat-menu #employee="matMenu" class="bg-info">  
-      <button mat-menu-item routerLink="/Employee/customer/changePassword" >Change password</button>
+    <button mat-button [matMenuTriggerFor]="updateDetails">Update Details</button>
+    <mat-menu #updateDetails="matMenu" class="bg-info">
+      <button mat-menu-item routerLink="/Employee/changePassword">Change password</button>
     </mat-menu>
-    
-    <button mat-button (click)="onLogout()" > Logout </button>
-</mat-toolbar>
+
+    <button mat-button (click)="onLogout()"> Logout </button>
+  </mat-toolbar>
 </nav>
