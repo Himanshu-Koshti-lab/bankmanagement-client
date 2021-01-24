@@ -2,104 +2,70 @@
 
 <div class="container">
     <div class="row">
-<div *ngFor="let account of AllAccount " class="col-lg-6 mb-4s">
-    <!-- *ngIf="account.userAccountStatusType!=3" -->
-    <div class="flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <h1>
-                    <p *ngIf="account.userAccountType===1">Saving Account</p>
-                    <p *ngIf="account.userAccountType===2">Current Account</p>
-                </h1>
-            </div>
-            <div class="flip-card-back">
-                <table>
-                    <tr>
-                        <td>
-                            <label>
-                                Account Number :
-                            </label>
-                        </td>
-                        <td>
-                            <input type="text" disabled placeholder="{{account.accountNumber}}">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                                Balance :
-                            </label>
-                        </td>
-                        <td>
-                            <input type="text" disabled placeholder="{{account.balance}}">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                                Reg Status :
-                            </label>
-                        </td>
-                        <td>
-                            <input type="text" disabled placeholder="PENDING" *ngIf="account.accountRegStatusType===1">
-                            <input type="text" disabled placeholder="APPROVED" *ngIf="account.accountRegStatusType===2">
-                            <input type="text" disabled placeholder="REJECTED" *ngIf="account.accountRegStatusType===3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                                Account Status :
-                            </label>
-                        </td>
-                        <td>
-                            <input type="text" disabled placeholder="ACTIVE" *ngIf="account.userAccountStatusType===1">
-                            <input type="text" disabled placeholder="INACTIVE"
-                                *ngIf="account.userAccountStatusType===2">
-                            <input type="text" disabled placeholder="DEACTIVATED"
-                                *ngIf="account.userAccountStatusType===3">
-                        </td>
-                    </tr>
-                </table>
-
-
-
-
-
-                <!-- <h1>
-                    <p>Account Number: {{account.accountNumber}}</p><br>
-                    <p>Balance : {{account.balance}}</p><br>
-                    <p>Reg Status : {{account.accountRegStatusType}}</p><br>
-                    <p>Account Status : {{account.userAccountStatusType}}</p>
-                </h1> -->
-                <!-- <th>Account Number </th>
-                    <th>Balance </th>
-                    <th>Reg Status </th>
-                    <th>Account Status </th>
-                    <td>{{account.accountNumber}}</td>
-                    <td>{{account.balance}}</td>
-                    <td>{{account.accountRegStatusType}}</td>
-                    <td>{{account.userAccountStatusType}}</td> -->
+        <div *ngFor="let account of AllAccount " class="col-lg-6 mb-4s">
+            <!-- *ngIf="account.userAccountStatusType!=3" -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h1>
+                            <p *ngIf="account.userAccountType===1">Saving Account</p>
+                            <p *ngIf="account.userAccountType===2">Current Account</p>
+                        </h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Account Number :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="{{account.accountNumber}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Balance :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="{{account.balance}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Reg Status :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="PENDING"
+                                        *ngIf="account.accountRegStatusType===1">
+                                    <input type="text" disabled placeholder="APPROVED"
+                                        *ngIf="account.accountRegStatusType===2">
+                                    <input type="text" disabled placeholder="REJECTED"
+                                        *ngIf="account.accountRegStatusType===3">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Account Status :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="ACTIVE"
+                                        *ngIf="account.userAccountStatusType===1">
+                                    <input type="text" disabled placeholder="INACTIVE"
+                                        *ngIf="account.userAccountStatusType===2">
+                                    <input type="text" disabled placeholder="DEACTIVATED"
+                                        *ngIf="account.userAccountStatusType===3">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-lg-6 mb-4">
-            <div class="card">
-                <img class="card-img-top" src="" alt="">
-
-
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card">
-                <img class="card-img-top" src="" alt="">
-
-
-            </div>
-        </div>
-    </div>
-</div> -->
