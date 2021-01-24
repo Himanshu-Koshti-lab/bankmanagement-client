@@ -150,6 +150,10 @@ export class MainService {
     return this._http.get<any>('http://localhost:8082/getMyTransaction');
   }
 
+  getUserAccounts(): Observable<any> {
+    return this._http.get<any>('http://localhost:8084/getUserAccounts');
+  }
+
   getTransactionCustomersStatement(): Observable<any> {
     return this._http.get<any>('http://localhost:8082/getCustomerTransaction');
   }
