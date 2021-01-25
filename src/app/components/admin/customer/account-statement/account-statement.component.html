@@ -1,7 +1,7 @@
 <app-adminnavbar></app-adminnavbar>
 <div class="container">
   <h1>Customers Account Statement</h1>
-  <table class="table table-bordered" >
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Transaction Id</th>
@@ -19,7 +19,7 @@
         <td>{{Transaction.receiverAccountNumber}}</td>
         <td>{{Transaction.amount}}</td>
         <td *ngIf="Transaction.transactionStatus===1" class="text-success">Success</td>
-        <td *ngIf="!Transaction.transactionStatus===0" class="text-danger">Fail</td>
+        <td *ngIf="Transaction.transactionStatus===0" class="text-danger">Fail</td>
         <td>{{Transaction.transactionType}}</td>
       </tr>
     </tbody>
