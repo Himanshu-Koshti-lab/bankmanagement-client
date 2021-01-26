@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MainService } from 'src/app/services/main.service';
 import { TransactionRecord } from 'src/app/classes/transactionrecord';
 import { MatPaginator } from '@angular/material/paginator';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-caccount-statement',
   templateUrl: './caccount-statement.component.html',
@@ -41,9 +42,13 @@ export class CaccountStatementComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private _service: MainService) {}
+  constructor(
+    private _service: MainService,
+    private spinner: NgxSpinnerService
+  ) {}
 
   ngOnInit(): void {
+    this.spinner.show();
     this._service
       .getTransactionStatement()
       .subscribe((data) => (this.Transactions = data));
@@ -51,5 +56,9 @@ export class CaccountStatementComponent implements OnInit {
 
     this.getData();
     this.dataSource.paginator = this.paginator;
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
   }
 }

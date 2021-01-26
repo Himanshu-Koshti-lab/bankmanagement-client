@@ -7,18 +7,19 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { FooterComponent } from './components/footer/footer.component';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 import { BannerComponent } from './components/banner/banner.component';
@@ -27,7 +28,7 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminnavbarComponent } from './components/navbar/AdminNavbar/adminnavbar/adminnavbar.component';
 import { SampleComponent } from './components/sample/sample.component';
-import {DropdownDirective} from './shared/dropdown.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 import { AccountDetailsComponent } from './components/admin/customer/account-details/account-details.component';
 import { CustomerDetailsComponent } from './components/admin/customer/customer-details/customer-details.component';
 import { AccountStatementComponent } from './components/admin/customer/account-statement/account-statement.component';
@@ -49,8 +50,8 @@ import { CustomerAccountDetailsComponent } from './components/Employee/customer/
 import { CustomerAccountStatementComponent } from './components/Employee/customer/customer-account-statement/customer-account-statement.component';
 import { ChangePasswordComponent } from './components/Employee/updateDetails/change-password/change-password.component';
 import { CustomerProfileDetailsComponent } from './components/Employee/customer/customer-profile-details/customer-profile-details.component';
-import { TokenInterceptorService } from './services/token-interceptor.service'
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { from } from 'rxjs';
 import { EmpDetailsComponent } from './components/Employee/emp-details/emp-details.component';
@@ -63,7 +64,7 @@ import { CustomerChangePasswordComponent } from './components/customer/customer-
 import { ForgotPasswordDialogboxComponent } from './components/forgot-password-dialogbox/forgot-password-dialogbox.component';
 import { LogindialogComponent } from './components/dialogs/logindialog/logindialog.component';
 import { CustomerAccountRegistrationRequestComponent } from './components/admin/request/customer/customer-account-registration-request/customer-account-registration-request.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { CustomerCreateAccountDialogboxComponent } from './components/customer/customer-create-account-dialogbox/customer-create-account-dialogbox.component';
 import { CustomerMobileNumberUpdateComponent } from './components/customer/customer-mobile-number-update/customer-mobile-number-update.component';
 import { CustomerMobileNumberRequestApproveComponent } from './components/admin/request/customer/customer-mobile-number-request-approve/customer-mobile-number-request-approve.component';
@@ -73,8 +74,6 @@ import { ChartsModule } from 'ng2-charts';
 import { TestingComponentComponent } from './components/testing-component/testing-component.component';
 import { ChangePasswordDialogComponent } from './common/change-password-dialog/change-password-dialog.component';
 import { ForgotPasswordDialogComponent } from './common/forgot-password-dialog/forgot-password-dialog.component';
-
-
 
 @NgModule({
   declarations: [
@@ -129,9 +128,9 @@ import { ForgotPasswordDialogComponent } from './common/forgot-password-dialog/f
     TestingComponentComponent,
     AccountinfoComponent,
     ChangePasswordDialogComponent,
-    ForgotPasswordDialogComponent
+    ForgotPasswordDialogComponent,
   ],
-  entryComponents:[DialogboxComponent, ChangePasswordDialogComponent],
+  entryComponents: [DialogboxComponent, ChangePasswordDialogComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -146,19 +145,21 @@ import { ForgotPasswordDialogComponent } from './common/forgot-password-dialog/f
     MatDialogModule,
     MatMenuModule,
     NgxCaptchaModule,
+    NgxSpinnerModule,
     AppRoutingModule,
     MatPaginatorModule,
     CarouselModule,
     MatTableModule,
     BrowserAnimationsModule,
     ChartsModule,
-
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass:TokenInterceptorService,
-    multi:true
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
