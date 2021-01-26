@@ -6,6 +6,7 @@ import {
   NgForm,
   Validators,
 } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { from } from 'rxjs';
 import { TransferFundRequest } from 'src/app/model/transfer-fund-request';
 import { MainService } from 'src/app/services/main.service';
@@ -22,9 +23,17 @@ export class CFundTransferComponent implements OnInit {
   AllAccount: any;
   message: any;
 
-  constructor(private service: MainService) {}
+  constructor(
+    private service: MainService,
+    private spinner: NgxSpinnerService
+  ) {}
 
   ngOnInit(): void {
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
     this.service
       .getUserAccounts()
       .subscribe((data) => (this.AllAccount = data));
@@ -47,7 +56,6 @@ export class CFundTransferComponent implements OnInit {
   accountNumber: number = 0;
   selectChangeHandler(event: any) {
     this.accountNumber = event.target.value;
-    console.log(this.accountNumber);
   }
 
   public Transfernow(TransferFundRequest: TransferFundRequest) {

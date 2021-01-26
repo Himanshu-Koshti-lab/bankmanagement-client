@@ -17,7 +17,7 @@ export class CupdateDetailsComponent implements OnInit {
   Submit: FormGroup;
   updateuser = new UpdateUser();
   msg: any;
-  Customer:any;
+  Customer: any;
 
   UpdateForm: FormGroup;
 
@@ -25,22 +25,15 @@ export class CupdateDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.UpdateForm = this.formBuilder.group({
-      mobileNo: new FormControl(null, [
-        Validators.required,
-        Validators.maxLength(10),
-        Validators.pattern('[789][0-9]{9}'),
-      ]),
       AccountStatus: new FormControl(null, [
         Validators.required,
         Validators.maxLength(10),
       ]),
     });
-    this.service.getCustomer().subscribe((data) => this.Customer = data);
+    this.service.getCustomer().subscribe((data) => (this.Customer = data));
   }
   updateUser(updateuser: UpdateUser) {
-    console.log(this.Customer.emailID)
     updateuser.emailID = this.Customer.emailID;
-    console.log(updateuser.AccountStatus)
     this.service.doUpdate(this.updateuser).subscribe(
       (data) => {
         console.log('response received');
