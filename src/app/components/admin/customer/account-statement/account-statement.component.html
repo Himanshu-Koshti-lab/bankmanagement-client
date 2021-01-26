@@ -10,6 +10,7 @@
         <th>Amount</th>
         <th>Transaction Status </th>
         <th>Transaction Type</th>
+        <th>Current Balance</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
         <td *ngIf="Transaction.transactionStatus===1" class="text-success">Success</td>
         <td *ngIf="Transaction.transactionStatus===0" class="text-danger">Fail</td>
         <td>{{Transaction.transactionType}}</td>
+        <td>{{Transaction.balance}} </td>
       </tr>
     </tbody>
   </table>
