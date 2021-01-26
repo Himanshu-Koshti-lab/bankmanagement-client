@@ -1,6 +1,8 @@
 <app-customer-navbar></app-customer-navbar>
 <h1>Customer Details</h1>
-
+<!-- <ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+</ngx-spinner> -->
 <div class="container">
     <div class="row justify-content-sm-center">
         <div class="col-3">
@@ -8,17 +10,19 @@
         </div>
 
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{ Customer.firstName }}" disabled data-toggle="tooltip" data-placement="bottom" title="{{ Customer.firstName }}!">
+            <input type="text" class="form-control" placeholder="{{ Customer.firstName }}" disabled
+                data-toggle="tooltip" data-placement="bottom" title="{{ Customer.firstName }}!">
         </div>
     </div>
-<br>
+    <br>
     <div class="row justify-content-sm-center">
         <div class="col-3">
             <label for="lastName">Last Name: </label>
         </div>
 
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.lastName}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Customer.lastName}}!">
+            <input type="text" class="form-control" placeholder="{{Customer.lastName}}" disabled data-toggle="tooltip"
+                data-placement="bottom" title="{{Customer.lastName}}!">
         </div>
     </div>
     <br>
@@ -29,7 +33,8 @@
         </div>
 
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.emailID}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Customer.emailID}}!">
+            <input type="text" class="form-control" placeholder="{{Customer.emailID}}" disabled data-toggle="tooltip"
+                data-placement="bottom" title="{{Customer.emailID}}!">
         </div>
     </div>
 
@@ -40,7 +45,8 @@
         </div>
 
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.mobileNo}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Customer.mobileNo}}!">
+            <input type="text" class="form-control" placeholder="{{Customer.mobileNo}}" disabled data-toggle="tooltip"
+                data-placement="bottom" title="{{Customer.mobileNo}}!">
         </div>
     </div>
     <br>
@@ -51,7 +57,8 @@
         </div>
 
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.permanentAddress}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentAddress}}!">
+            <input type="text" class="form-control" placeholder="{{Customer.permanentAddress}}" disabled
+                data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentAddress}}!">
         </div>
     </div>
     <br>
@@ -63,17 +70,19 @@
         </div>
 
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.permanentCity}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentCity}}!">
+            <input type="text" class="form-control" placeholder="{{Customer.permanentCity}}" disabled
+                data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentCity}}!">
         </div>
     </div>
-<br>
+    <br>
     <div class="row justify-content-sm-center">
         <div class="col-3">
             <label for="permanentState: ">State: </label>
         </div>
 
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.permanentState}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentState}}!">
+            <input type="text" class="form-control" placeholder="{{Customer.permanentState}}" disabled
+                data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentState}}!">
         </div>
     </div>
 </div>

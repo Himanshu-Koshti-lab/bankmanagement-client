@@ -47,15 +47,14 @@ export class CaccountStatementComponent implements OnInit {
     private spinner: NgxSpinnerService
   ) {}
 
-  ngOnInit(): void {
-    this.spinner.show();
+  ngOnInit() {
     this._service
       .getTransactionStatement()
       .subscribe((data) => (this.Transactions = data));
     this.temp = this.Transactions;
-
     this.getData();
     this.dataSource.paginator = this.paginator;
+    this.spinner.show();
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
