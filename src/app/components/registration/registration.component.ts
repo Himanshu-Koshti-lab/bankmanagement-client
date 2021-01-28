@@ -78,7 +78,8 @@ export class RegistrationComponent implements OnInit {
     private _router: Router,
     public dialog: MatDialog
   ) {
-    this.siteKey = '6LfDCjsaAAAAABW9cqJ_pYej5CtdUOXz94_3cH3F';
+    //6Lc9ktMZAAAAANyXdtiP4A-TDXMdX1KVvxnOL5WN 6LfDCjsaAAAAABW9cqJ_pYej5CtdUOXz94_3cH3F
+    this.siteKey = '6Lc9ktMZAAAAANyXdtiP4A-TDXMdX1KVvxnOL5WN';
   }
 
   ngOnInit(): void {}

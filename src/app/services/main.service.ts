@@ -109,7 +109,7 @@ export class MainService {
 
   approveEmployeeRegistrationRequest(customerResponse: CustomerResponse) {
     return this._http.post(
-      environment.DASHBOARD_API +
+      environment.USER_API +
         '/service/register-userEmployeeRegistrationVerify',
       customerResponse
     );

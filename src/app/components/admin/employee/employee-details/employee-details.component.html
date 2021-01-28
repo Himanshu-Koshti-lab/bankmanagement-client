@@ -4,8 +4,8 @@
   <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
 </ngx-spinner>
 
-<h1>Employee Details</h1>
-<div class="">
+
+<!-- <div class="">
     <table class="table table-striped">
         <tr>
           <th>User Id</th>
@@ -21,4 +21,62 @@
           <td *ngIf="employee.registrationStatus===2">{{employee.dob}}</td>
         </tr>
       </table>
+</div> -->
+
+<div class="container">
+  <h1>Employee Details</h1>
+
+  <mat-form-field class="container">
+    <mat-label>Search Here</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container">
+
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+      <td mat-cell *matCellDef="let element">
+        <label *ngIf="element.registrationStatus===2" >{{element.id}}
+        </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+      <td mat-cell *matCellDef="let element">
+        <label *ngIf="element.registrationStatus===2" >{{element.firstName + " " + element.lastName}}
+        </label>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="emailID">
+      <th mat-header-cell *matHeaderCellDef> Employee Email ID </th>
+      <td mat-cell *matCellDef="let element">
+        <label *ngIf="element.registrationStatus===2" >{{element.emailID}}
+        </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef> Date of Birth</th>
+      <td mat-cell *matCellDef="let element">
+        <label *ngIf="element.registrationStatus===2" >{{element.dob}}
+        </label>
+      </td>
+    </ng-container>
+
+   
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+
+
+  </table>
+  <mat-paginator [pageSizeOptions]="[7]" showFirstLastButtons></mat-paginator>
 </div>
