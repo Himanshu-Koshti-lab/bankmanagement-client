@@ -4,4 +4,5 @@ export class AdminCustomerCustomerDetails {
     lastName:string;
     emailID:string;
     dob:string
+    registrationStatus:number;
 }

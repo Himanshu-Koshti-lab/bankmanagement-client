@@ -27,7 +27,6 @@ export class CustomerDetailsComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
     'firstName',
-    'lastName',
     'emailID',
     'dob'
   ];
@@ -35,7 +34,7 @@ export class CustomerDetailsComponent implements OnInit {
   //AdminCustomerCustomerDetails
   public getData() {
     this._service
-      .getTransactionStatement()
+      .getCustomerFromRemote()
       .subscribe(
         (report) => (
           (this.dataSource.data = report as AdminCustomerCustomerDetails[]),
