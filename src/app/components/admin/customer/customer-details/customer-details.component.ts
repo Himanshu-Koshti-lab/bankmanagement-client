@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { AdminCustomerCustomerDetails } from 'src/app/model/admin-customer-customer-details';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-customer-details',
@@ -8,11 +12,54 @@ import { MainService } from 'src/app/services/main.service';
   styleUrls: ['./customer-details.component.css']
 })
 export class CustomerDetailsComponent implements OnInit {
+
   AllCustomers;
-  constructor(private _service:MainService,private _http:HttpClient) { }
+  temp: any;
+  ELEMENT_DATA: AdminCustomerCustomerDetails[];
+
+  
+
+  constructor(private _service:MainService,private _http:HttpClient, private spinner: NgxSpinnerService) { }
+
+  dataSource = new MatTableDataSource<AdminCustomerCustomerDetails>(this.ELEMENT_DATA);
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  displayedColumns: string[] = [
+    'id',
+    'firstName',
+    'lastName',
+    'emailID',
+    'dob'
+  ];
+
+  //AdminCustomerCustomerDetails
+  public getData() {
+    this._service
+      .getTransactionStatement()
+      .subscribe(
+        (report) => (
+          (this.dataSource.data = report as AdminCustomerCustomerDetails[]),
+          (this.dataSource.paginator = this.paginator)
+        )
+      );
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   ngOnInit(): void {
     this._service.getCustomerFromRemote().subscribe((data) => this.AllCustomers = data);
+    this.temp = this.AllCustomers;
+    this.getData();
+    this.dataSource.paginator = this.paginator;
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
+
   }
 
 }

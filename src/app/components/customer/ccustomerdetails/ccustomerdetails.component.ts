@@ -11,6 +11,8 @@ import { MainService } from 'src/app/services/main.service';
 export class CcustomerdetailsComponent implements OnInit {
   Customer: any;
 
+  temp:any;
+
   constructor(
     private _service: MainService,
     private _http: HttpClient,
@@ -19,5 +21,11 @@ export class CcustomerdetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this._service.getCustomer().subscribe((data) => (this.Customer = data));
+    this.temp = this.Customer;
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
   }
 }
