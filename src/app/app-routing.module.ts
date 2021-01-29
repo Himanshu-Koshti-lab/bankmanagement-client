@@ -35,8 +35,9 @@ import {CustomerChangePasswordComponent} from './components/customer/customer-ch
 import {CustomerAccountRegistrationRequestComponent} from './components/admin/request/customer/customer-account-registration-request/customer-account-registration-request.component';
 import { CustomerMobileNumberUpdateComponent } from './components/customer/customer-mobile-number-update/customer-mobile-number-update.component';
 import { CustomerMobileNumberRequestApproveComponent } from './components/admin/request/customer/customer-mobile-number-request-approve/customer-mobile-number-request-approve.component';
-import { TestingComponentComponent } from './components/testing-component/testing-component.component';
 import { AccountinfoComponent } from './components/customer/accountinfo/accountinfo.component';
+import { CustomerDashboardComponent } from './components/admin/customer/customer-dashboard/customer-dashboard.component';
+import { EmployeeRegistrationDashboardComponent } from './components/admin/employee/employee-registration-dashboard/employee-registration-dashboard.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,7 @@ const routes: Routes = [
   {path:'Admin/customerRequest/customerRegistrationRequest',component:CustomerRegistrationRequestComponent},
   {path:'Admin/customerRequest/customerAccountRegistrationRequest',component:CustomerAccountRegistrationRequestComponent},
   {path:'Admin/customerRequest/customerUpdateProfile',component:CustomerUpdateProfileComponent},
+  {path:'Admin/Customer/customerDashboard',component:CustomerDashboardComponent},
   {path:'CustomerHome',component:CHomeComponent},
   {path:'Customer/CustomerDetails',component:CcustomerdetailsComponent},
   {path:'Customer/CustomerAccountDetails',component:AccountinfoComponent},
@@ -70,14 +72,14 @@ const routes: Routes = [
   {path:'Employee/customer/customerProfileDetails',component:CustomerProfileDetailsComponent},
   {path:'Employee/customer/changePassword',component:ChangePasswordComponent},
   {path:'employeeDashboard',component:EmployeeDashboardComponent},
+  {path:'Admin/Employee/dashboard',component:EmployeeRegistrationDashboardComponent},
   {path:'Employee/employeeProfile',component:EmpDetailsComponent},
   {path:'Admin/adminProfile',component:AdminProfileComponent},
   {path:'Admin/changePassword',component:AdminChangePasswordComponent},
   {path:'Employee/changePassword',component:EmployeeChangePasswordComponent},
   {path:'Customer/changePassword',component:CustomerChangePasswordComponent},
   {path:'Customer/CustomerMobileNumberUpdateComponent',component:CustomerMobileNumberUpdateComponent},
-  {path:'Admin/customerRequest/CustomerMobileNumberRequestApproveComponent',component:CustomerMobileNumberRequestApproveComponent},
-  {path:'testing',component:TestingComponentComponent}
+  {path:'Admin/customerRequest/CustomerMobileNumberRequestApproveComponent',component:CustomerMobileNumberRequestApproveComponent}
 ];
 
 @NgModule({

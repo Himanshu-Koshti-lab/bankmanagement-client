@@ -71,9 +71,11 @@ import { CustomerMobileNumberRequestApproveComponent } from './components/admin/
 import { AccountinfoComponent } from './components/customer/accountinfo/accountinfo.component';
 
 import { ChartsModule } from 'ng2-charts';
-import { TestingComponentComponent } from './components/testing-component/testing-component.component';
 import { ChangePasswordDialogComponent } from './common/change-password-dialog/change-password-dialog.component';
 import { ForgotPasswordDialogComponent } from './common/forgot-password-dialog/forgot-password-dialog.component';
+import { CustomerDashboardComponent } from './components/admin/customer/customer-dashboard/customer-dashboard.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { EmployeeRegistrationDashboardComponent } from './components/admin/employee/employee-registration-dashboard/employee-registration-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -125,10 +127,11 @@ import { ForgotPasswordDialogComponent } from './common/forgot-password-dialog/f
     CustomerCreateAccountDialogboxComponent,
     CustomerMobileNumberUpdateComponent,
     CustomerMobileNumberRequestApproveComponent,
-    TestingComponentComponent,
     AccountinfoComponent,
     ChangePasswordDialogComponent,
     ForgotPasswordDialogComponent,
+    CustomerDashboardComponent,
+    EmployeeRegistrationDashboardComponent,
   ],
   entryComponents: [DialogboxComponent, ChangePasswordDialogComponent],
   imports: [
@@ -152,6 +155,7 @@ import { ForgotPasswordDialogComponent } from './common/forgot-password-dialog/f
     MatTableModule,
     BrowserAnimationsModule,
     ChartsModule,
+    MatGridListModule
   ],
   providers: [
     {
