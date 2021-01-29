@@ -32,8 +32,6 @@ export class LoginComponent implements OnInit {
 
     if (sessionStorage.getItem('token') !== null) {
       this._router.navigateByUrl('home');
-      console.log('First Logout');
-      alert('First Logout');
     }
     console.log(sessionStorage.getItem('token'));
   }

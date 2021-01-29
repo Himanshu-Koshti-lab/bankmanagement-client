@@ -53,11 +53,11 @@ export class ForgotpasswordComponent implements OnInit {
     this.validEmail = false;
     this.forgotPassByQue.reset();
   }
-  
+
   openDialog(): void {
     const dialogRef = this.dialog.open(LogindialogComponent, {
-      width: '800px' ,
-      data: {GeneratedOtp: this.GenOtp}
+      width: '800px',
+      data: { GeneratedOtp: this.GenOtp },
     });
   }
   //Function For Submit forgotPassByQue Form
@@ -73,7 +73,7 @@ export class ForgotpasswordComponent implements OnInit {
       (err) => alert('Something went wrong Question and Answer')
     );
   }
-  
+
   forgotPassByOtp(user: User) {
     const resp = this._service.forgetPassByOtpSer(user);
     resp.subscribe(
@@ -90,7 +90,6 @@ export class ForgotpasswordComponent implements OnInit {
       },
       (err) => {
         this.validEmail = false;
-        alert('Please Enter Email First');
       }
     );
   }
@@ -98,14 +97,10 @@ export class ForgotpasswordComponent implements OnInit {
     this.validEmail = false;
     const resp = this._service.verifyotp(user);
     this.forgotPassByQue.reset();
-    resp.subscribe(
-      (data) => {
-        this.validEmail = data;
-        console.log(this.validEmail);
-        alert('Password Updated Successfully');
-      },
-      (err) => alert('Something went wrong with Email,Question and Password')
-    );
+    resp.subscribe((data) => {
+      this.validEmail = data;
+      console.log(this.validEmail);
+    });
   }
   selectedQuestion: string = 'What Is your favorite book?';
 
