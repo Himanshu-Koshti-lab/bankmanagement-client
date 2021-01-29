@@ -35,10 +35,10 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
   </mat-form-field>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container table-striped">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>
-        Employee Registration Request ID
+         Request ID
       </th>
       <td mat-cell *matCellDef="let element">
         <label>{{ element.id }} </label>
@@ -67,7 +67,7 @@
     </ng-container>
 
     <ng-container matColumnDef="registrationStatus">
-      <th mat-header-cell *matHeaderCellDef>Employee Registration Status</th>
+      <th mat-header-cell *matHeaderCellDef> Registration Status</th>
       <td mat-cell *matCellDef="let element">
         <span *ngIf="element.registrationStatus === 1">
           <button (click)="approveEmployee(element)" class="btn btn-success">

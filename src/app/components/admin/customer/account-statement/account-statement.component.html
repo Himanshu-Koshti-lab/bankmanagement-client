@@ -40,7 +40,7 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
   </mat-form-field>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container table-striped">
 
     <!-- Position Column -->
     <ng-container matColumnDef="transactionId">
@@ -52,13 +52,13 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="senderAccountNumber">
-      <th mat-header-cell *matHeaderCellDef> Sender Account </th>
+      <th mat-header-cell *matHeaderCellDef> Sender Account Number</th>
       <td mat-cell *matCellDef="let element"> {{element.senderAccountNumber}} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="receiverAccountNumber">
-      <th mat-header-cell *matHeaderCellDef> Reciever Account </th>
+      <th mat-header-cell *matHeaderCellDef> Reciever Account Number</th>
       <td mat-cell *matCellDef="let element"> {{element.receiverAccountNumber}} </td>
     </ng-container>
 
@@ -69,7 +69,7 @@
     </ng-container>
 
     <ng-container matColumnDef="transactionStatus">
-      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <th mat-header-cell *matHeaderCellDef> Transaction Status </th>
       <td mat-cell *matCellDef="let element">
         <label *ngIf="element.transactionStatus" class="text-success">Success
         </label>
@@ -83,7 +83,7 @@
     </ng-container>
 
     <ng-container matColumnDef="transactionType">
-      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <th mat-header-cell *matHeaderCellDef> Transaction Type </th>
       <td mat-cell *matCellDef="let element"> {{element.transactionType}} </td>
     </ng-container>
 

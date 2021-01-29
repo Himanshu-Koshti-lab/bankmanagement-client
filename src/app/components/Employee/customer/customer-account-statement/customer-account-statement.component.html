@@ -44,7 +44,7 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
   </mat-form-field>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container table-striped">
     <!-- Position Column -->
     <ng-container matColumnDef="transactionId">
       <th mat-header-cell *matHeaderCellDef>
@@ -76,7 +76,7 @@
     </ng-container>
 
     <ng-container matColumnDef="transactionStatus">
-      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <th mat-header-cell *matHeaderCellDef>Transaction Status</th>
       <td mat-cell *matCellDef="let element">
         <label *ngIf="element.transactionStatus === 1" class="text-success"
           >Success

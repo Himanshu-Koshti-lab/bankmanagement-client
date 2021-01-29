@@ -51,9 +51,9 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
   </mat-form-field>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container table-striped">
     <ng-container matColumnDef="accountNumber">
-      <th mat-header-cell *matHeaderCellDef>Account Number</th>
+      <th mat-header-cell *matHeaderCellDef>Customer Account Number</th>
       <td mat-cell *matCellDef="let element">
         <label
           *ngIf="element.accountNumber === 0 && element.accountregstatus != 1"
