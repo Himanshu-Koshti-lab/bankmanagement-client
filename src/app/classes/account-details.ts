@@ -5,4 +5,5 @@ export class AccountDetails {
     balance:number;
     accounttype:number;
     accountStatusId:number;
+    accountregstatus:number;
 }
