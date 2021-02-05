@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -74,7 +75,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ChangePasswordDialogComponent } from './common/change-password-dialog/change-password-dialog.component';
 import { ForgotPasswordDialogComponent } from './common/forgot-password-dialog/forgot-password-dialog.component';
 import { CustomerDashboardComponent } from './components/admin/customer/customer-dashboard/customer-dashboard.component';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { EmployeeRegistrationDashboardComponent } from './components/admin/employee/employee-registration-dashboard/employee-registration-dashboard.component';
 
 @NgModule({
@@ -155,7 +156,7 @@ import { EmployeeRegistrationDashboardComponent } from './components/admin/emplo
     MatTableModule,
     BrowserAnimationsModule,
     ChartsModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   providers: [
     {
@@ -163,6 +164,7 @@ import { EmployeeRegistrationDashboardComponent } from './components/admin/emplo
       useClass: TokenInterceptorService,
       multi: true,
     },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent],
 })
