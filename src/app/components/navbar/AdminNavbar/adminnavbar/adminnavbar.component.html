@@ -16,6 +16,9 @@
 
     <button mat-button [matMenuTriggerFor]="customer">Customer</button>
     <mat-menu #customer="matMenu" class="bg-info">
+      <button mat-menu-item routerLink="/Admin/Customer/customerDashboard">
+        Dashboard
+      </button>
       <button mat-menu-item routerLink="/Admin/Customer/accountDetails">
         Account details
       </button>
@@ -24,9 +27,6 @@
       </button>
       <button mat-menu-item routerLink="/Admin/Customer/accountStatement">
         Account Statement
-      </button>
-      <button mat-menu-item routerLink="/Admin/Customer/customerDashboard">
-        Dashboard
       </button>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="employee">Employee</button>
