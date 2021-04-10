@@ -1,0 +1,13 @@
+table {
+  width: 80%;
+  align-items: center;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 25%;
+  align-self: center;
+}
+.mat-paginator {
+  align-items: center;
+}

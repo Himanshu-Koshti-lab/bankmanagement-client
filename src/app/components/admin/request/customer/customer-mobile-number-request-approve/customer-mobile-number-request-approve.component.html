@@ -1,0 +1,96 @@
+<app-adminnavbar></app-adminnavbar>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+</ngx-spinner>
+
+<!-- <div class="">
+    <table class="table table-striped" style="width:50%">
+        <tr>
+          <th>User Request Id</th>
+          <th>Email ID</th>
+          <th>New Mobile No</th>
+          <th>Action</th>
+        </tr>
+            <tr *ngFor="let updaterequests of AllCustomers">
+              <td>{{updaterequests.req_id}}</td>
+              <td>{{updaterequests.emailID}}</td>
+              <td>{{updaterequests.newmobileNo}}</td>                 
+              <td *ngIf="updaterequests.userRequestStatus.id===1"><button (click)="approveMobNoRequest(updaterequests)"  class="btn btn-success" style="margin-right: 30px;">Approve</button> <button (click)="rejectMobNoRequest(updaterequests)"  class="btn btn-danger" style="margin-left: 20px;" >Reject</button>
+              <td *ngIf="updaterequests.userRequestStatus.id===2" class="text-success">Approved</td>
+              <td *ngIf="updaterequests.userRequestStatus.id===3" class="text-danger">Rejected</td>
+            </tr>
+      </table>
+</div> -->
+
+<div class="container">
+  <h1 style="text-align: center;">Customer's Mobile No Update Requests</h1>
+
+  <mat-form-field class="container">
+    <mat-label>Search Here</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container table-striped">
+   
+
+    <ng-container matColumnDef="req_id">
+      <th mat-header-cell *matHeaderCellDef>Request ID</th>
+      <td mat-cell *matCellDef="let element">
+        <label>{{ element.req_id }} </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="emailID">
+      <th mat-header-cell *matHeaderCellDef>Customer Email ID</th>
+      <td mat-cell *matCellDef="let element">
+        <label>{{ element.emailID }} </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="newmobileNo">
+      <th mat-header-cell *matHeaderCellDef>New Mobile Number</th>
+      <td mat-cell *matCellDef="let element">
+        <label>{{ element.newmobileNo }} </label>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="userRequestStatus">
+      <th mat-header-cell *matHeaderCellDef>Account Registration Status</th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="element.userRequestStatus.id === 1">
+          <button (click)="approveMobNoRequest(element)" class="btn btn-success">
+            Approve
+          </button>
+          <button
+            (click)="rejectMobNoRequest(element)"
+            class="btn btn-danger"
+          >
+            Reject
+          </button>
+        </span>
+
+        <label *ngIf="element.userRequestStatus.id === 2" class="text-success"
+          >Approved
+        </label>
+
+        <label *ngIf="element.userRequestStatus.id === 3" class="text-danger"
+          >Rejected
+        </label>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter "{{ input.value }}"
+      </td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[7]" showFirstLastButtons></mat-paginator>
+</div>

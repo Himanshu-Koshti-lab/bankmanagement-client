@@ -1,0 +1,84 @@
+<app-adminnavbar></app-adminnavbar>
+
+<ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+  </ngx-spinner>
+  
+<h1>Admin Details</h1>
+
+<div class="container">
+    <div class="row justify-content-sm-center">
+        <div class="col-3">
+            <label for="firstName">First Name: </label>
+        </div>
+
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="{{ Admin.firstName }}" disabled data-toggle="tooltip" data-placement="bottom" title="{{ Admin.firstName }}!">
+        </div>
+    </div>
+<br>
+    <div class="row justify-content-sm-center">
+        <div class="col-3">
+            <label for="lastName">Last Name: </label>
+        </div>
+
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="{{Admin.lastName}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Admin.lastName}}!">
+        </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-sm-center">
+        <div class="col-3">
+            <label for="emailID">Email ID: </label>
+        </div>
+
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="{{Admin.emailID}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Admin.emailID}}!">
+        </div>
+    </div>
+
+    <br>
+    <div class="row justify-content-sm-center">
+        <div class="col-3">
+            <label for="mobileNo">Mobile Mumber: </label>
+        </div>
+
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="{{Admin.mobileNo}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Admin.mobileNo}}!">
+        </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-sm-center">
+        <div class="col-3">
+            <label for="permanentAddress">Address: </label>
+        </div>
+
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="{{Admin.permanentAddress}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Admin.permanentAddress}}!">
+        </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-sm-center">
+
+        <div class="col-3">
+            <label for="permanentCity">City: </label>
+        </div>
+
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="{{Admin.permanentCity}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Admin.permanentCity}}!">
+        </div>
+    </div>
+<br>
+    <div class="row justify-content-sm-center">
+        <div class="col-3">
+            <label for="permanentState: ">State: </label>
+        </div>
+
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="{{Admin.permanentState}}" disabled data-toggle="tooltip" data-placement="bottom" title="{{Admin.permanentState}}!">
+        </div>
+    </div>
+</div>

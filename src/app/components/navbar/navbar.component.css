@@ -1,0 +1,12 @@
+.logo{
+    text-align: center;
+  }
+.mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+a{
+  padding-left: 20px;
+  font-weight: 400;
+  font-size: medium;
+}
+

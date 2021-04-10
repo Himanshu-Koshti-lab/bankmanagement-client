@@ -1,0 +1,141 @@
+<app-customer-navbar></app-customer-navbar>
+<!-- <mat-card>
+    <div class="containerpt-20" class="col-sm-10">
+        <div class="row justify-content-sm-center pt-8">
+            <div class="col-sm-5">
+                <br>
+                <h1 style="text-align: center" class="d-flex justify-content-sm-center">Update Customer Details</h1><br>
+                <form #updatecustomerform="ngForm"
+                    (ngSubmit)="updateUser(updatecustomerform.value);  updatecustomerform.reset()" class="update-form">
+
+                    <div class="required">
+                        <label for="EmailId"> Email Id: </label><br>
+                        <input type="email" class="form-control" id="emailID" name="emailID"
+                            placeholder="{{Customer.emailID}}" disabled aria-describedby="emailIDHelp"
+                            placeholder="Enter email" [(ngModel)]="updateuser.emailID" required #emailID="ngModel"
+                            [class.is-invalid]="emailID.invalid && emailID.touched"
+                            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <div *ngIf="emailID.errors && (emailID.invalid && emailID.touched)">
+                            <small class="text-danger" *ngIf="emailID.errors.required">Email ID is required
+                                field</small>
+                            <small class="text-danger" *ngIf="emailID.errors.pattern">Email ID should be in proper
+                                format (Example: abc@gmail.com)</small>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="required">
+                        <label for="MobileNumber"> New Mobile Number: </label>
+
+                        <input type="number" class="form-control" id="mobileNo" name="mobileNo"
+                            aria-describedby="mobileNoHelp" placeholder="Enter Mobile Number"
+                            [(ngModel)]="updateuser.mobileNo" required #mobileNo="ngModel"
+                            [class.is-invalid]="mobileNo.invalid && mobileNo.touched" maxlength="10"
+                            pattern="[789][0-9]{9}" onKeyPress="if(this.value.length==10) return false;" onkeydown="return event.keyCode === 8 ||
+                            event.keyCode === 46 ? true : !isNaN(Number(event.key))">
+                        <div *ngIf="mobileNo.errors && (mobileNo.invalid && mobileNo.touched)">
+                            <small class="text-danger" *ngIf="mobileNo.errors.required">Mobile Number is required
+                                field</small>
+                            <small class="text-danger" *ngIf="mobileNo.errors.pattern">Mobile Number should be in
+                                proper
+                                format (Phone numbers from India are 10 digits long, and start with 7, 8, or
+                                9)</small>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="required">
+                            <label for="AccountStatus">New Account Status: </label>
+                            <select class="form-control" id="AccountStatus" name="AccountStatus" style="width:80%;"
+                                placeholder="Enter Account Status" [(ngModel)]="updateuser.AccountStatus" required
+                                #accountstatus="ngModel"
+                                [class.is-invalid]="accountstatus.invalid && accountstatus.touched" maxlength="10">
+                                <option label="Select Status" disabled>Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="locked">Locked</option>
+                            </select>
+                            <small class="text-danger"
+                                [class.d-none]="accountstatus.valid || accountstatus.untouched">Account Status is
+                                required</small>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <button type="submit" class="btn btn-primary" [disabled]="updatecustomerform.form.invalid">Send
+                        Request</button>
+                    <button style="margin-left: 100px;" type="button" class="btn btn-danger cancelbtn">Cancel</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</mat-card> -->
+
+<div class="main-div">
+    <mat-card class="design">
+      <div class="login-form">
+        <form #updatecustomerform="ngForm"
+                    (ngSubmit)="updateUser(updatecustomerform.value);  updatecustomerform.reset()" class="update-form">
+                    <div class="required">
+                        <label for="EmailId"> Email Id: </label><br>
+                        <input type="email" class="form-control" id="emailID" name="emailID"
+                            placeholder="{{Customer.emailID}}" disabled aria-describedby="emailIDHelp"
+                            placeholder="Enter email" [(ngModel)]="updateuser.emailID" required #emailID="ngModel"
+                            [class.is-invalid]="emailID.invalid && emailID.touched"
+                            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <div *ngIf="emailID.errors && (emailID.invalid && emailID.touched)">
+                            <small class="text-danger" *ngIf="emailID.errors.required">Email ID is required
+                                field</small>
+                            <small class="text-danger" *ngIf="emailID.errors.pattern">Email ID should be in proper
+                                format (Example: abc@gmail.com)</small>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="required">
+                        <label for="MobileNumber"> New Mobile Number: </label>
+                        <input type="number" class="form-control" id="mobileNo" name="mobileNo"
+                            aria-describedby="mobileNoHelp" placeholder="Enter Mobile Number"
+                            [(ngModel)]="updateuser.mobileNo" required #mobileNo="ngModel"
+                            [class.is-invalid]="mobileNo.invalid && mobileNo.touched" maxlength="10"
+                            pattern="[789][0-9]{9}" onKeyPress="if(this.value.length==10) return false;" onkeydown="return event.keyCode === 8 ||
+                            event.keyCode === 46 ? true : !isNaN(Number(event.key))">
+                        <div *ngIf="mobileNo.errors && (mobileNo.invalid && mobileNo.touched)">
+                            <small class="text-danger" *ngIf="mobileNo.errors.required">Mobile Number is required
+                                field</small>
+                            <small class="text-danger" *ngIf="mobileNo.errors.pattern">Mobile Number should be in
+                                proper
+                                format (Phone numbers from India are 10 digits long, and start with 7, 8, or
+                                9)</small>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="required">
+                            <label for="AccountStatus">New Account Status: </label>
+                            <select class="form-control" id="AccountStatus" name="AccountStatus" style="width:80%;"
+                                placeholder="Enter Account Status" [(ngModel)]="updateuser.AccountStatus" required
+                                #accountstatus="ngModel"
+                                [class.is-invalid]="accountstatus.invalid && accountstatus.touched" maxlength="10">
+                                <option label="Select Status" disabled>Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="locked">Locked</option>
+                            </select>
+                            <small class="text-danger"
+                                [class.d-none]="accountstatus.valid || accountstatus.untouched">Account Status is
+                                required</small>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <span class="reg"><button type="submit" class="btn btn-primary" [disabled]="updatecustomerform.form.invalid">Update Details</button></span>
+                      </div>
+                    <button  class="btn btn-danger cancelbtn">Cancel</button>
+                </form>
+        
+        
+      </div>
+    </mat-card>
+    </div>

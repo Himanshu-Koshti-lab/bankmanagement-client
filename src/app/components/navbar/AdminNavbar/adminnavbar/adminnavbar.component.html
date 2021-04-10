@@ -1,0 +1,80 @@
+<div class="logo">
+  <img src="../../assets/images/header.jpg" alt="image not found" />
+</div>
+
+<nav>
+  <mat-toolbar class="bg-primary">
+    <button mat-button routerLink="/Admin">Home</button>
+
+    <button mat-button [matMenuTriggerFor]="admin">Admin</button>
+    <mat-menu #admin="matMenu" class="bg-info">
+      <button mat-menu-item routerLink="/Admin/adminProfile">Admin Profile</button>
+      <button mat-menu-item routerLink="/Admin/changePassword">Change Password</button>
+    </mat-menu>
+
+
+
+    <button mat-button [matMenuTriggerFor]="customer">Customer</button>
+    <mat-menu #customer="matMenu" class="bg-info">
+      <button mat-menu-item routerLink="/Admin/Customer/customerDashboard">
+        Dashboard
+      </button>
+      <button mat-menu-item routerLink="/Admin/Customer/accountDetails">
+        Account details
+      </button>
+      <button mat-menu-item routerLink="/Admin/Customer/customerDetails">
+        Customer details
+      </button>
+      <button mat-menu-item routerLink="/Admin/Customer/accountStatement">
+        Account Statement
+      </button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="employee">Employee</button>
+    <mat-menu #employee="matMenu" class="bg-info">
+      <button mat-menu-item routerLink="/Admin/Employee/employeeDetails">
+        Employee details
+      </button>
+
+      <!-- Employee/dashboard -->
+
+      <button mat-menu-item routerLink="/Admin/Employee/dashboard">
+        Employee Dashboard
+      </button>
+
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="request">Request</button>
+    <mat-menu #request="matMenu" class="bg-info">
+      <button mat-menu-item [matMenuTriggerFor]="employeeSub">Employee</button>
+      <mat-menu #employeeSub="matMenu" class="bg-info">
+        <button mat-menu-item routerLink="/Admin/employeeRequest/employeeRegistrationRequest">
+          Registration Request
+        </button>
+        <!-- <button
+          mat-menu-item
+          routerLink="/Admin/employeeRequest/employeeUpdateProfile"
+        >
+          Update Profile
+        </button> -->
+      </mat-menu>
+      <button mat-menu-item [matMenuTriggerFor]="customerSub">Customer</button>
+      <mat-menu #customerSub="matMenu" class="bg-info">
+        <button mat-menu-item routerLink="/Admin/customerRequest/customerRegistrationRequest">
+          Registration Request
+        </button>
+        <button mat-menu-item routerLink="/Admin/customerRequest/customerAccountRegistrationRequest">
+          Account Registration Request
+        </button>
+        <!-- <button mat-menu-item routerLink="/Admin/customerRequest/customerUpdateProfile">
+          Update Profile
+        </button> -->
+
+        <button mat-menu-item routerLink="/Admin/customerRequest/CustomerMobileNumberRequestApproveComponent">
+          Update Mobile number Request
+        </button>
+      </mat-menu>
+    </mat-menu>
+    <button mat-button (click)="onLogout()" *ngIf="isUserLoggedIn">
+      Logout
+    </button>
+  </mat-toolbar>
+</nav>

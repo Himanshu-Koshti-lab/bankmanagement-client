@@ -1,0 +1,36 @@
+<app-customer-navbar></app-customer-navbar>
+<h1 >Create Account</h1>
+
+<div class="main-div">
+<mat-card class="design">
+    <div class="login-form">
+        <form [formGroup]="accountForm" (ngSubmit)="onSubmit(accountForm.value)">
+            
+            <div class="form-group">
+                <div class="required">
+                    <label>Email : </label>
+                </div>
+                <input type="text"  class="form-control" placeholder="{{ Customer.emailID }}"  disabled data-toggle="tooltip" data-placement="bottom" title="{{ Customer.emailID }}" />
+            </div>
+
+            <div class="form-group">
+                <div class="required">
+                    <label>Account Type : </label>
+                </div>
+                <select class="custom-select" formControlName="userAccountType" (change)="selectChangeHandler($event)" data-toggle="tooltip" data-placement="bottom" title="Select Bank Account Type!">
+                    <option label="Account Type" disabled></option>
+                    <option value="1" selected>Salary</option>
+                    <option value="2">Current</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" style="color: black; height: 50px;" [disabled]="accountForm.invalid" data-toggle="tooltip" data-placement="bottom" title="Register New Bank Account For User!">Create
+                    Account</button>
+            </div>
+        </form>
+
+
+    </div>
+</mat-card>
+</div>

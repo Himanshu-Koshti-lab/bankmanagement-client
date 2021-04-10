@@ -1,0 +1,63 @@
+<app-adminnavbar></app-adminnavbar>
+
+<ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+  </ngx-spinner>
+  
+<h1>Customers Dashboard </h1>
+
+<div class="row2">
+  <mat-grid-list cols="2" rowHeight="400px" >
+    <mat-grid-tile>
+      <mat-card
+        style="
+          width: 635px;
+          height: 350px;
+          border-radius: 15px;
+          border-color: black;
+          background: #e7e7e7;
+        "
+      >
+        <p style="font-weight: bold">
+          Total Number Of Registered Customer: {{ total }}
+        </p>
+        <canvas
+          baseChart
+          height="400"
+          width="800"
+          [datasets]="topAchievementPieDataSets"
+          [labels]="topAchievementPieLabels"
+          [chartType]="topAchievementPieChartType"
+          [options]="topAchievementPieOptions"
+        ></canvas>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card
+        style="
+          width: 635px;
+          height: 350px;
+          border-radius: 15px;
+          border-color: black;
+          background: #e7e7e7;
+        "
+      >
+        <p style="font-weight: bold">
+          Total Number Of Account Registered For Customer: {{ " " + total1 }}
+        </p>
+        <div style="display: block">
+          <canvas
+            baseChart
+            height="400"
+            width="800"
+            [datasets]="topAchievementPieDataSets1"
+            [labels]="topAchievementPieLabels"
+            [chartType]="topAchievementPieChartType"
+            [options]="topAchievementPieOptions"
+          ></canvas>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

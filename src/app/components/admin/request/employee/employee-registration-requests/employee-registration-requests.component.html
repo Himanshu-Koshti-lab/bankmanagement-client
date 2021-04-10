@@ -1,0 +1,105 @@
+<app-adminnavbar></app-adminnavbar>
+
+<!-- <div class="">
+    <table class="table table-striped">
+        <tr>
+          <th>User Id</th>
+          <th>Name</th>
+          <th>Email ID</th>
+          <th>Birth Date</th>
+          <th>Action</th>
+        </tr>       
+    
+        <tr *ngFor="let employee of AllEmployee">
+          <td>{{employee.id}}</td>
+          <td>{{employee.firstName +" "+employee.lastName}}</td>
+          <td>{{employee.emailID}}</td>
+          <td>{{employee.dob}}</td>
+          <td *ngIf="employee.registrationStatus===1"><button (click)="approveEmployee(employee)" class="btn btn-success">Approve</button> <button (click)="rejectemployeeRegistrationRequest(employee)" class="btn btn-danger">Reject</button></td>
+          <td *ngIf="employee.registrationStatus===2" class="text-success">Approved</td>
+          <td *ngIf="employee.registrationStatus===3" class="text-danger">Rejected</td>
+        </tr>
+       
+      </table>
+</div> -->
+
+<ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+</ngx-spinner>
+
+<div class="container">
+  <h1 style="text-align: center">Employee Registration Requests</h1>
+
+  <mat-form-field class="container">
+    <mat-label>Search Here</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container table-striped">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>
+         Request ID
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <label>{{ element.id }} </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>Employee Name</th>
+      <td mat-cell *matCellDef="let element">
+        <label>{{ element.firstName + " " + element.lastName }} </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="emailID">
+      <th mat-header-cell *matHeaderCellDef>Employee Email ID</th>
+      <td mat-cell *matCellDef="let element">
+        <label>{{ element.emailID }} </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef>Date of Birth</th>
+      <td mat-cell *matCellDef="let element">
+        <label>{{ element.dob }} </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="registrationStatus">
+      <th mat-header-cell *matHeaderCellDef> Registration Status</th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="element.registrationStatus === 1">
+          <button (click)="approveEmployee(element)" class="btn btn-success">
+            Approve
+          </button>
+          <button
+            (click)="rejectemployeeRegistrationRequest(element)"
+            class="btn btn-danger"
+          >
+            Reject
+          </button>
+        </span>
+
+        <label *ngIf="element.registrationStatus === 2" class="text-success"
+          >Approved
+        </label>
+
+        <label *ngIf="element.registrationStatus === 3" class="text-danger"
+          >Rejected
+        </label>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter "{{ input.value }}"
+      </td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[7]" showFirstLastButtons></mat-paginator>
+</div>

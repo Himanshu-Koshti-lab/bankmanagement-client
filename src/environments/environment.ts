@@ -3,7 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  clientId: 'ABCD',
+  clientSecret: 'ABCD',
+  scope: 'read',
+  // USER_API: 'http://ec2-13-59-244-199.us-east-2.compute.amazonaws.com:8081',
+  // TRANSACTION_API:
+  //   'http://ec2-13-59-244-199.us-east-2.compute.amazonaws.com:8082',
+  // DASHBOARD_API:
+  //   'http://ec2-13-59-244-199.us-east-2.compute.amazonaws.com:8083',
+  // ACCOUNT_API: 'http://ec2-13-59-244-199.us-east-2.compute.amazonaws.com:8084',
+  USER_API: 'http://localhost:8081',
+  TRANSACTION_API: 'http://localhost:8082',
+  DASHBOARD_API: 'http://localhost:8083',
+  ACCOUNT_API: 'http://localhost:8084',
 };
 
 /*

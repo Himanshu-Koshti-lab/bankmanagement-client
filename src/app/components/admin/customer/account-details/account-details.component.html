@@ -1,0 +1,103 @@
+<app-adminnavbar></app-adminnavbar>
+
+<ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+</ngx-spinner>
+
+
+<!-- <div class="">
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Account Number</th>
+      <th>Balance</th>
+      <th>Acccount Type</th>
+      <th>Acccount Status</th>
+    </tr>
+
+    <tr *ngFor="let customer of AllCustomers">
+      <td>{{customer.firstName +" "+customer.lastName}}</td>
+      <td *ngIf="customer.accountNumber===0" class="text-danger">Pending</td>
+      <td *ngIf="customer.accountNumber!=0">{{customer.accountNumber}}</td>
+      <td *ngIf="customer.balance===0" class="text-danger">Pending</td>
+      <td *ngIf="customer.balance!=0">{{customer.balance}}</td>
+      <td *ngIf="customer.accounttype===1">Salary</td>
+      <td *ngIf="customer.accounttype===2">Current</td>
+      <td *ngIf="customer.accountStatusId===1" class="text-success">Active</td>
+      <td *ngIf="customer.accountStatusId===2" class="text-danger">Inactive</td>
+      <td *ngIf="customer.accountStatusId===3" class="text-primary">Deactivated</td>
+    </tr>
+  </table>
+</div> -->
+
+<div class="container">
+
+  <h1 style="text-align: center;">Customer Account Details</h1>
+
+  <mat-form-field class="container">
+    <mat-label>Search Here</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container table-striped">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-label>Customer Name</mat-label>
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName + " " + element.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="accountNumber">
+      <th mat-header-cell *matHeaderCellDef> Customer Account Number </th>
+      <td mat-cell *matCellDef="let element">
+        <label *ngIf="element.accountNumber!=0">{{element.accountNumber}}
+        </label>
+        <label *ngIf="!element.accountNumber===0" class="text-danger">Pending</label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="balance">
+      <th mat-header-cell *matHeaderCellDef> Balance </th>
+      <td mat-cell *matCellDef="let element">
+        <label *ngIf="element.balance!=0">{{element.balance}}
+        </label>
+        <label *ngIf="!element.balance===0" class="text-danger">Pending</label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="accounttype">
+      <th mat-header-cell *matHeaderCellDef> Account Type </th>
+      <td mat-cell *matCellDef="let element">
+        <label *ngIf="element.accounttype===1">Salary
+        </label>
+        <label *ngIf="element.accounttype===2">Current</label>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="accountStatusId">
+      <th mat-header-cell *matHeaderCellDef> Account Status </th>
+      <td mat-cell *matCellDef="let element">
+        <label *ngIf="element.accountStatusId===1" class="text-success">Active
+        </label>
+        <label *ngIf="element.accountStatusId===2" class="text-danger">Inactive</label>
+        <label *ngIf="element.accountStatusId===3" class="text-primary">Deactivated</label>
+      </td>
+    </ng-container>
+
+    
+   
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+
+
+  </table>
+  <mat-paginator [pageSizeOptions]="[7]" showFirstLastButtons></mat-paginator>
+</div>

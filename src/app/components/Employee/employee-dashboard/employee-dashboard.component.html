@@ -1,0 +1,24 @@
+<app-employee-navbar></app-employee-navbar>
+<h1>Welcome {{Employee.firstName + " " + Employee.lastName}}</h1>
+
+<div class=" text-center">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+            <img src="../../assets/images/third.jpg" alt="image not found" style="height: 400px;">
+        </ng-template>
+        <ng-template carouselSlide>
+            <img src="../../assets/images/ten.jpg" alt="image not found" style="height: 400px;">
+        </ng-template>
+        <ng-template carouselSlide>
+            <img src="../../assets/images/eleven.jpg"
+                alt="image not found" style="height: 400px;">
+        </ng-template>
+    </owl-carousel-o>
+</div>
+
+<div>
+    <img src="../../assets/images/impontantNotice.JPG" alt="image not found">
+</div>
+
+<!-- <div id="overflowTest">
+</div> -->

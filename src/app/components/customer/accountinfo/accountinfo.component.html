@@ -1,0 +1,77 @@
+<app-customer-navbar></app-customer-navbar>
+<ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+</ngx-spinner>
+
+<!-- <ngx-spinner bdColor="rgba(0, 0, 0, 1)">
+    template="<img src='https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif' />"
+</ngx-spinner> -->
+<div class="container">
+    <div class="row">
+        <div *ngFor="let account of AllAccount " class="col-lg-6 mb-4s">
+            <!-- *ngIf="account.userAccountStatusType!=3" -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h1>
+                            <p *ngIf="account.userAccountType===1">Salary Account</p>
+                            <p *ngIf="account.userAccountType===2">Current Account</p>
+                        </h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Account Number :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="{{account.accountNumber}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Account Balance :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="{{account.balance}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Registration Status :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="PENDING"
+                                        *ngIf="account.accountRegStatusType===1">
+                                    <input type="text" disabled placeholder="APPROVED"
+                                        *ngIf="account.accountRegStatusType===2">
+                                    <input type="text" disabled placeholder="REJECTED"
+                                        *ngIf="account.accountRegStatusType===3">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Account Status :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="ACTIVE"
+                                        *ngIf="account.userAccountStatusType===1">
+                                    <input type="text" disabled placeholder="INACTIVE"
+                                        *ngIf="account.userAccountStatusType===2">
+                                    <input type="text" disabled placeholder="DEACTIVATED"
+                                        *ngIf="account.userAccountStatusType===3">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
