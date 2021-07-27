@@ -5,7 +5,6 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -56,7 +55,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { from } from 'rxjs';
 import { EmpDetailsComponent } from './components/Employee/emp-details/emp-details.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
-import { CustomerCareComponent } from './components/customer-care/customer-care.component';
 import { AdminChangePasswordComponent } from './components/admin/admin-change-password/admin-change-password.component';
 import { EmployeeChangePasswordComponent } from './components/Employee/employee-change-password/employee-change-password.component';
 import { CustomerChangePasswordComponent } from './components/customer/customer-change-password/customer-change-password.component';
@@ -80,7 +78,6 @@ import { EmployeeRegistrationDashboardComponent } from './components/admin/emplo
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutUsComponent,
     LoginComponent,
     RegistrationComponent,
     FooterComponent,
@@ -114,7 +111,6 @@ import { EmployeeRegistrationDashboardComponent } from './components/admin/emplo
     CustomerProfileDetailsComponent,
     EmpDetailsComponent,
     AdminProfileComponent,
-    CustomerCareComponent,
     AdminChangePasswordComponent,
     EmployeeChangePasswordComponent,
     CustomerChangePasswordComponent,
