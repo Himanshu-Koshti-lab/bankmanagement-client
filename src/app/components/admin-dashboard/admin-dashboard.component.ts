@@ -8,30 +8,26 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  styleUrls: ['./admin-dashboard.component.css'],
 })
 export class AdminDashboardComponent implements OnInit {
+  constructor(private router: Router, private apiService: ApiService) {}
 
-  constructor(private router: Router,private apiService: ApiService) { }
-
-  
   ngOnInit(): void {
-    if(sessionStorage.getItem("token") === null){
-      this.router.navigateByUrl('login')
-      console.log("Login First")
+    if (sessionStorage.getItem('token') === null) {
+      this.router.navigateByUrl('login');
+      console.log('Login First');
     }
-      const jwt = JSON.stringify(sessionStorage.getItem("token"));
-      let jwtData = jwt.split('.')[1]
-      let decodedJwtJsonData = window.atob(jwtData)
-      let decodedJwtData = JSON.parse(decodedJwtJsonData)
-      if(decodedJwtData.authorities == "ROLE_ADMIN")
-        this.router.navigateByUrl('Admin')
-        else if (decodedJwtData.authorities == "ROLE_EMPLOYEE")
-          this.router.navigateByUrl('employeeDashboard')
-        else 
-          this.router.navigateByUrl('CustomerHome')
+    const jwt = JSON.stringify(sessionStorage.getItem('token'));
+    let jwtData = jwt.split('.')[1];
+    let decodedJwtJsonData = window.atob(jwtData);
+    let decodedJwtData = JSON.parse(decodedJwtJsonData);
+    if (decodedJwtData.authorities == 'ROLE_ADMIN')
+      this.router.navigateByUrl('Admin');
+    else if (decodedJwtData.authorities == 'ROLE_EMPLOYEE')
+      this.router.navigateByUrl('employeeDashboard');
+    else this.router.navigateByUrl('CustomerHome');
   }
-  
 
   customOptions: OwlOptions = {
     loop: true,
@@ -39,25 +35,18 @@ export class AdminDashboardComponent implements OnInit {
     touchDrag: true,
     pullDrag: true,
     autoplay: true,
-    dots: true,
-    autoWidth:true,
-    autoHeight:true,
+    autoWidth: true,
+    autoHeight: true,
     navSpeed: 700,
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
-        items: 2
+        items: 1,
       },
-      740: {
-        items: 3
-      },
-      840: {
-        items: 1
-      }
     },
-    nav: true
-  }
+    nav: true,
+  };
 }

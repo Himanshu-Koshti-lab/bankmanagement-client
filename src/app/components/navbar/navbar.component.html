@@ -1,20 +1,35 @@
-
-<div class="logo">
-  <img src="../../assets/images/header.jpg" alt="image not found" />
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="text-dark nav-link" routerLink="/home" *ngIf="!isUserLoggedIn"
+<nav
+  class="navbar navbar-expand-lg navbar-light"
+  style="background-color: #2e3138ff; color: #ccc9e7ff; overflow: hidden"
+>
+  <img
+    src="../../assets/images/newlogo.png"
+    style="width: 100px; float: left"
+    alt="image not found"
+  />
+  <a
+    class="nav-link"
+    style="color: #ccc9e7ff"
+    routerLink="/home"
+    *ngIf="!isUserLoggedIn"
     >Home</a
   >
-  <a class="text-dark nav-link" routerLink="/Admin" *ngIf="isUserLoggedIn"
+  <a
+    class="nav-link"
+    style="color: #ccc9e7ff"
+    routerLink="/Admin"
+    *ngIf="isUserLoggedIn"
     >Home</a
   >
-  <a class="text-dark nav-link" routerLink="/login" *ngIf="!isUserLoggedIn"
+  <a
+    class="nav-link"
+    style="color: #ccc9e7ff"
+    routerLink="/login"
+    *ngIf="!isUserLoggedIn"
     >Login</a
   >
   <a
-    class="text-dark nav-link"
+    class="nav-link"
     class="text-right"
     (click)="onLogout()"
     *ngIf="isUserLoggedIn"

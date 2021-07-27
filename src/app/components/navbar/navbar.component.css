@@ -1,10 +1,17 @@
-.logo{
-    text-align: center;
-  }
+.logo {
+  text-align: center;
+}
 .mat-button-base {
-    margin: 8px 8px 8px 0;
-  }
-a{
+  margin: 8px 8px 8px 0;
+}
+body {
+  --dark-liver-horses: #60463bff;
+  --deep-taupe: #856a5dff;
+  --languid-lavender: #ccc9e7ff;
+  --sonic-silver: #6c6f7dff;
+  --gunmetal: #2e3138ff;
+}
+a {
   padding-left: 20px;
   font-weight: 400;
   font-size: medium;
