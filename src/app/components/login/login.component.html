@@ -8,38 +8,100 @@
             <div class="required">
               <label>Email</label>
             </div>
-            <input type="text" formControlName="emailID" class="form-control"
+            <input
+              type="text"
+              formControlName="emailID"
+              class="form-control"
               pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              [ngClass]="{ 'is-invalid': submitted && loginForm.controls.emailID.errors }"
-              placeholder="Enter Email ID" />
-            <div *ngIf=" loginForm.controls.emailID.touched && loginForm.controls.emailID.invalid" class="text-danger">
-              <div *ngIf="loginForm.controls.emailID.errors.required">Email is required
-                field.</div>
+              [ngClass]="{
+                'is-invalid': submitted && loginForm.controls.emailID.errors
+              }"
+              placeholder="Enter Email ID"
+            />
+            <div
+              *ngIf="
+                loginForm.controls.emailID.touched &&
+                loginForm.controls.emailID.invalid
+              "
+              class="text-danger"
+            >
+              <div *ngIf="loginForm.controls.emailID.errors.required">
+                Email is required field.
+              </div>
             </div>
           </div>
           <div class="form-group">
             <div class="required">
               <label>Password</label>
             </div>
-            <input type="password" formControlName="password" class="form-control" placeholder="Enter Password"
-              [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }" />
-            <div *ngIf=" loginForm.controls.password.touched && loginForm.controls.password.invalid"
-              class="text-danger">
-              <div *ngIf="loginForm.controls.password.errors.required">Password is required
-                field.</div>
+            <input
+              type="password"
+              formControlName="password"
+              class="form-control"
+              placeholder="Enter Password"
+              [ngClass]="{
+                'is-invalid': submitted && loginForm.controls.password.errors
+              }"
+            />
+            <div
+              *ngIf="
+                loginForm.controls.password.touched &&
+                loginForm.controls.password.invalid
+              "
+              class="text-danger"
+            >
+              <div *ngIf="loginForm.controls.password.errors.required">
+                Password is required field.
+              </div>
             </div>
           </div>
           <div class="form-group">
-            <button class="btn btn-primary" style="color: black;" [disabled]="!loginForm.valid" data-toggle="tooltip" data-placement="bottom" title="Login Here!">Login</button>
+            <button
+              class="btn btn-primary"
+              style="color: black"
+              [disabled]="!loginForm.valid"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Login Here!"
+            >
+              Login
+            </button>
           </div>
         </form>
         <div class="form-group">
-          <button routerLink="/home" class="btn btn-danger cancelbtn" data-toggle="tooltip" data-placement="bottom" title="Cancel">Cancel</button>
-          <span class="psw"><button class="btn btn-primary" routerLink="/forgot_password" data-toggle="tooltip" data-placement="bottom" title="Forgot Password Here!">Forgot password
-              ?</button></span>
+          <button
+            routerLink="/home"
+            class="btn btn-danger cancelbtn"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="Cancel"
+          >
+            Cancel
+          </button>
+          <span class="psw"
+            ><button
+              class="btn btn-primary"
+              routerLink="/forgot_password"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Forgot Password Here!"
+            >
+              Forgot password ?
+            </button></span
+          >
         </div>
         <div class="form-group">
-          <span class="reg"><button class="btn btn-primary" routerLink="/register" data-toggle="tooltip" data-placement="bottom" title="Register New User!">Register here</button></span>
+          <span class="reg"
+            ><button
+              class="btn btn-primary"
+              routerLink="/register"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Register New User!"
+            >
+              Register here
+            </button></span
+          >
         </div>
       </div>
     </mat-card>

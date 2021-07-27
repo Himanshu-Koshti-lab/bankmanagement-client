@@ -23,7 +23,6 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { FooterComponent } from './components/footer/footer.component';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
-import { BannerComponent } from './components/banner/banner.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -58,7 +57,6 @@ import { from } from 'rxjs';
 import { EmpDetailsComponent } from './components/Employee/emp-details/emp-details.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { CustomerCareComponent } from './components/customer-care/customer-care.component';
-import { HeadersComponent } from './components/headers/headers.component';
 import { AdminChangePasswordComponent } from './components/admin/admin-change-password/admin-change-password.component';
 import { EmployeeChangePasswordComponent } from './components/Employee/employee-change-password/employee-change-password.component';
 import { CustomerChangePasswordComponent } from './components/customer/customer-change-password/customer-change-password.component';
@@ -87,7 +85,6 @@ import { EmployeeRegistrationDashboardComponent } from './components/admin/emplo
     RegistrationComponent,
     FooterComponent,
     DialogboxComponent,
-    BannerComponent,
     NavbarComponent,
     ForgotpasswordComponent,
     AdminDashboardComponent,
@@ -118,7 +115,6 @@ import { EmployeeRegistrationDashboardComponent } from './components/admin/emplo
     EmpDetailsComponent,
     AdminProfileComponent,
     CustomerCareComponent,
-    HeadersComponent,
     AdminChangePasswordComponent,
     EmployeeChangePasswordComponent,
     CustomerChangePasswordComponent,
