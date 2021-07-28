@@ -1,5 +1,28 @@
 h1 {
-    padding-top: 20px;
-    padding-right: 20px;
-    text-align: center;
-  }
+  padding-top: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #e38678;
+  border-radius: 10px;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+img {
+  width: 200px;
+}
+
+.card > div {
+  padding-top: 15px;
+}
+.name {
+  grid-column: 1 / 2;
+  grid-row: 1 / 6;
+}
