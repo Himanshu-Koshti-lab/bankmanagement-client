@@ -28,7 +28,8 @@ export class CustomerDetailsComponent implements OnInit {
     'id',
     'firstName',
     'emailID',
-    'dob'
+    'dob',
+    'registrationStatus'
   ];
 
   //AdminCustomerCustomerDetails

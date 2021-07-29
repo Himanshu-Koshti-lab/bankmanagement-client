@@ -1,9 +1,13 @@
 <app-adminnavbar></app-adminnavbar>
 
-<ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.9)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
   <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
 </ngx-spinner>
-
 
 <!-- <div class="">
     <table class="table table-striped">
@@ -28,55 +32,58 @@
 
   <mat-form-field class="container">
     <mat-label>Search Here</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
   </mat-form-field>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container table-striped">
-
-
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    class="mat-elevation-z8 container table-striped"
+  >
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Customer ID </th>
+      <th mat-header-cell *matHeaderCellDef>Customer ID</th>
       <td mat-cell *matCellDef="let element">
-        <label *ngIf="element.registrationStatus===2" >{{element.id}}
-        </label>
+        <label>{{ element.id }} </label>
       </td>
     </ng-container>
 
     <ng-container matColumnDef="firstName">
-      <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+      <th mat-header-cell *matHeaderCellDef>Customer Name</th>
       <td mat-cell *matCellDef="let element">
-        <label *ngIf="element.registrationStatus===2" >{{element.firstName + " " + element.lastName}}
-        </label>
+        <label>{{ element.firstName + " " + element.lastName }} </label>
       </td>
     </ng-container>
 
-
     <ng-container matColumnDef="emailID">
-      <th mat-header-cell *matHeaderCellDef> Customer Email ID </th>
+      <th mat-header-cell *matHeaderCellDef>Customer Email ID</th>
       <td mat-cell *matCellDef="let element">
-        <label *ngIf="element.registrationStatus===2" >{{element.emailID}}
-        </label>
+        <label>{{ element.emailID }} </label>
       </td>
     </ng-container>
 
     <ng-container matColumnDef="dob">
-      <th mat-header-cell *matHeaderCellDef> Date of Birth</th>
+      <th mat-header-cell *matHeaderCellDef>Date of Birth</th>
       <td mat-cell *matCellDef="let element">
-        <label *ngIf="element.registrationStatus===2" >{{element.dob}}
-        </label>
+        <label>{{ element.dob }} </label>
+      </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="registrationStatus">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">
+        <label>{{ element.registrationStatus }} </label>
       </td>
     </ng-container>
 
-   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
     <!-- Row shown when there is no matching data. -->
     <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter "{{ input.value }}"
+      </td>
     </tr>
-
-
   </table>
   <mat-paginator [pageSizeOptions]="[7]" showFirstLastButtons></mat-paginator>
 </div>
