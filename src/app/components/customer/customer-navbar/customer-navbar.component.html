@@ -1,29 +1,56 @@
-<div class="logo">
-  <img src="../../assets/images/header.jpg" alt="image not found">
-</div>
-<nav>
-  <mat-toolbar class="bg-primary">
+<nav style="background-color: #2e3138ff; color: #ccc9e7ff; overflow: hidden">
+  <mat-toolbar style="background-color: #2e3138ff; color: #ccc9e7ff">
+    <img
+      src="../../assets/images/newlogo.png"
+      style="width: 100px; float: left"
+      alt="image not found"
+    />
     <button mat-button routerLink="/CustomerHome">Home</button>
 
-    <button mat-button routerLink="/Customer/CustomerDetails">Customer Details</button>
-    
+    <button mat-button routerLink="/Customer/CustomerDetails">
+      Customer Details
+    </button>
 
-    <button mat-button [matMenuTriggerFor]="accountinfoSub">Account Information</button>
+    <button mat-button [matMenuTriggerFor]="accountinfoSub">
+      Account Information
+    </button>
     <mat-menu #accountinfoSub="matMenu" class="bg-info">
-      <button mat-menu-item routerLink="/Customer/Account_Information/Create_Account">Create Account</button>
-      <button mat-menu-item routerLink="/Customer/Account_Information/Account_Statement">Account Statement</button>
-      <button mat-menu-item routerLink="/Customer/CustomerAccountDetails">Account Details</button>
+      <button
+        mat-menu-item
+        routerLink="/Customer/Account_Information/Create_Account"
+      >
+        Create Account
+      </button>
+      <button
+        mat-menu-item
+        routerLink="/Customer/Account_Information/Account_Statement"
+      >
+        Account Statement
+      </button>
+      <button mat-menu-item routerLink="/Customer/CustomerAccountDetails">
+        Account Details
+      </button>
     </mat-menu>
-    <button mat-button routerLink="/Customer/Fund_Transfer">Transfer Fund</button>
-    
+    <button mat-button routerLink="/Customer/Fund_Transfer">
+      Transfer Fund
+    </button>
 
-    <button mat-button [matMenuTriggerFor]="updateCustomer">Update Details</button>
+    <button mat-button [matMenuTriggerFor]="updateCustomer">
+      Update Details
+    </button>
     <mat-menu #updateCustomer="matMenu" class="bg-info">
-      <button mat-menu-item routerLink="/Customer/changePassword">Change Password</button>
-      <button mat-menu-item routerLink="/Customer/CustomerMobileNumberUpdateComponent">Mobile Number</button>
+      <button mat-menu-item routerLink="/Customer/changePassword">
+        Change Password
+      </button>
+      <button
+        mat-menu-item
+        routerLink="/Customer/CustomerMobileNumberUpdateComponent"
+      >
+        Mobile Number
+      </button>
     </mat-menu>
 
     <!-- Customer/CustomerAccountDetails -->
-    <button mat-button  (click)="onLogout()" >Logout</button>
+    <button mat-button (click)="onLogout()">Logout</button>
   </mat-toolbar>
 </nav>

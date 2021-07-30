@@ -3,86 +3,24 @@
 <ngx-spinner bdColor="rgba(51,51,51,0.9)" size="medium" color="#fff" type="ball-scale-multiple">
     <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
 </ngx-spinner>
-<div class="container">
-    <div class="row justify-content-sm-center">
-        <div class="col-3">
-            <label for="firstName">First Name: </label>
-        </div>
-
-        <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{ Customer.firstName }}" disabled
-                data-toggle="tooltip" data-placement="bottom" title="{{ Customer.firstName }}!">
-        </div>
+<div class="card">
+    <div class="name" for="firstName">
+      <img src="../../assets/images/profile.png" />
+      <p>{{ Customer.firstName + " " + Customer.lastName }}</p>
     </div>
-    <br>
-    <div class="row justify-content-sm-center">
-        <div class="col-3">
-            <label for="lastName">Last Name: </label>
-        </div>
-
-        <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.lastName}}" disabled data-toggle="tooltip"
-                data-placement="bottom" title="{{Customer.lastName}}!">
-        </div>
+    <div>
+      <p>{{ Customer.emailID }}</p>
     </div>
-    <br>
-
-    <div class="row justify-content-sm-center">
-        <div class="col-3">
-            <label for="emailID">Email ID: </label>
-        </div>
-
-        <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.emailID}}" disabled data-toggle="tooltip"
-                data-placement="bottom" title="{{Customer.emailID}}!">
-        </div>
+    <div>
+      <p>{{ Customer.mobileNo }}</p>
     </div>
-
-    <br>
-    <div class="row justify-content-sm-center">
-        <div class="col-3">
-            <label for="mobileNo">Mobile Mumber: </label>
-        </div>
-
-        <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.mobileNo}}" disabled data-toggle="tooltip"
-                data-placement="bottom" title="{{Customer.mobileNo}}!">
-        </div>
+    <div>
+      <p>{{ Customer.permanentAddress }}</p>
     </div>
-    <br>
-
-    <div class="row justify-content-sm-center">
-        <div class="col-3">
-            <label for="permanentAddress">Address: </label>
-        </div>
-
-        <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.permanentAddress}}" disabled
-                data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentAddress}}!">
-        </div>
+    <div>
+      <p>{{ Customer.permanentCity }}</p>
     </div>
-    <br>
-
-    <div class="row justify-content-sm-center">
-
-        <div class="col-3">
-            <label for="permanentCity">City: </label>
-        </div>
-
-        <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.permanentCity}}" disabled
-                data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentCity}}!">
-        </div>
+    <div>
+      <p>{{ Customer.permanentState }}</p>
     </div>
-    <br>
-    <div class="row justify-content-sm-center">
-        <div class="col-3">
-            <label for="permanentState: ">State: </label>
-        </div>
-
-        <div class="col-3">
-            <input type="text" class="form-control" placeholder="{{Customer.permanentState}}" disabled
-                data-toggle="tooltip" data-placement="bottom" title="{{Customer.permanentState}}!">
-        </div>
-    </div>
-</div>
+  </div>
