@@ -17,10 +17,11 @@ h1 {
   text-align: center;
 }
 th {
-  background-color: #007bff;
+  background-color: #2e3138ff;
   text-align: center;
   font-weight: bold;
   font-size: small;
+  color: white;
 }
 
 td {
